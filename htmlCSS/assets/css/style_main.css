@@ -1,8 +1,8 @@
-/***********************
+/********************************
     style_main.css index
     =======================
     By AHJ
-************************/
+*********************************/
 
 *,
 ::before,
@@ -17,16 +17,17 @@
 
     max-width: 1024px;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto auto 40px;
 
     grid-template-areas: 
-        "header header header"
-        "nav main main"
-        "footer footer footer";
-    background-color: #f9e510;
+        "header header header header header"
+        "nav main main main main"
+        "footer footer footer footer footer";
 
     margin: 0px auto;
+
+    background-color: #f9e510;
 }
 
 /********************* Header ******************/
@@ -41,7 +42,7 @@ header {
         "img_header";
 
     grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column-end: 6;
 
     color: #fff;
     
@@ -65,6 +66,10 @@ nav {
     grid-column-start: 1;
     grid-column-end: 2;
     background-color: #103bf9;
+    
+
+    grid-column-start: 1;
+    grid-column-end: 2;
 }
 nav a {
     color: #fff;
@@ -76,13 +81,15 @@ main {
 
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     grid-template-areas: 
-        "article figure";
+        "article aside";
 
     grid-column-start: 2;
-    grid-column-end: 4;  
+    grid-column-end: 6;  
+    
+    background-color: #fff;
 }
 
 /********************** Article ***********************/
@@ -99,10 +106,13 @@ article {
         "presentation";
 
     grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-end: 4;
+    
+    padding: 10px;
 }
 .title_section {
     grid-area: title_section;
+
     grid-column-start: 1;
     grid-column-end: 2;
 }
@@ -121,11 +131,14 @@ aside {
         "figure"
         "presentation_author";
 
-    grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 5;
+
     color: #fff;
+
+    padding: 10px;
+
     background-color: #103bf9;
-    border: 1px solid #000000;
 }
 figure {
     grid-area: figure;
@@ -135,7 +148,7 @@ figure {
     grid-template-rows: auto auto;
     grid-template-areas: 
         "img"
-        "figcaption";   
+        "figcaption";
 }
 .presentation_author {
     grid-area: presentation_author;
@@ -149,7 +162,9 @@ img{
 
 figcaption {
     grid-area: figcaption;
+
     color: #fff;
+
     margin: 0px auto;
 }
 
@@ -158,11 +173,13 @@ footer {
     grid-area: footer;
         
     grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column-end: 6;
 
     color: white;
-    margin: 0px auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     background-color: #103bf9;
-    border: 1px solid black;
 }
