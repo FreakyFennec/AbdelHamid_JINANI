@@ -18,62 +18,85 @@
     max-width: 1024px;
 
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 50px auto 40px;
+    grid-template-rows: auto auto 40px;
 
     grid-template-areas: 
         "header header header"
         "nav main main"
-        "footer footer";
+        "footer footer footer";
     background-color: #f9e510;
 
     margin: 0px auto;
 }
+
+/********************* Header ******************/
 header {
     grid-area: header;
-
+ 
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 50px auto;
     grid-template-areas: 
         "title_header"
         "img_header";
+
     grid-column-start: 1;
     grid-column-end: 4;
+
+    color: #fff;
+    
+    background-color: #103bf9;
 }
 #title_header {
     grid-area: title_header;
+
+    text-align: center;
 }
 .img_header {
     grid-area: img_header;
+
+    width: 100%;
 }
+
+/**************** Nav *********/
 nav {
     grid-area: nav;
+    column-width: 300px;
     grid-column-start: 1;
     grid-column-end: 2;
+    background-color: #103bf9;
 }
+nav a {
+    color: #fff;
+}
+
+/************** Main *********************/
 main {
     grid-area: main;
-    grid-column-start: 2;
-    grid-column-end: 4;
 
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     grid-template-areas: 
         "article figure";
-    grid-column-start: 2;
-    grid-column-end: 4;
 
-    
+    grid-column-start: 2;
+    grid-column-end: 4;  
 }
+
+/********************** Article ***********************/
 article {
     grid-area: article;
+    column-width: auto;
+
     display: grid;
     
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas: 
-        "title_section presentation";
+        "title_section"
+        "presentation";
 
     grid-column-start: 1;
     grid-column-end: 2;
@@ -86,17 +109,60 @@ article {
 .presentation {
     grid-area: presentation;
 }
-figure {
-    grid-area: figure;
+
+/********** Aside ****************/
+aside {
+    grid-area: aside;
+    
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
-    grid-template-areas: ;
+    grid-template-areas: 
+        "figure"
+        "presentation_author";
 
     grid-column-start: 2;
     grid-column-end: 3;
+    color: #fff;
+    background-color: #103bf9;
+    border: 1px solid #000000;
 }
-img
+figure {
+    grid-area: figure;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        "img"
+        "figcaption";   
+}
+.presentation_author {
+    grid-area: presentation_author;
+}
+img{
+    grid-area: img;
+
+    width: 150px;
+    margin: 0px auto;
+}
+
+figcaption {
+    grid-area: figcaption;
+    color: #fff;
+    margin: 0px auto;
+}
+
+/****************** Footer *******************/
 footer {
     grid-area: footer;
+        
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+    color: white;
+    margin: 0px auto;
+
+    background-color: #103bf9;
+    border: 1px solid black;
 }
