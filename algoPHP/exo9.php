@@ -12,11 +12,23 @@
 
 <?php
 // variables de travail
-$age = 32;
-$genre = F;
+$age = 17;
+$genre = "F";
 
 // 
-
+if ($genre == "F") {
+    if ($age >= 18 && $age <= 35) {
+        echo "La personne est imposable.";
+    } else {
+        echo "La personne est non imposable";
+    }
+} elseif ($genre == "H") {
+    if ($age >= 20) {
+        echo " la personne est imposable";
+    } else {
+        echo "La personne est non imposable";
+    }
+}
 
 
 ?>
