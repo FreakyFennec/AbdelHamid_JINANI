@@ -11,8 +11,21 @@
 <h2>Résultat</h2>
 
 <?php
-// variables de travail
-$age ;
+// Variables de travail
+$age = 18;
 
-echo "<br>";
+// Conditions de vérification de l'âge
+if ($age == 6 || $age == 7) {
+    $category = "Poussin";
+} elseif ($age == 8 || $age == 9) {
+    $category = "Pupille";
+} elseif ($age == 10 || $age == 11) {
+    $category = "Minime";
+} elseif ($age == 12) {
+    $category = "Cadet";
+} else {
+    $category = "La catégorie n'est pas précisée.";
+}
+
+echo "L'enfant qui à $age ans appartient à la catégorie « $category ».<br>";
 ?>
