@@ -15,7 +15,7 @@
 $age = 17;
 $genre = "F";
 
-// 
+// les conditions relatives à l'âge et au genre
 if ($genre == "F") {
     if ($age >= 18 && $age <= 35) {
         echo "La personne est imposable.";
