@@ -1,5 +1,5 @@
 /********************************
-    style_main.css index
+    style_main_1_02.css index
     =======================
     By AHJ
 *********************************/
@@ -22,11 +22,12 @@ p {
     display: grid;
 
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: auto auto 40px;
+    grid-template-rows: auto auto auto 40px;
 
     grid-template-areas: 
         "header header header header header"
-        "nav main main main main"
+        "nav nav nav nav nav"
+        "main main main main main"
         "footer footer footer footer footer";
 
     max-width: 1024px;
@@ -73,17 +74,40 @@ header {
 nav {
     grid-area: nav;
     column-width: 300px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "ul";
+
+
     grid-column-start: 1;
     grid-column-end: 2;
 
     background-color: #fff;
     
     grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-end: 6;
+
+    margin: 0px;
+    padding: 0px;
 }
 ul {
-    margin: 10px;
+    grid-area: ul;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "a_home a_movie a_caracters a_story a_author";
+    
+    grid-column-start: 1;
+    grid-column-end: 6;
+
+    margin: 0px;
     padding: 10px;
+
     background-color: #103bf9;
 }
 nav a {
@@ -100,7 +124,31 @@ nav a {
 nav a:hover {   
     color: rgb(19, 247, 68);
 }
+.a_home {
+    grid-area: a_home;
 
+    margin: 0px;
+}
+.a_movie {
+    grid-area: a_movie;
+    
+    margin: 0px;
+}
+.a_caracters {
+    grid-area: a_caracters;
+
+    margin: 0px;
+}
+.a_story {
+    grid-area: a_story;
+
+    margin: 0px;
+}
+.a_author {
+    grid-area: a_author;
+
+    margin: 0px;
+}
 /************** Main *********************/
 main {
     grid-area: main;
@@ -112,7 +160,7 @@ main {
     grid-template-areas: 
         "article aside";
 
-    grid-column-start: 2;
+    grid-column-start: 1;
     grid-column-end: 6;  
     
     background-color: #fff;
@@ -126,10 +174,11 @@ article {
     display: grid;
     
     grid-template-columns: 1fr;
-    grid-template-rows: 60px auto;
+    grid-template-rows: 60px auto auto;
     grid-template-areas: 
         "title_section"
-        "presentation";
+        "presentation"
+        "poster_movie";
 
     grid-column-start: 1;
     grid-column-end: 4;
@@ -138,14 +187,33 @@ article {
 }
 #title_section {
     grid-area: title_section;
-
+/*
     grid-column-start: 1;
     grid-column-end: 2;
-
+*/
     color: #f9e510;
 }
 .presentation {
     grid-area: presentation;
+}
+.posters_movie {
+    grid-area: poster_movie;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "poster1 poster2 poster3";
+}
+.poster1, .poster2, .poster3 {
+    grid-area: poster1 poster2 poster3;
+
+    width: 210px;
+
+    margin: 3px;
+    padding: 0px;
+
+    border: 1px solid black;
 }
 
 /********** Aside ****************/
