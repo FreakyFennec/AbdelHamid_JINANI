@@ -53,7 +53,7 @@ header {
 
     color: #fff;
     
-    background-color: #103bf9;
+    background-color: #3e9fee;
 }
 #title_header {
     grid-area: title_header;
@@ -97,7 +97,7 @@ nav {
     margin: 0px;
     padding: 0px;
 
-    border-bottom: 3px dashed #103bf9;
+    border-bottom: 3px dashed #3e9fee;
 }
 ul {
     grid-area: ul;
@@ -114,7 +114,7 @@ ul {
     margin: 0px;
     padding: 10px;
 
-    background-color: #103bf9;
+    background-color: #3e9fee;
 }
 nav a {
     color: #fff;
@@ -245,14 +245,14 @@ aside {
     margin: 90px 10px 10px 10px;
     padding: 10px;
 
-    background-color: #103bf9;
+    background-color: #3e9fee;
 }
 figure {
     grid-area: figure;
     
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto 50px 40px;
+    grid-template-rows: auto 30px 20px;
     grid-template-areas: 
         "img_author"
         "figcaption"
@@ -281,16 +281,19 @@ figcaption {
 
     font-size: 1.4em;
     color: #fff;
-text-align: center;
-line-height: 50px;
+    
+    text-align: center;
 
     margin: 0px;
     padding: 0px;
 }
 .profession {
     grid-area: profession;
-text-align: center;
-line-height: 30px;
+
+    color: #fff;
+
+    text-align: center;
+
     margin: 0px;
     padding: 0px;
 }
@@ -307,5 +310,5 @@ footer {
     justify-content: center;
     align-items: center;
 
-    background-color: #103bf9;
+    background-color: #0567b8;
 }
