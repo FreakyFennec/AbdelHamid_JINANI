@@ -17,36 +17,28 @@ $montantVersé = 200;
 
 
 // calcul du reste à payer
-$resteAPayer = $montantVersé - $montantAPayer;
-
-$resteDizaine = $resteAPayer % 100;
-echo "$resteDizaine <br>"; // 48
-
-$resteUnitaire = $resteAPayer % 10;
-echo "$resteUnitaire <br>"; // 8
-
-$restBilletsCinq = $resteUnitaire / 5;
-echo "$restBilletsCinq <br>"; // 1.6
+$resteARendre = $montantVersé - $montantAPayer;
 
 
+if ($resteARendre != 0) {
+    $resteUnitaire = $resteARendre % 10;
+    $nbreDeBilletDix = ($resteARendre - $resteUnitaire)/10;
 
-$nbreBilletsDix = round(($resteDizaine / 10), 0) -1;
-    echo "Nbr billets de 10 : $nbreBilletsDix<br>";
+    $restBilletsCinq = $resteUnitaire % 5;
+    $nbrBilletsCinq = ($resteUnitaire - $restBilletsCinq)/5;
 
-$nbreBilletsCinq = round(($restBilletsCinq / 5), 0);
-    echo "Nbr billets de 5 : $nbreBilletsDix<br>";
+    $restePiecesDeux = $restBilletsCinq % 2;
+    $nbrePiecesDeDeux = ($restBilletsCinq - $restePiecesDeux)/2;
 
+    $restePiecesUn = $restePiecesDeux % 1;
+    $nbrePiecesUn = ($restePiecesDeux - $restePiecesUn)/1;
+}
 
-$nbrePiecesDeDeux = round(($resteUnitaire / 2), 0);
-    echo "Nbr pièces de 2 : $nbrePiecesDeDeux<br>";   
-
-
-
-echo "Montant à payer : $montantAPayer <br>
+echo "<br>Montant à payer : $montantAPayer <br>
     Montant versé : $montantVersé  <br>
-    Reste à payer : $resteAPayer <br>
+    Reste à rendre : $resteARendre <br>
     *********************************** <br>
-    Rendu de monnaie :  <br>";
+    Rendu de monnaie :  $nbreDeBilletDix billets de 10 € - $nbrBilletsCinq billet de 5 € - $nbrePiecesDeDeux pièces de 2 € - $nbrePiecesUn pièce de 1 €.<br>";
 
 
 ?>
