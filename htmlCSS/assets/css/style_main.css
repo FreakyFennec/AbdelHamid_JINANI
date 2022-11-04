@@ -12,7 +12,11 @@
     list-style: none;
 }
 body {
+    margin: 0px;
     background-color: #f9e510;
+}
+p {
+    text-align: justify;
 }
 #grid {
     display: grid;
@@ -88,6 +92,10 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    line-height: 1.5em;
+
+    text-decoration: underline;
 }
 nav a:hover {   
     color: rgb(19, 247, 68);
@@ -118,7 +126,7 @@ article {
     display: grid;
     
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: 60px auto;
     grid-template-areas: 
         "title_section"
         "presentation";
