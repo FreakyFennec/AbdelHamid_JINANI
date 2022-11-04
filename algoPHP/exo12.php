@@ -22,7 +22,7 @@ function sayHello() {
         "Marie-Claire" => "ENG"
     ];
     
-    // boucle foreach pour afficher le bonjour au stagiaires
+    // boucle foreach pour afficher le bonjour au stagiaires (ordre de saisie)
     foreach ($arrayStagiaires as $nickName => $nationality) {
        if ($nationality == "FR") {
             $hello = "Salut";
@@ -36,7 +36,24 @@ function sayHello() {
         }
     }
 
+    // trier le tableau associatif   
+    ksort($arrayStagiaires);
+
+    echo "<br>";    
+
+    // boucle foreach pour afficher le bonjour au stagiaires (ordre de alphabétique)
+    foreach ($arrayStagiaires as $nickName => $nationality) {
+       if ($nationality == "FR") {
+            $hello = "Salut";
+            echo "$hello  $nickName<br>";
+        } else if ($nationality == "ESP") {
+            $hello = "Hola";
+            echo "$hello  $nickName<br>";
+        } else if ($nationality == "ENG") {
+            $hello = "Hello";
+            echo "$hello  $nickName<br>";
+        }
+    }
 }
-/**/
 sayHello();
 ?>
