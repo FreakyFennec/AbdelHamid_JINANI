@@ -11,17 +11,18 @@
 <h2>Résultat</h2>
 
 <?php
-// variables de travail
-$arrayStagiaires = [
-    "Mickaël" => "FR", 
-    "Virgile" => "ESP",
-    "Marie-Claire" => "ENG"
-];
-
 // calcul 
 /**/
-function sayHello($arrayStagiaires) {
+function sayHello() {
 
+    // variables de travail
+    $arrayStagiaires = [
+        "Mickaël" => "FR", 
+        "Virgile" => "ESP",
+        "Marie-Claire" => "ENG"
+    ];
+    
+    // boucle foreach pour afficher le bonjour au stagiaires
     foreach ($arrayStagiaires as $nickName => $nationality) {
        if ($nationality == "FR") {
             $hello = "Salut";
@@ -36,6 +37,6 @@ function sayHello($arrayStagiaires) {
     }
 
 }
-/*
-$sayHello();*/
+/**/
+sayHello();
 ?>
