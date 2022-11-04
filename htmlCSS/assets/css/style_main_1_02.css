@@ -85,19 +85,19 @@ nav {
     grid-template-areas:
         "ul";
 
-
-    grid-column-start: 1;
-    grid-column-end: 2;
-
-    background-color: #fff;
     
     grid-column-start: 1;
     grid-column-end: 6;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     margin: 0px;
     padding: 0px;
 
-    border-bottom: 3px dashed #3e9fee;
+    background-color: #3e9fee;
+    border-bottom: 3px dashed #fff;
 }
 ul {
     grid-area: ul;
@@ -108,8 +108,8 @@ ul {
     grid-template-areas:
         "a_home a_movie a_caracters a_story a_author";
     
-    grid-column-start: 1;
-    grid-column-end: 6;
+    grid-column-start: 2;
+    grid-column-end: 5;
 
     margin: 0px;
     padding: 10px;
