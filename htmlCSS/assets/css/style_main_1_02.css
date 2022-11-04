@@ -22,7 +22,7 @@ p {
     display: grid;
 
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: auto auto auto 40px;
+    grid-template-rows: auto 80px auto 40px;
 
     grid-template-areas: 
         "header header header header header"
@@ -43,7 +43,7 @@ header {
  
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 50px auto;
+    grid-template-rows: 60px auto;
     grid-template-areas: 
         "title_header"
         "img_header";
@@ -59,6 +59,7 @@ header {
     grid-area: title_header;
 
     font-size: 1.7em;
+    font-style: italic;
 
     display: flex;
     justify-content: center;
@@ -68,6 +69,9 @@ header {
     grid-area: img_header;
 
     width: 100%;
+
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
 }
 
 /**************** Nav *********/
@@ -92,6 +96,8 @@ nav {
 
     margin: 0px;
     padding: 0px;
+
+    border-bottom: 3px dashed #103bf9;
 }
 ul {
     grid-area: ul;
@@ -118,8 +124,6 @@ nav a {
     align-items: center;
 
     line-height: 1.5em;
-
-    text-decoration: underline;
 }
 nav a:hover {   
     color: rgb(19, 247, 68);
@@ -174,7 +178,7 @@ article {
     display: grid;
     
     grid-template-columns: 1fr;
-    grid-template-rows: 60px auto auto;
+    grid-template-rows: 60px 180px auto;
     grid-template-areas: 
         "title_section"
         "presentation"
@@ -183,14 +187,13 @@ article {
     grid-column-start: 1;
     grid-column-end: 4;
     
+    margin: 0px;
     padding: 10px;
 }
 #title_section {
     grid-area: title_section;
-/*
-    grid-column-start: 1;
-    grid-column-end: 2;
-*/
+
+    font-size: 2em;
     color: #f9e510;
 }
 .presentation {
@@ -203,17 +206,24 @@ article {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     grid-template-areas:
-        "poster1 poster2 poster3";
+        "poster poster poster";
 }
-.poster1, .poster2, .poster3 {
-    grid-area: poster1 poster2 poster3;
 
-    width: 210px;
+.poster, .poster, .poster {
+    grid-area: poster poster poster;
 
-    margin: 3px;
+    width: 240px;
+    height: 270px;
+
+    overflow: hidden;
+
+    margin: auto;
     padding: 0px;
 
     border: 1px solid black;
+}
+.poster1, .poster2, .poster3 {
+    width: 240px;
 }
 
 /********** Aside ****************/
@@ -232,7 +242,7 @@ aside {
 
     color: #fff;
 
-    margin: 10px;
+    margin: 90px 10px 10px 10px;
     padding: 10px;
 
     background-color: #103bf9;
@@ -242,18 +252,25 @@ figure {
     
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto 50px 40px;
     grid-template-areas: 
-        "img"
-        "figcaption";
+        "img_author"
+        "figcaption"
+        "profession";
+    margin: 0px;
+    padding: 0px;
 }
 .presentation_author {
     grid-area: presentation_author;
+
+    margin: 0px;
+    padding: 0px;
 }
 #img_author{
-    grid-area: img;
+    grid-area: img_author;
 
-    width: 150px;
+    width: 200px;
+
     margin: 0px auto;
 
     border: 2px solid #fff;
@@ -264,10 +281,19 @@ figcaption {
 
     font-size: 1.4em;
     color: #fff;
+text-align: center;
+line-height: 50px;
 
-    margin: 0px auto;
+    margin: 0px;
+    padding: 0px;
 }
-
+.profession {
+    grid-area: profession;
+text-align: center;
+line-height: 30px;
+    margin: 0px;
+    padding: 0px;
+}
 /****************** Footer *******************/
 footer {
     grid-area: footer;
