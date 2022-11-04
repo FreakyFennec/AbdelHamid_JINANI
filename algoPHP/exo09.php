@@ -29,6 +29,4 @@ if ($genre == "F") {
         echo "La personne est non imposable";
     }
 }
-
-
 ?>
