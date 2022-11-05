@@ -4,20 +4,21 @@
     By AHJ
 -->
 
-<h1>Exercice 14</h1>
+<h1>Fonction calcul age</h1>
 
 <p>Calculer l'âge exact d'une personne à partir de sa date de naissance (en années, mois, jours).</p>
 
 <h2>Résultat</h2>
 
 <?php
-function ageCalculation() {
 
-    // variable de travail
-    $currentDate = new DateTime("2018-05-21");
-    $birthDate = new DateTime("1985-01-17");
+// variable de travail
+$currentDate = new DateTime("2018-05-21");
+$birthDate = new DateTime("1985-01-17");
 
-    // calculs
+// fonction qui calcule l'âge
+function ageCalculation($currentDate, $birthDate) {
+
     $interval = $currentDate->diff($birthDate);
 
     $years = $interval->y;
@@ -26,5 +27,4 @@ function ageCalculation() {
 
     echo "Age de la personne : $years ans $months mois $days jours<br>";
 }
-ageCalculation();
-?>
+ageCalculation($currentDate, $birthDate);
