@@ -16,7 +16,7 @@ $montantAPayer = 152;
 $montantVersé = 200;
 
 
-// calcul du reste à payer
+// calcul du reste à rendre
 $resteARendre = $montantVersé - $montantAPayer;
 
 
