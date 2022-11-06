@@ -22,6 +22,12 @@ class Personnes {
     public $nickName;
     public $birth;
 
+    public function __construct($nickName , $name , $birth) {
+        $this->name = $name;
+        $this->nickName = $nickName;
+        $this->birth = $birth;
+    }
+
     // Calcul age
     public function displayIdentity() {
         /*
@@ -32,7 +38,7 @@ class Personnes {
 
         $age = $interval->y; // Extraction du nombre d'années
 */
-        echo "$this->nickName $this->name a $this->age ans.<br>";
+        echo "$this->nickName $this->name a $this->birth ans.<br>";
     }   
 }
 
@@ -41,16 +47,7 @@ $p1 = new Personnes("DUPONT", "Michel", "1980-02-19"); // Instantiation (créati
 
 $p2 = new Personnes("DUCHEMIN", "Alice", "1982-01-17"); // Instantiation (création objet $p2)
 
-/**/
-$p1 = new Personnes(); // Objet
-$p1->name = "DUPONT";
-$p1->nickName = "Michel";
-$p1->birth = "1980-02-19";
 
-$p2 = new Personnes(); // Objet
-$p2->name = "DUCHEMIN";
-$p2->nickName = "Alice";
-$p2->birth = "1982-01-17";
 /**/
 
 $p1->displayIdentity();
