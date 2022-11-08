@@ -1,12 +1,12 @@
 <?php
 
 //<!--
-    //exo01_V2.php
+    //exo03_V2.php
 //=============================================
     //By AHJ
 //-->
 
-    echo "<h1>Exercice 01_V2</h1>
+    echo "<h1>Exercice 03_V2</h1>
 
     <p>Afficher un lien hypertexte permettant d’accéder au site d’Elan Formation. Le lien devra s’ouvrir dans un nouvel onglet (_blank).</p>
 
