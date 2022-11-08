@@ -33,13 +33,13 @@ p {
 header {
     display: flex;
     flex-direction: column;
-    width: 100%;/*
-    height: 170px;*/
+    width: 100%;
     color: #fff;
     
     background-color: #3e9fee;
 }
-#title_header {
+#title_header {/**/
+    height: 50px;
     font-size: 1.7em;
     font-style: italic;
 
@@ -135,7 +135,7 @@ article {
 
 .poster{    
     width: 240px;
-    height: 270px;
+    height: 275px;
 /*
     display: inline-block;
 */
