@@ -68,9 +68,11 @@ nav {
 }
 ul {
     width: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     margin: 0px;
     padding: 5px;
 
@@ -78,6 +80,7 @@ ul {
 }
 li {
     display: inline-block;
+    
     list-style: none;
     margin: 5px 10px;
 }
@@ -123,7 +126,7 @@ article {
     margin: 20px 0px 0px 0px;
 }
 #presentation {
-    margin: 20px 0px 0px 0px;
+    margin: 20px 0px 20px 0px;
 }
 .posters_movie {
     display: flex;
@@ -136,6 +139,8 @@ article {
 .poster{    
     width: 240px;
     height: 275px;
+
+    margin: 10px;
 /*
     display: inline-block;
 */
