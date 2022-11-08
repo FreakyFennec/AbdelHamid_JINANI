@@ -1,5 +1,5 @@
 /********************************
-    style_main_1_02.css index
+    style_main.css index
     =======================
     By AHJ
 *********************************/
@@ -7,9 +7,9 @@
 *,
 ::before,
 ::after {
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
 }
 body {
     margin: 0px;
@@ -18,17 +18,9 @@ body {
 p {
     text-align: justify;
 }
-#grid {
-    display: grid;
-
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: auto 80px auto 40px;
-
-    grid-template-areas: 
-        "header header header header header"
-        "nav nav nav nav nav"
-        "main main main main main"
-        "footer footer footer footer footer";
+#container {
+    display: flex;
+    flex-direction: column;
 
     max-width: 1024px;
 
@@ -39,25 +31,15 @@ p {
 
 /********************* Header ******************/
 header {
-    grid-area: header;
- 
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 60px auto;
-    grid-template-areas: 
-        "title_header"
-        "img_header";
-
-    grid-column-start: 1;
-    grid-column-end: 6;
-
+    display: flex;
+    flex-direction: column;
+    width: 100%;/*
+    height: 170px;*/
     color: #fff;
     
     background-color: #3e9fee;
 }
 #title_header {
-    grid-area: title_header;
-
     font-size: 1.7em;
     font-style: italic;
 
@@ -66,8 +48,6 @@ header {
     align-items: center;
 }
 .img_header {
-    grid-area: img_header;
-
     width: 100%;
 
     border-top: 2px solid white;
@@ -76,19 +56,6 @@ header {
 
 /**************** Nav *********/
 nav {
-    grid-area: nav;
-    column-width: 300px;
-
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-        "ul";
-
-    
-    grid-column-start: 1;
-    grid-column-end: 6;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,125 +67,79 @@ nav {
     border-bottom: 3px dashed #fff;
 }
 ul {
-    grid-area: ul;
-
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: auto;
-    grid-template-areas:
-        "a_home a_movie a_caracters a_story a_author";
-    
-    grid-column-start: 2;
-    grid-column-end: 5;
-
-    margin: 0px;
-    padding: 10px;
-
-    background-color: #3e9fee;
-}
-nav a {
-    color: #fff;
-    
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0px;
+    padding: 5px;
+
+    background-color: #3e9fee;
+}
+li {
+    display: inline-block;
+    list-style: none;
+    margin: 5px 10px;
+}
+a {
+    text-decoration: none;
+    color: #fff;
 
     line-height: 1.5em;
 }
 nav a:hover {   
     color: rgb(19, 247, 68);
 }
-.a_home {
-    grid-area: a_home;
-
+.home {
     margin: 0px;
 }
-.a_movie {
-    grid-area: a_movie;
-    
+.movie {
     margin: 0px;
 }
-.a_caracters {
-    grid-area: a_caracters;
-
+.caracters {
     margin: 0px;
 }
-.a_story {
-    grid-area: a_story;
-
+.story {
     margin: 0px;
 }
-.a_author {
-    grid-area: a_author;
-
+.author {
     margin: 0px;
 }
 /************** Main *********************/
 main {
-    grid-area: main;
-
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-    grid-template-areas: 
-        "article aside";
-
-    grid-column-start: 1;
-    grid-column-end: 6;  
-    
+    display: flex;
+    flex-direction: row;
     background-color: #fff;
 }
 
 /********************** Article ***********************/
 article {
-    grid-area: article;
-    column-width: auto;
-
-    display: grid;
-    
-    grid-template-columns: 1fr;
-    grid-template-rows: 60px 180px auto;
-    grid-template-areas: 
-        "title_section"
-        "presentation"
-        "poster_movie";
-
-    grid-column-start: 1;
-    grid-column-end: 4;
-    
     margin: 0px;
     padding: 10px;
 }
 #title_section {
-    grid-area: title_section;
-
     font-size: 2em;
     color: #f9e510;
+    margin: 20px 0px 0px 0px;
 }
-.presentation {
-    grid-area: presentation;
+#presentation {
+    margin: 20px 0px 0px 0px;
 }
 .posters_movie {
-    grid-area: poster_movie;
+    display: flex;
+    justify-content: space-around;
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    grid-template-areas:
-        "poster poster poster";
+    margin: 30px 0px 0px 0px;
+    padding: 0px;
 }
 
-.poster, .poster, .poster {
-    grid-area: poster poster poster;
-
+.poster{    
     width: 240px;
     height: 270px;
-
+/*
+    display: inline-block;
+*/
     overflow: hidden;
-
-    margin: auto;
-    padding: 0px;
 
     border: 1px solid black;
 }
@@ -228,18 +149,8 @@ article {
 
 /********** Aside ****************/
 aside {
-    grid-area: aside;
-    
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas: 
-        "figure"
-        "presentation_author";
-
-    grid-column-start: 4;
-    grid-column-end: 5;
-
+    display: flex;
+    flex-direction: column;
     color: #fff;
 
     margin: 90px 10px 10px 10px;
@@ -247,28 +158,18 @@ aside {
 
     background-color: #3e9fee;
 }
-figure {
-    grid-area: figure;
+#author {
+    display: flex;
+    flex-direction: column;
     
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 30px 20px;
-    grid-template-areas: 
-        "img_author"
-        "figcaption"
-        "profession";
     margin: 0px;
     padding: 0px;
 }
 .presentation_author {
-    grid-area: presentation_author;
-
     margin: 0px;
     padding: 0px;
 }
 #img_author{
-    grid-area: img_author;
-
     width: 200px;
 
     margin: 0px auto;
@@ -277,8 +178,6 @@ figure {
 }
 
 figcaption {
-    grid-area: figcaption;
-
     font-size: 1.4em;
     color: #fff;
     
@@ -288,8 +187,6 @@ figcaption {
     padding: 0px;
 }
 .profession {
-    grid-area: profession;
-
     color: #fff;
 
     text-align: center;
@@ -299,11 +196,8 @@ figcaption {
 }
 /****************** Footer *******************/
 footer {
-    grid-area: footer;
-        
-    grid-column-start: 1;
-    grid-column-end: 6;
-
+    height: 50px;
+    font-size: 1.4em;
     color: white;
 
     display: flex;
