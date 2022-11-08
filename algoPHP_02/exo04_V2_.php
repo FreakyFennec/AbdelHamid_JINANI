@@ -39,7 +39,7 @@
             echo "<tr>
                     <td>$country</td>
                     <td>$capital</td>
-                    <td><a href=\"https://fr.wikipedia.org/wiki/$capital\">Lien</a></td>
+                    <td><a href=\"https://fr.wikipedia.org/wiki/$capital\" target=\"_blank\">Lien</a></td>
                 </tr>";
         }
     }
