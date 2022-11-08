@@ -19,26 +19,32 @@
 
     class Personnes {
         public $name;
-        public $nickName;
+        public $firstName;
         public $birth;
 
-        public function __construct($nickName , $name , $birth) {
+        public function __construct($name, $firstName, $birth) {
             $this->name = $name;
-            $this->nickName = $nickName;
+            $this->firstName = $firstName;
             $this->birth = $birth;
         }
 
         // Calcul age
-        public function displayIdentity() {
-            /*
+        public function ageCalculation() {
+             /**/
             // Variable de travail
             $currentDate = new DateTime(); // Date d'aujourd'hui
             // Calculs
             $interval = $currentDate->diff($birth); // Objet (?) contenant les années, les mois, les jours etc...
 
             $age = $interval->y; // Extraction du nombre d'années
-    */
-            echo "$this->nickName $this->name a $this->birth ans.<br>";
+
+            return $age;
+        }
+
+        // Affiche identitée
+        public function displayIdentity() {
+           
+            echo "$this->firstName $this->name a $this->birth ans.<br>";
         }   
     }
 
