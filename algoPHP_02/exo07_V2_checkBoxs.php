@@ -13,26 +13,20 @@
     
     // variables de travail
     $elements = [
-        "1" => "0",
-        "2" => "1",
-        "3" => "0"
+        "1" => "",
+        "2" => "checked",
+        "3" => ""
     ];
-    //$displayInput($namesInput);
-
-    echo "<form><fieldset><div>";
-            
+           
     function checkboxGenerator($elements) {
-        foreach($elements as $choice => $value) {
-            if ($value === 1) {
-                $value = "checked";
-            }
-            var_dump($value);
-            echo "<input type=\"checkbox\" id=\"choice$choice\" name=\"choice$choice\" \"$value\">
-                <label for=\"choix$choice\">Choix $choice</label><br>";
+        echo "<form><fieldset><div>";
+        foreach($elements as $key => $value) {
+
+            echo "<input type=\"checkbox\" id=\"$key\" name=\"choice$key\" $value>
+                <label for=\"choix$key\">Choix $key</label><br>";
         }
+        echo "</div></fieldset></form>";
     }
     checkboxGenerator($elements);
-
-    echo "</div></fieldset></form>";
 
 ?>
