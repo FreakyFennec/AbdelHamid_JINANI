@@ -11,22 +11,19 @@
     <p>Créer une fonction personnalisée permettant de remplir une liste déroulante à partir d'un tableau de valeurs.</p>";
     
     // variables de travail
-    $elements = array("Nom", "Prénom", "Ville");
+    $elements = array("Monsieur", "Madame", "Mademoiselle");
     //$displayInput($namesInput);
 
-    echo "<form>";
+    echo "<form><select name=\"civilities\" id=\"civilities\">";
             
     function populateDropDownList($elements) {
         foreach($elements as $elements) {
 
-            echo "
-                <label for=\"#\">$elements</label><br>
-                <input type=\"text\" id=\"#\" name=\"#\" required
-                minlength=\"4\" maxlength=\"18\" size=\"10\"></input><br>";
+            echo "<option value=\"$elements\">$elements</option><br>";
         }
     }
-    buisnessCard($elements);
+    populateDropDownList($elements);
 
-    echo "</form>";
+    echo "</select></form>";
 
 ?>
