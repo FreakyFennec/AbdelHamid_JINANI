@@ -1,5 +1,9 @@
 <h1>Introduction PHP</h1>
 
+<a href="http://localhost/AbdelHamid_JINANI/algoPHP_02/">Index (algoPHP_02)</a><br>
+<a href="http://localhost/AbdelHamid_JINANI/algoPHP/">Index (algoPHP)</a><br>
+<a href="http://localhost/AbdelHamid_JINANI/algoPHP_POO/">Index (algoPHP_POO)</a><br>
+
 <?php
 
 /*
