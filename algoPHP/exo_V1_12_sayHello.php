@@ -1,10 +1,10 @@
 <!--
-    exo12.php
+    exo_V1_12_sayHello.php
 =============================================
     By AHJ
 -->
 
-<h1>Exercice 12</h1>
+<h1>exo_V1_12_sayHello.php</h1>
 
 <p>A partir d’une fonction personnalisée et à partir d’un tableau de prénoms et de langue associée (tableau  contenant  clé  et  valeur),  dire  bonjour  aux  différentes  personnes  dans  leur  langue respective (français ➔«Salut», anglais ➔«Hello», espagnol ➔«Hola»)<br><br>
 Exemple: tableau ➔Mickaël -> FRA, Virgile -> ESP, Marie-Claire -> ENG</p>

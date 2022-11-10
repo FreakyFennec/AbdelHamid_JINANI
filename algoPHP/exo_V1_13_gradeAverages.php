@@ -1,10 +1,10 @@
 <!--
-    exo13.php
+    exo_V1_13_gradeAverages.php
 =============================================
     By AHJ
 -->
 
-<h1>Exercice 13</h1>
+<h1>exo_V1_13_gradeAverages.php</h1>
 
 <p>Calculer la moyenne générale d'un élève dont les notes sont renseignées dans un tableau (pas de coefficient). Elle devra être affichée avec 2 décimales.</p>
 

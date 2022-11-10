@@ -1,22 +1,19 @@
-<?php
+<!--
+    exo15.php
+=============================================
+    By AHJ
+-->
 
-// declare(strict_type = 1);
-
-//<!--
-    //exo15.php
-//=============================================
-    //By AHJ
-//-->
-
-    echo "<h1>Exercice 15</h1>
+    <h1>Exercice 15</h1>
 
     <p>Créer une classe Personne (nom, prénom et date de naissance).<br>
     Instancier 2 personnes et afficher leurs informations : nom, prénom et âge.<br><br>
     (dollar)p1 = new Personne('DUPONT', 'Michel', '1980-02-19') ;<br>
     (dollar)p2 = new Personne('DUCHEMIN', 'Alice', '1985-01-17') ;</p>
 
-    <h2>Résultat</h2>";
-
+    <h2>Résultat</h2>
+    
+<?php
     class Personnes {
         public $name;
         public $firstName;
