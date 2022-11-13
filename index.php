@@ -3,7 +3,7 @@
 <a href="http://localhost/AbdelHamid_JINANI/algoPHP_02/">Index (algoPHP_02)</a><br>
 <a href="http://localhost/AbdelHamid_JINANI/algoPHP/">Index (algoPHP)</a><br>
 <a href="http://localhost/AbdelHamid_JINANI/algoPHP_POO/">Index (algoPHP_POO)</a><br>
-<a href="http://localhost/AbdelHamid_JINANI/Glossary/">Index (algoPHP_POO)</a><br>
+<a href="http://localhost/AbdelHamid_JINANI/Glossary/">Index (Glossary)</a><br>
 
 <?php
 
