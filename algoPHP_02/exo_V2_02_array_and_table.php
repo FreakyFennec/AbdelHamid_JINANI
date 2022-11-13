@@ -21,11 +21,11 @@
     ];
 
     ksort($capitals);
-    echo "<table border ='1'>
+    echo "<table border = '1'>
             <tr>
                 <th>Country</th>          
                 <th>Capital</th>
-            </tr>         ";
+            </tr>";
 
     function displayTableHtml($capitals) {
         foreach($capitals as $country => $capital) {
@@ -35,6 +35,6 @@
         }
     }
     displayTableHtml($capitals);
-    echo"</table>";
+    echo "</table>";
 
 ?>
