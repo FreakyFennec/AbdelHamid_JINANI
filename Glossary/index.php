@@ -28,9 +28,9 @@
         <main>
             <article>
                 <h1 id="title_article">Glossaire du développeur</h1>
-                <p id="presentation">Entrée en formation de Dév. web et mobile chez Elan, j'apprends qu'un développeur se doit de connaître toutes les abréviations de son métier. <br>
-                Pour m'aider dans cette tâche Herculéenne j'ai commencé une page pour me les noter au et à mesure que je les rencontrais.<br><br>
-                Et si cela pouvait servir à quelqu'un d'autre j'en serais heureux, bien que la toile regorge de pages bien plus aboutie que ne le sera jamais la mienne.</p><br>
+                <p id="presentation">Entré en formation de Dév. web et mobile chez Elan, j'apprends qu'un développeur se doit de connaître toutes les abréviations de son métier. <br>
+                Pour m'aider dans cette tâche Herculéenne j'ai commencé une page pour les noter au fur et à mesure.<br><br>
+                Et si cela pouvait servir à quelqu'un d'autre j'en serais heureux, bien que la toile regorge de pages bien plus abouties que ne le sera jamais la mienne.</p><br>
                 <p><a href="dev_glossary/display_dev_glossary.php" class="link_pages">Dev glossary</a></p>
             </article>
             <aside>
