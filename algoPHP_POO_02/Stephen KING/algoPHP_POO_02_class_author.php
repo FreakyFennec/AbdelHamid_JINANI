@@ -13,7 +13,7 @@
         private array $books;
 
         // Constructor
-        public function __construct(string $surName, string $firstName, string $gender,  DateTime $birth) {
+        public function __construct(string $surName, string $firstName, string $gender,  string $birth) {
             $this->surName = $surName;
             $this->firstName = $firstName;
             $this->gender = $gender;
@@ -49,6 +49,8 @@
             return $this->gender;
         }        
         public function getBirth() {
+            
+
             return $this->birth;
         }        
         public function getBooks() {
@@ -58,14 +60,14 @@
         // Methode
         public function displayBooks() {
             
-                return "
-                    <div>
-                        <p>Surname : " .$this->surName. "</p>
-                        <p>First name : " .$this->firstName. "</p>
-                        <p>Gender : " .$this->gender. "</p>
-                        <p>Date of birth : " .($this->birth). "</p>
-                        <p>Books : " .$this->books. "</p>
-                    </div>";
+            return "
+                <div>
+                    <p>Surname : " .$this->surName. "</p>
+                    <p>First name : " .$this->firstName. "</p>
+                    <p>Gender : " .$this->gender. "</p>
+                    <p>Date of birth : " .($this->birth). "</p>
+                    <p>Books : " .$this->books. "</p>
+                </div>";
             
         }
     }
