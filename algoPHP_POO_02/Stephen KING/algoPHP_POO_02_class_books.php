@@ -6,57 +6,51 @@
 
 <?php
     class Books {
-        private $_title;
-        private $_publicationDate;
-        private $_pagesQuant;
-        private $_price;
-        private Author $_author;
+        private string $title;
+        private int $publicationDate;
+        private int $pagesQuant;
+        private float $price;
+        private Authors $author;
 
-    
-        public function __construct($_title, $_publicationDate, $_pagesQuant, $_price, Author $_author) {
-            $this->_title = $_title;
-            $this->_publicationDate = $_publicationDate;
-            $this->_pagesQuant = $_pagesQuant;
-            $this->_price = $_price;
+        // Constructor
+        public function __construct(string $title, int $publicationDate, int $pagesQuant, float $price, Authors $author) {
+            $this->title = $title;
+            $this->publicationDate = $publicationDate;
+            $this->pagesQuant = $pagesQuant;
+            $this->price = $price;
         }
 
+        // Setters
         public function setTitle() {
-            return $this->_title;
+            return $this->title;
         }
-        public function getTitle() {
-            return $this->_title;
-        }
-        
         public function setPublicationDate() {
-            return $this->_publicationDate;
+            return $this->publicationDate;
         }
-        public function getPublicationDate() {
-            return $this->_publicationDate;
-        }
-        
         public function setPagesQuant() {
-            return $this->_pagesQuant;
-        }    
+            return $this->pagesQuant;
+        }  
+        public function setPrice() {
+            return $this->price;
+        }  
+
+        // Getters
+        public function getTitle() {
+            return $this->title;
+        }        
+        public function getPublicationDate() {
+            return $this->publicationDate;
+        }         
         public function getPagesQuant() {
-            return $this->_pagesQuant;
-        }
-        
-        public function setPrince() {
-            return $this->_price;
-        }    
-        public function getPrince() {
-            return $this->_price;
+            return $this->pagesQuant;
+        }         
+        public function getPrice() {
+            return $this->price;
         }
     
-
+        // Methode
         public function __toString() {
-            return "Title : " .$this->_title. "<br>
-                    Publication date : " .$this->_publicationDate. "<br>
-                    Pages quantities : " .$this->_pagesQuant. "<br>
-                    Price : " .$this->_price. "<br>
-                    Books : " .Author $_author."<br>";
+            return "" .$this->title. " (" .$this->publicationDate. ") : " .$this->pagesQuant. " pages / " .$this->price. " €<br>";
         }
-
     }
-
 ?>

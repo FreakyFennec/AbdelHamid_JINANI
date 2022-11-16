@@ -14,18 +14,19 @@
 <body>
     
     <?php
-        echo "<h1>The author</h1>";
 
         require "algoPHP_POO_02_class_author.php"; 
-        $author = new Authors("Stephen", "KING", "Men", "1947-09-21", "books");
-        echo $author;
-
-
-        echo "<h1>Books</h1>";
-
+        
         require "algoPHP_POO_02_class_books.php";
 
-        $bibliography = new Books ();
+        $king = new Authors("Stephen", "KING", "Men", "1947-09-21");
+
+        $ca = new Books ("Ca", 1980, 1138, 20, $king);
+        $simetierre = new Books ("Simetierre", 1983, 374, 15, $king);
+        $le_fleau = new Books ("Le Fléau", 1978, 823, 14, $king);
+        $shining = new Books ("Shining ", 1977, 447, 16, $king);
+
+        echo $king->displayBooks();
     ?>
 
 </body>

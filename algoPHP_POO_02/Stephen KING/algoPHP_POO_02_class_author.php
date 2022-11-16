@@ -6,67 +6,67 @@
 
 <?php  
     class Authors {
-        private $_surName;
-        private $_firstName;
-        private $_gender;
-        private $_birth;
-        private array $_books;
+        private string $surName;
+        private string $firstName;
+        private string $gender;
+        private DateTime $birth;
+        private array $books;
 
-    
-        public function __construct($_surName, $_firstName, $_gender, $_birth, $_books) {
-            $this->_surName = $_surName;
-            $this->_firstName = $_firstName;
-            $this->_gender = $_gender;
-            $this->_birth = $_birth;
-            $this->_books = [];
+        // Constructor
+        public function __construct(string $surName, string $firstName, string $gender,  DateTime $birth) {
+            $this->surName = $surName;
+            $this->firstName = $firstName;
+            $this->gender = $gender;
+            $this->birth = new DateTime($birth);
+            $this->books = [];
         }
 
-
+        // Setters
         public function setSurName() {
-            return $this->_surName;
+            return $this->surName;
         }
-        public function getSurName() {
-            return $this->_surName;
-        }
-        
         public function setFirsName() {
-            return $this->_firsName;
+            return $this->firsName;
         }
-        public function getFirsName() {
-            return $this->_firsName;
-        }
-        
         public function setGender() {
-            return $this->_gender;
+            return $this->gender;
         }
-        public function getGender() {
-            return $this->_gender;
-        }
-        
         public function setBirth() {
-            return $this->_birth;
+            return $this->birth;
         }
-        public function getBirth() {
-            return $this->_birth;
-        }
-        
         public function setBooks() {
-            return $this->_books;
+            return $this->books;
         }
+
+        // Getters
+        public function getSurName() {
+            return $this->surName;
+        }        
+        public function getFirsName() {
+            return $this->firsName;
+        }        
+        public function getGender() {
+            return $this->gender;
+        }        
+        public function getBirth() {
+            return $this->birth;
+        }        
         public function getBooks() {
-            return $this->_books;
+            return $this->books;
         }
-        
-        public function __toString() {
-            return "<div>
-                        <p>Surname : " .$this->_surName. "</p>
-                        <p>First name : " .$this->_firstName. "</p>
-                        <p>Gender : " .$this->_gender. "</p>
-                        <p>Date of birth : " .$this->_birth. "</p>
-                        <p>Books : " .$this->_books. "</p>
+
+        // Methode
+        public function displayBooks() {
+            
+                return "
+                    <div>
+                        <p>Surname : " .$this->surName. "</p>
+                        <p>First name : " .$this->firstName. "</p>
+                        <p>Gender : " .$this->gender. "</p>
+                        <p>Date of birth : " .($this->birth). "</p>
+                        <p>Books : " .$this->books. "</p>
                     </div>";
+            
         }
     }
-
-
 ?>
