@@ -12,8 +12,7 @@ Vous implémenterez une méthode afficherBibliographie() qui permettra d’affic
 
 <?php
 
-    // variables de travail
-    
-
+    require "algoPHP_POO_02_class_author.php";
+    require "algoPHP_POO_02_class_bibliography.php";
 
 ?>

@@ -11,30 +11,44 @@ Une méthode toString() sera appréciée dans chacune de vos classes.<br>
 Vous implémenterez une méthode afficherBibliographie() qui permettra d’afficher la bibliographie complète d’un auteur :</p>
 
 <?php  
-class Author {
-    protected $_surName;
-    protected $_firstName;
-    protected $_biblio;
+    class Authors {
+        protected $_surName;
+        protected $_firstName;
+        protected $_biblio;
 
-   
-    public function __construct($_surName, $_firstName) {
-        $this->_surName = $_surName;
-        $this->_firstName = $_firstName;
-    }
+    
+        public function __construct($_surName, $_firstName) {
+            $this->_surName = $_surName;
+            $this->_firstName = $_firstName;
+        }
 
-    public function __toString() {
+        public function getSurName() {
+            return $this->_surName;
+        }
+        public function setSurName() {
+            return $this->_surName;
+        }
+
         
-    }
+        public function getFirsName() {
+            return $this->_firsName;
+        }
+        public function setFirsName() {
+            return $this->_firsName;
+        }
+        
+        public function getBiblio() {
+            return $this->_biblio;
+        }
+        public function setBiblio() {
+            return $this->_biblio;
+        }
 
-    public function getSurName() {
-        return $this->_surName;
-    }
-
-    public function setSurName() {
-        return $this->_surName;
-    }
-
-
+        public function __toString() {
+            return "Surname : " .$this->_title. "<br>
+                    First name : " .$this->_publicationDate. "<br>
+                    Bibliography : " .$this->_pagesQuantities. "<br><br>";
+        }
 }
     
 
