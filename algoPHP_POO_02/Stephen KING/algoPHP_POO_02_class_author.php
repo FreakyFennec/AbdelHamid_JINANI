@@ -23,14 +23,14 @@
             return $this->_surName;
         }
         public function getSurName() {
-            echo $this->_surName;
+            return $this->_surName;
         }
         
         public function setFirsName() {
             return $this->_firsName;
         }
         public function getFirsName() {
-            echo $this->_firsName;
+            return $this->_firsName;
         }
         
         
@@ -40,8 +40,10 @@
                         <p>First name : " .$this->_firstName. ">/p>
                     </div>";
         }
-}
-    
+    }
 
+    $author = new Authors("Stephen", "KING");
+    var_dump($author);  
+    echo $author;
 
 ?>

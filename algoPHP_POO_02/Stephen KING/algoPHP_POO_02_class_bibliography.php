@@ -26,28 +26,28 @@
             return $this->_title;
         }
         public function getTitle() {
-            echo $this->_title;
+            return $this->_title;
         }
         
         public function setPublicationDate() {
             return $this->_publicationDate;
         }
         public function getPublicationDate() {
-            echo $this->_publicationDate;
+            return $this->_publicationDate;
         }
         
         public function setPagesQuant() {
             return $this->_pagesQuant;
         }    
         public function getPagesQuant() {
-            echo $this->_pagesQuant;
+            return $this->_pagesQuant;
         }
         
         public function setPrince() {
             return $this->_price;
         }    
         public function getPrince() {
-            echo $this->_price;
+            return $this->_price;
         }
     
 
