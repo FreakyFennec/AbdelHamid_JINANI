@@ -3,16 +3,27 @@
     =============================================
     By AHJ
 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <?php
 
-<h1>algoPHP_POO_02_class_index.php</h1>
+        require "algoPHP_POO_02_class_author.php";
+        require "algoPHP_POO_02_class_bibliography.php";
 
-<p>Les livres sont caractérisés par un titre, un nombre de pages, une année de parution, un prix et un auteur. Un auteur comporte un nom et un prénom.<br>
-Une méthode toString() sera appréciée dans chacune de vos classes.<br>
-Vous implémenterez une méthode afficherBibliographie() qui permettra d’afficher la bibliographie complète d’un auteur :</p>
+        $author = new Authors("Stephen", "KING");
+        var_dump($author);
+        // 
+        $bibliography = new Bibliographys ();
+        var_dump($bibliography);
+    ?>
 
-<?php
-
-    require "algoPHP_POO_02_class_author.php";
-    require "algoPHP_POO_02_class_bibliography.php";
-
-?>
+</body>
+</html>
