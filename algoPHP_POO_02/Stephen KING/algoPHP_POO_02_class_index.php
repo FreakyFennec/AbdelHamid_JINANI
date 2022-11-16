@@ -14,44 +14,18 @@
 <body>
     
     <?php
+        echo "<h1>The author</h1>";
 
-        require "algoPHP_POO_02_class_author.php";
-        require "algoPHP_POO_02_class_bibliography.php";
+        require "algoPHP_POO_02_class_author.php"; 
+        $author = new Authors("Stephen", "KING", "Men", "1947-09-21", "books");
+        echo $author;
 
-        $author = new Authors("Stephen", "KING");
 
-        $biblioStephenKing = [
-            [
-            "title" => "Ca",
-            "publicationDate" => "1986",
-            "pagesQuant" => "1138",
-            "price" => "20"
-            ],
+        echo "<h1>Books</h1>";
 
-            [
-            "title" => "Simetierre",
-            "publicationDate" => "1983",
-            "pagesQuant" => "374",
-            "price" => "15"
-            ],
+        require "algoPHP_POO_02_class_books.php";
 
-            [
-            "title" => "Le Fléau",
-            "publicationDate" => "1978",
-            "pagesQuant" => "823",
-            "price" => "14"
-            ],
-
-            [
-            "title" => "Shining",
-            "publicationDate" => "1977",
-            "pagesQuant" => "447",
-            "price" => "16"
-            ],
-        ];
-
-        $bibliography = new Bibliographys ();
-        // var_dump($bibliography);
+        $bibliography = new Books ();
     ?>
 
 </body>

@@ -1,21 +1,19 @@
 <!--
-    algoPHP_POO_02_class_bibliography.php
+    algoPHP_POO_02_class_books.php
     =============================================
     By AHJ
 -->
 
-<h1>Bibliography</h1>
-
-
 <?php
-    class Bibliographys {
-        protected $_title;
-        protected $_publicationDate;
-        protected $_pagesQuant;
-        protected $_price;
+    class Books {
+        private $_title;
+        private $_publicationDate;
+        private $_pagesQuant;
+        private $_price;
+        private Author $_author;
 
     
-        public function __construct($_title, $_publicationDate, $_pagesQuant, $_price) {
+        public function __construct($_title, $_publicationDate, $_pagesQuant, $_price, Author $_author) {
             $this->_title = $_title;
             $this->_publicationDate = $_publicationDate;
             $this->_pagesQuant = $_pagesQuant;
@@ -55,12 +53,10 @@
             return "Title : " .$this->_title. "<br>
                     Publication date : " .$this->_publicationDate. "<br>
                     Pages quantities : " .$this->_pagesQuant. "<br>
-                    Price : " .$this->_price. "<br>";
+                    Price : " .$this->_price. "<br>
+                    Books : " .Author $_author."<br>";
         }
 
     }
 
-    $bibliography = new Bibliographys("Ca", "1986", "1138", "20 €");
-    var_dump($bibliography);
-    echo $bibliography;
 ?>
