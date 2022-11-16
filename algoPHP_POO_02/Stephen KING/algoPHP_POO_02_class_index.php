@@ -19,10 +19,9 @@
         require "algoPHP_POO_02_class_bibliography.php";
 
         $author = new Authors("Stephen", "KING");
-        var_dump($author);
-        // 
+
         $bibliography = new Bibliographys ();
-        var_dump($bibliography);
+        // var_dump($bibliography);
     ?>
 
 </body>

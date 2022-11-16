@@ -59,4 +59,8 @@
         }
 
     }
+
+    $bibliography = new Bibliographys("Ca", "1986", "1138", "20 €");
+    var_dump($bibliography);
+    echo $bibliography;
 ?>

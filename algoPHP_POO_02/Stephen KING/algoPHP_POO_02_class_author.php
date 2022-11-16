@@ -36,14 +36,13 @@
         
         public function __toString() {
             return "<div>
-                        <p>Surname : " .$this->_surName. ">/p>
-                        <p>First name : " .$this->_firstName. ">/p>
+                        <p>Surname : " .$this->_surName. "</p>
+                        <p>First name : " .$this->_firstName. "</p>
                     </div>";
         }
     }
 
     $author = new Authors("Stephen", "KING");
-    var_dump($author);  
     echo $author;
 
 ?>
