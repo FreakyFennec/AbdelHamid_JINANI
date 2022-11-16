@@ -21,39 +21,64 @@
             $this->books = [];
         }
 
-        // Setters
-        public function setSurName() {
+        // Getters and Setters
+
+        /** Get value of surName */
+        public function getSurName():string {
             return $this->surName;
         }
-        public function setFirsName() {
+
+        /** Set the value of surName
+         *  @return self
+         */       
+        public function setSurName($surName) {
+            $this->surName = $surName,
+            return $this;
+        }
+
+        /** Get value of firsName */
+        public function getFirsName():string {
             return $this->firsName;
         }
-        public function setGender() {
+
+        /** Set the value of firstName
+         * @return self
+         */
+        public function setFirsName($firsName) {
+            $this->firsName = $firstName;
+            return $this;
+        }
+
+        /** Get value of gender */
+        public function getGender():string {
             return $this->gender;
         }
-        public function setBirth() {
-            return $this->birth;
+
+        /** Set the value of gender
+         * @return self
+         */
+        public function setGender() {
+            $this->gender = $gender;
+            return $this;
         }
-        public function setBooks() {
+
+        /** Get the value of birth */
+        public function getBirth():DateTime {            
+            return $this->$birth;
+        } 
+
+        /** Set the value of firstName
+         * @return self
+         */
+        public function setBirth($birth) {
+            $this->birth = $birth;
+            return $this;
+        }
+
+        public function getBooks() {
             return $this->books;
         }
-
-        // Getters
-        public function getSurName() {
-            return $this->surName;
-        }        
-        public function getFirsName() {
-            return $this->firsName;
-        }        
-        public function getGender() {
-            return $this->gender;
-        }        
-        public function getBirth() {
-            
-
-            return $this->birth;
-        }        
-        public function getBooks() {
+        public function setBooks() {
             return $this->books;
         }
 
