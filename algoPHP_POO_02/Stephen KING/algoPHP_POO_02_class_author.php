@@ -32,7 +32,7 @@
          *  @return self
          */       
         public function setSurName($surName) {
-            $this->surName = $surName,
+            $this->surName = $surName;
             return $this;
         }
 
@@ -67,7 +67,7 @@
             return $this->$birth;
         } 
 
-        /** Set the value of firstName
+        /** Set the value of birth
          * @return self
          */
         public function setBirth($birth) {
@@ -82,18 +82,28 @@
             return $this->books;
         }
 
-        // Methode
+        /** Methode display birth */
+        public function displayBirth($birth):int {
+            return date_format(new DateTime(), $this->$birth)->format('d-m-Y');
+        }
+        
+        /** Methode display books */
         public function displayBooks() {
-            
+            $result = "Book of $this<br><ul>";
+            foreach($this->book as $books) {
+                $result .= "<li>";
+            }
+            $result .= "<ul>";
+            return $result;
+        }  
+        
+        public function __toString() {           
             return "
                 <div>
                     <p>Surname : " .$this->surName. "</p>
                     <p>First name : " .$this->firstName. "</p>
-                    <p>Gender : " .$this->gender. "</p>
                     <p>Date of birth : " .($this->birth). "</p>
-                    <p>Books : " .$this->books. "</p>
                 </div>";
-            
-        }
+        }       
     }
 ?>
