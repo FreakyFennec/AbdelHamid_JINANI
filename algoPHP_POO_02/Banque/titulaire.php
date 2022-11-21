@@ -1,6 +1,3 @@
-
-<h1>Account holder<h1>
-
 <?php
     class Titulaire {
 

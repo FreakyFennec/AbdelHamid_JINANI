@@ -59,6 +59,25 @@
             $this->titulaireCompte = $titulaireCompte;
             return $this;
         }
+        
+        // Méthode pour créditer un compte.
+        public function crediter($montant) 
+        {
+            $this->soldeInitial += $montant ;
+        }
+        
+        // Méthode pour débiter un compte.
+        public function debiter($montant)
+        {
+            $this->soldeInitial -= $montant ;
+        }
+
+        // Méthode pour faire un virement.
+        public function virement($montant, $compteCible)    // Montant à virer et compte à créditer en paramètres
+        {
+            $this->debiter($montant);                       // $this(soldeInitial)-> méthode crediter($montant).
+            $compteCible->crediter($montant);               // $compteCible à créditer de $montant.
+        }
 
 
         public function __toString() {
