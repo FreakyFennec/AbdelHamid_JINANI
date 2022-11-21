@@ -1,5 +1,5 @@
 <?php
-    class compteBanquaire 
+    class Comptes 
     {
         private string $nomCompte;
         private string $soldeInitial;

@@ -2,7 +2,7 @@
 <h1>Account holder<h1>
 
 <?php
-    class titulaireCompte {
+    class Titulaires {
 
         // Propriétés
         private string $nom;
@@ -77,8 +77,5 @@
             $this->lieuResidence = $lieuResidence;
             return $this;
         }
-
-
-        
     }
 ?>
