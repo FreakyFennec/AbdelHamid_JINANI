@@ -1,104 +1,84 @@
+
+<h1>Account holder<h1>
+
 <?php
-    class AccountHolder {
+    class titulaireCompte {
 
         // Propriétés
-        private string $surName;
-        private string $firstName;
-        private string $gender;
-        private DateTime $birth;
-        private string $cityHome;
-        private array $accounts;
+        private string $nom;
+        private string $prenom;
+        private string $genre;
+        private DateTime $dateNaissance;
+        private string $lieuResidence;
+        private array $comptes;
 
         // Construteur
-        public function __construct(string $surName, string $firstName, string $gender, string $birth, string $cityHome) {
-            $this->surName = $surName;
-            $this->firsName = $firstName;
-            $this->gender = $gender;
-            $this->birth = new DateTime($birth);
-            $this->cityHome = $cityHome;
+        public function __construct(string $nom, string $prenom, string $genre, string $dateNaissance, string $lieuResidence) {
+            $this->nom = $nom;
+            $this->firsName = $prenom;
+            $this->genre = $genre;
+            $this->dateNaissance = new DateTime($dateNaissance);
+            $this->lieuResidence = $lieuResidence;
             $this->account = [];
         }
 
-        // Set and get surName       
-        public function getsurName():string
+        // Set and get nom       
+        public function getnom():string
         {
-            return $this->surName;
-        }
-        
-        public function setsurName($surName)
+            return $this->nom;
+        }       
+        public function setnom($nom)
         {
-            $this->surName = $surName;
+            $this->nom = $nom;
             return $this;
         }
 
-        // Set and get firstName       
-        public function getfirstName():string
+        // Set and get prenom       
+        public function getprenom():string
         {
-            return $this->firstName;
-        }
-        
-        public function setfirstName($firstName)
+            return $this->prenom;
+        }        
+        public function setprenom($prenom)
         {
-            $this->firstName = $firstName;
+            $this->prenom = $prenom;
             return $this;
         }
 
-        // Set and get        
-        public function get(firstName):string
+        // Set and get genre      
+        public function getgender():string
         {
-            return $this->firstName;
-        }
-        
-        public function setfirstName($firstName)
+            return $this->genre;
+        }        
+        public function set($genre)
         {
-            $this->firstName = $firstName;
+            $this->genre = $genre;
             return $this;
         }
 
-        // Set and get        
-        public function get():DateTime
+        // Set and get dateNaissance    
+        public function getdateNaissance():int
         {
-            return $this->;
-        }
-        
-        public function set($)
+            return date_diff(new DateTime(), $this->dateNaissance)->format("%Y");
+        }        
+        public function setdateNaissance($dateNaissance)
         {
-            $this-> = $;
+            $this->dateNaissance = $dateNaissance;
             return $this;
         }
-        // Set and get        
-        public function get():string
+
+        // Set and get lieuResidence     
+        public function getlieuResidence():string
         {
-            return $this->;
+            return $this->lieuResidence;
         }
-        
-        public function set($)
+    
+        public function setlieuResidence($lieuResidence)
         {
-            $this-> = $;
+            $this->lieuResidence = $lieuResidence;
             return $this;
         }
-        // Set and get        
-        public function get():string
-        {
-            return $this->;
-        }
-        
-        public function set($)
-        {
-            $this-> = $;
-            return $this;
-        }
-        // Set and get        
-        public function get():string
-        {
-            return $this->;
-        }
-        
-        public function set($)
-        {
-            $this-> = $;
-            return $this;
-        }
+
+
         
     }
 ?>
