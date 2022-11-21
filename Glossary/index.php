@@ -14,7 +14,7 @@
 <body>
     <div id="container">
         <header>
-            <p id="title_header">The nine dev.</p>
+            <p id="title_header">The nine dev</p>
             <img class="img_header" src="assets/img/tag_Lyon_DSC_0015.png" alt="imgHeader">
         </header>
         <nav>
@@ -31,7 +31,7 @@
                 <p id="presentation">Entré en formation de Dév. web et mobile chez Elan, j'apprends qu'un développeur se doit de connaître toutes les abréviations de son métier. <br>
                 Pour m'aider dans cette tâche Herculéenne j'ai commencé une page pour les noter au fur et à mesure.<br><br>
                 Et si cela pouvait servir à quelqu'un d'autre j'en serais heureux, bien que la toile regorge de pages bien plus abouties que ne le sera jamais la mienne.</p><br>
-                <p><a href="dev_glossary/display_dev_glossary.php" class="link_pages">Dev glossary</a></p>
+                <p class="contLinkPage"><a href="dev_glossary/display_dev_glossary.php" class="link_pages">Dev glossary</a></p>
             </article>
             <aside>
                 <div id="zone_author">   

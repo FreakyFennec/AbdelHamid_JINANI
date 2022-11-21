@@ -73,6 +73,18 @@
                             "Type" => "S"
                         ],
                         [
+                            "Abreviation" => "BOM",
+                            "Signification" => "Byte Order Mark",
+                            "Definition" => "Série d'octets au début d'un fichier texte, pour définir l'encodage du contenu. Si encodage UTF-8 alors sans BOM",
+                            "Type" => "A"
+                        ],
+                        [
+                            "Abreviation" => "PHP",
+                            "Signification" => "Hypertext Preprocessor",
+                            "Definition" => "Langage informatique (de script). Principalement utilisé pour concevoir des sites dynamiques.",
+                            "Type" => "S"
+                        ],
+                        [
                             "Abreviation" => "",
                             "Signification" => "",
                             "Definition" => ".",
@@ -86,7 +98,6 @@
                         ]
                     ];
 
-                    echo "C'est parti mon Kiki !<br><br>";
                     echo "<table>
                             <caption>Sigles et acronymes en informatique</caption>
                             <thead>

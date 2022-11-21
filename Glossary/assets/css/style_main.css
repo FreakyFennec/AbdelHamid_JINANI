@@ -12,7 +12,8 @@
     padding: 0px;
 }
 
-/********************* Body ******************/
+/******************* Body ******************/
+/*******************************************/
 body {
     background-color: #bebebe;
 }
@@ -28,7 +29,8 @@ body {
     margin: 0px auto;   
 }
 
-/********************* Header ******************/
+/***************** Header ******************/
+/*******************************************/
 header {
     display: flex;
     flex-direction: column;
@@ -53,7 +55,8 @@ header {
     border-bottom: 2px solid white;
 }
 
-/************************** Nav ********************/
+/******************* Nav *******************/
+/*******************************************/
 nav {
     display: flex;
     justify-content: center;
@@ -97,14 +100,15 @@ nav a:hover {
     margin: 0px;
 }
 
-/************** Main *********************/
+/****************** Main *******************/
+/*******************************************/
 main {
     display: flex;
     flex-direction: row;
     background-color: #fff;
 }
 
-/********************** Article ***********************/
+/**************** Article ******************/
 article {/**/
     width: 75%;
 
@@ -119,6 +123,10 @@ article {/**/
 #presentation {
     margin: 20px 0px 20px 0px;
 }
+.contLinkPage {
+    background-color: #bebebe;
+    border: 1px solid black;
+}
 .link_pages {
     color: black;
 }
@@ -126,7 +134,8 @@ article {/**/
     color: #13f10b;
 }
 
-/********** Aside ****************/
+/***************** Aside *******************/
+/*******************************************/
 aside {/**/
     width: 25%;
 
@@ -141,7 +150,7 @@ aside {/**/
     background-color: #3e9fee;
 }
 
-/****************** Figure *******************/
+/***************** Figure ******************/
 #author {
     display: flex;
     flex-direction: column;
@@ -179,7 +188,8 @@ figcaption {
     padding: 0px;
 }
 
-/****************** Footer *******************/
+/****************** Footer *****************/
+/*******************************************/
 footer {
     height: 50px;
     font-size: 1.4em;
