@@ -85,7 +85,7 @@
             foreach($this->books as $book) {
                 $result .= "<li>$book</li>";
             }
-            $result .= "<ul>";
+            $result .= "<ul>";  // .= Fait une concaténation automatique.
             return $result;
         }  
         
