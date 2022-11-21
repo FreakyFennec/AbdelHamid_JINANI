@@ -5,7 +5,7 @@
 -->
 
 <?php  
-    class Authors {
+    class Author {
         private string $surName;
         private string $firstName;
         private string $gender;
@@ -27,10 +27,7 @@
         public function getSurName():string {
             return $this->surName;
         }
-
-        /** Set the value of surName
-         *  @return self
-         */       
+     
         public function setSurName($surName) {
             $this->surName = $surName;
             return $this;
@@ -41,9 +38,6 @@
             return $this->firsName;
         }
 
-        /** Set the value of firstName
-         * @return self
-         */
         public function setFirsName($firsName) {
             $this->firsName = $firstName;
             return $this;
@@ -54,9 +48,7 @@
             return $this->gender;
         }
 
-        /** Set the value of gender
-         * @return self
-         */
+
         public function setGender() {
             $this->gender = $gender;
             return $this;
@@ -83,26 +75,30 @@
         }
 
         /** Methode display birth */
-        public function displayBirth($birth):int {
-            return date_format(new DateTime(), $this->$birth)->format('d-m-Y');
+        public function getAge() {
+            return date_diff(new DateTime(), $this->birth)->format("%Y");
         }
         
         /** Methode display books */
         public function displayBooks() {
             $result = "Book of $this<br><ul>";
-            foreach($this->book as $books) {
-                $result .= "<li>";
+            foreach($this->books as $book) {
+                $result .= "<li>$book</li>";
             }
             $result .= "<ul>";
             return $result;
         }  
         
-        public function __toString() {           
+        public function __toString() {
+            return $this->firstName." ".$this->surName;
+        }
+
+        public function afficherInfos() {           
             return "
                 <div>
                     <p>Surname : " .$this->surName. "</p>
                     <p>First name : " .$this->firstName. "</p>
-                    <p>Date of birth : " .($this->birth). "</p>
+                    <p>Date of birth : " .$this->getAge(). " ans.</p>
                 </div>";
         }       
     }

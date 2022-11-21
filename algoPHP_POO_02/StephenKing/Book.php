@@ -5,15 +5,15 @@
 -->
 
 <?php
-    class Books {
+    class Book {
         private string $title;
         private int $publicationDate;
         private int $pagesQuant;
         private float $price;
-        private Authors $author;
+        private Author $author;
 
         // Constructor
-        public function __construct(string $title, int $publicationDate, int $pagesQuant, float $price, Authors $author) {
+        public function __construct(string $title, int $publicationDate, int $pagesQuant, float $price, Author $author) {
             $this->title = $title;
             $this->publicationDate = $publicationDate;
             $this->pagesQuant = $pagesQuant;
