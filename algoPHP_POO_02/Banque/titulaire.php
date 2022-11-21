@@ -2,7 +2,7 @@
 <h1>Account holder<h1>
 
 <?php
-    class Titulaires {
+    class Titulaire {
 
         // Propriétés
         private string $nom;
@@ -15,7 +15,7 @@
         // Construteur
         public function __construct(string $nom, string $prenom, string $genre, string $dateNaissance, string $lieuResidence) {
             $this->nom = $nom;
-            $this->firsName = $prenom;
+            $this->prenom = $prenom;
             $this->genre = $genre;
             $this->dateNaissance = new DateTime($dateNaissance);
             $this->lieuResidence = $lieuResidence;
@@ -23,59 +23,80 @@
         }
 
         // Set and get nom       
-        public function getnom():string
+        public function getNom():string
         {
             return $this->nom;
         }       
-        public function setnom($nom)
+        public function setNom($nom)
         {
             $this->nom = $nom;
             return $this;
         }
 
         // Set and get prenom       
-        public function getprenom():string
+        public function getPrenom():string
         {
             return $this->prenom;
         }        
-        public function setprenom($prenom)
+        public function setPrenom($prenom)
         {
             $this->prenom = $prenom;
             return $this;
         }
 
         // Set and get genre      
-        public function getgender():string
+        public function getGenre():string
         {
             return $this->genre;
         }        
-        public function set($genre)
+        
+        public function setGenre($genre)
         {
             $this->genre = $genre;
             return $this;
         }
 
         // Set and get dateNaissance    
-        public function getdateNaissance():int
+        public function getDateNaissance():string
         {
             return date_diff(new DateTime(), $this->dateNaissance)->format("%Y");
         }        
-        public function setdateNaissance($dateNaissance)
+        public function setDateNaissance($dateNaissance)
         {
             $this->dateNaissance = $dateNaissance;
             return $this;
         }
 
         // Set and get lieuResidence     
-        public function getlieuResidence():string
+        public function getLieuResidence():string
         {
             return $this->lieuResidence;
         }
     
-        public function setlieuResidence($lieuResidence)
+        public function setLieuResidence($lieuResidence)
         {
             $this->lieuResidence = $lieuResidence;
             return $this;
         }
+
+        // Methode afficherComptes
+        public function afficherComptes() {
+            $result = "<h1>Comptes de $this</h1>";
+            foreach($this->comptes as $compte) {
+                $result .= $compte;
+            }
+            return $result;
+        }
+
+        public function __toString() {
+            return $this->prenom." ".$this->nom;
+        }
+
+        // Ajouter comptes
+        public function ajouterCompte(Compte $comptes)
+        {
+            $this->comptes[] = $comptes;
+        }
     }
 ?>
+

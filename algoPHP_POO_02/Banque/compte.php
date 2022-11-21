@@ -1,13 +1,13 @@
 <?php
-    class Comptes 
+    class Compte 
     {
         private string $nomCompte;
-        private string $soldeInitial;
+        private float $soldeInitial;
         private string $devise;
-        private string $titulaireCompte;
+        private Titulaire $titulaireCompte;
     
         // Constructeur
-        public function __construct(string $nomCompte, int $soldeInitial, string $devise, string $titulaireCompte) 
+        public function __construct(string $nomCompte, float $soldeInitial, string $devise, Titulaire $titulaireCompte) 
         {        
             $this->nomCompte = $nomCompte;
             $this->soldeInitial = $soldeInitial;
@@ -17,51 +17,52 @@
         }
 
         // Set and get nomCompte
-        public function getnomCompte():string
+        public function getNomCompte():string
         {
             return $this->nomCompte;
         }       
-        public function setnomCompte($nomCompte)
+        public function setNomCompte($nomCompte)
         {
             $this->nomCompte = $nomCompte;
             return $this;
         }
 
         // Set and get soldeInitial
-        public function getsoldeInitial():string
+        public function getSoldeInitial():float
         {
             return $this->soldeInitial;
         }       
-        public function setsoldeInitial($soldeInitial)
+        public function setSoldeInitial($soldeInitial)
         {
             $this->soldeInitial = $soldeInitial;
             return $this;
         }
 
         // Set and get devise
-        public function getdevise():string
+        public function getDevise():string
         {
             return $this->devise;
         }       
-        public function setdevise($devise)
+        public function setDevise($devise)
         {
             $this->devise = $devise;
             return $this;
         }
 
         // Set and get titulaireCompte
-        public function gettitulaireCompte():string
+        public function getTitulaireCompte():string
         {
             return $this->titulaireCompte;
         }       
-        public function settitulaireCompte($titulaireCompte)
+        public function setTSitulaireCompte($titulaireCompte)
         {
             $this->titulaireCompte = $titulaireCompte;
             return $this;
         }
 
+
         public function __toString() {
-            return "Compte : " .$this->nomCompte. "<br> Solde initial : " .$this->soldeInitial. "<br> Devise : ".$this->devise. " <br> Tutulaire du compte : .$this->titulaireCompte.";
+            return "".$this->nomCompte. " solde initial : " .$this->soldeInitial." ".$this->devise. " <br>";
         }
     }
 ?>

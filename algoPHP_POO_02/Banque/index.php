@@ -14,8 +14,11 @@
             include $class_name . '.php';
         });
 
-        $martin = new Titulaires("MARTIN", "Henry", "M", "1981-08-24", "Cadix");
-        $compteCourant = new Comptes("Compte courrant", "1527.85", "€", $martin);
+        $martin = new Titulaire("MARTIN", "Henry", "M", "1981-08-24", "Cadix");
+        $compteCourant = new Compte("Compte courant", 1527.85, "€", $martin);
+        $compteEpargne = new Compte("Compte épargne", 5000, "€", $martin);
+
+        echo $martin->afficherComptes();
     ?>
 </body>
 </html>
