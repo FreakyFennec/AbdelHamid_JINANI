@@ -59,5 +59,9 @@
             $this->titulaireCompte = $titulaireCompte;
             return $this;
         }
+
+        public function __toString() {
+            return "Compte : " .$this->nomCompte. "<br> Solde initial : " .$this->soldeInitial. "<br> Devise : ".$this->devise. " <br> Tutulaire du compte : .$this->titulaireCompte.";
+        }
     }
 ?>
