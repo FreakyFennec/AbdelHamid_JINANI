@@ -20,6 +20,8 @@
 
         $king = new Author("Stephen", "KING", "Men", "1947-09-21");
 
+        echo $king->afficherInfos();
+
         $ca = new Book ("Ca", 1980, 1138, 20, $king);
         $simetierre = new Book ("Simetierre", 1983, 374, 15, $king);
         $le_fleau = new Book ("Le Fléau", 1978, 823, 14, $king);

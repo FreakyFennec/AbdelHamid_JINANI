@@ -33,13 +33,13 @@
             return $this;
         }
 
-        /** Get value of firsName */
-        public function getFirsName():string {
-            return $this->firsName;
+        /** Get value of firstName */
+        public function getFirstName():string {
+            return $this->firstName;
         }
 
-        public function setFirsName($firsName) {
-            $this->firsName = $firstName;
+        public function setFirstName($firstName) {
+            $this->firstName = $firstName;
             return $this;
         }
 
@@ -49,19 +49,16 @@
         }
 
 
-        public function setGender() {
+        public function setGender($gender) {
             $this->gender = $gender;
             return $this;
         }
 
         /** Get the value of birth */
-        public function getBirth():DateTime {            
+        public function getBirth($birth):DateTime {            
             return $this->$birth;
         } 
 
-        /** Set the value of birth
-         * @return self
-         */
         public function setBirth($birth) {
             $this->birth = $birth;
             return $this;
@@ -70,8 +67,9 @@
         public function getBooks() {
             return $this->books;
         }
-        public function setBooks() {
-            return $this->books;
+        public function setBooks($books) {
+            $this->books = $books;
+            return $this;
         }
 
         /** Methode display birth */
@@ -79,18 +77,22 @@
             return date_diff(new DateTime(), $this->birth)->format("%Y");
         }
         
+        public function addBook(Book $book) {
+            $this->books[] = $book;
+        }
+
         /** Methode display books */
         public function displayBooks() {
-            $result = "Book of $this<br><ul>";
+            $result = "Book of : $this<br><ul>";  // $this contient ce qu'il a dans la fonc. __toString().
             foreach($this->books as $book) {
-                $result .= "<li>$book</li>";
+                $result .= "<li>$book</li>";  // .= Fait une concaténation (automatique).
             }
-            $result .= "<ul>";  // .= Fait une concaténation automatique.
+            $result .= "<ul>";
             return $result;
         }  
         
         public function __toString() {
-            return $this->firstName." ".$this->surName;
+            return $this->surName." ".$this->firstName;
         }
 
         public function afficherInfos() {           

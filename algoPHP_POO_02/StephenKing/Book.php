@@ -18,6 +18,8 @@
             $this->publicationDate = $publicationDate;
             $this->pagesQuant = $pagesQuant;
             $this->price = $price;
+            $this->author = $author;
+            $this->author->addBook($this);
         }
 
         // Setters
