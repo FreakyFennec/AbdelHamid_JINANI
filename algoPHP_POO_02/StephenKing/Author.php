@@ -72,7 +72,7 @@
             return $this;
         }
 
-        /** Methode display birth */
+        /** Method display age */
         public function getAge() {
             return date_diff(new DateTime(), $this->birth)->format("%Y");
         }
@@ -81,7 +81,7 @@
             $this->books[] = $book;
         }
 
-        /** Methode display books */
+        /** Method display books */
         public function displayBooks() {
             $result = "Book of : $this<br><ul>";  // $this contient ce qu'il a dans la fonc. __toString().
             foreach($this->books as $book) {
