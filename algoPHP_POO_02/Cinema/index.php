@@ -14,9 +14,9 @@
             include $class_name . '.php';
         });
 
-        $georgeL = new Director("Lucas", "George", "Man", "1944-05-14");
+        $georgeLucas = new Director("Lucas", "George", "Man", "1944-05-14");
 
-        echo $georgeL->();
+        echo $georgeLucas->();
     ?>
 </body>
 </html>
