@@ -16,7 +16,7 @@
 
         $georgeLucas = new Director("Lucas", "George", "Man", "1944-05-14");
 
-        echo $georgeLucas->();
+        echo $georgeLucas->displayInfosDirector();
     ?>
 </body>
 </html>

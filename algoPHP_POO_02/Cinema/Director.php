@@ -69,13 +69,27 @@
 
         // Method add movies
         public function addMovie(Movie $movie) {
-            $this->movies[] $movie;
+            $this->movies[] = $movie;
         }
 
         // Method display movies
         public function displayMovies() {
             $result = "Movie of : $this<br><ul>";
-            foreach($this->)
+            foreach($this->movies as $movie) {
+                $result .= "<li>$movie</li>";
+            }
+            $result .= "<ul>";
+            return $result;
+        }
+
+        // method display infos director
+        public function displayInfosDirector() {
+            return "
+                    <div>
+                        <p>Surname : " .$this->surName. "</p>
+                        <p>First name : " .$this->firstName. "</p>
+                        <p>Date of birth : " .$this->getAge(). " ans.</p>
+                    </div>";
         }
     }
 ?>
