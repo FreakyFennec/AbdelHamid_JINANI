@@ -66,5 +66,16 @@
         public function getAge() {
             return date_diff(new DateTime(), $this->birth)->format("%Y"); // différence(dateActuelle, dateNaissance)->formatée(années).
         }
+
+        // Method add movies
+        public function addMovie(Movie $movie) {
+            $this->movies[] $movie;
+        }
+
+        // Method display movies
+        public function displayMovies() {
+            $result = "Movie of : $this<br><ul>";
+            foreach($this->)
+        }
     }
 ?>

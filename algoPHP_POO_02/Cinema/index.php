@@ -13,6 +13,10 @@
         spl_autoload_register(function ($class_name) { // Pour faire des includes. Les noms de fichiers et de classes doivent se correspondre.
             include $class_name . '.php';
         });
+
+        $georgeL = new Director("Lucas", "George", "Man", "1944-05-14");
+
+        echo $georgeL->();
     ?>
 </body>
 </html>
