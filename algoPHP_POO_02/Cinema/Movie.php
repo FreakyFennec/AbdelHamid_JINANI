@@ -67,6 +67,7 @@
         public function setSynopsis() {
             return $this->synopsis;
         }
+        
         // Method
         public function __toString() {
             return "" .$this->title. " <br>

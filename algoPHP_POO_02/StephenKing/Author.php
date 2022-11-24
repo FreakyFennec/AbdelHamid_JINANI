@@ -100,7 +100,7 @@
                 <div>
                     <p>Surname : " .$this->surName. "</p>
                     <p>First name : " .$this->firstName. "</p>
-                    <p>Date of birth : " .$this->getAge(). " ans.</p>
+                    <p>Age : " .$this->getAge(). " ans.</p>
                 </div>";
         }       
     }

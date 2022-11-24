@@ -171,6 +171,11 @@
            $this->western = $western;
            return $this;
         }
+
+        // Method
+        public function __toString() {
+         	return "Genre : " .$this->filmGenre. "<br>";
+     	}
     }
 ?>
     

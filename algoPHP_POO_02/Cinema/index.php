@@ -14,13 +14,13 @@
             include $class_name . '.php';
         });
 
-        $georgeLucas = new Director("Lucas", "George", "Man", "1944-05-14");
+        $georgeLucas = new Director ("Lucas", "George", "Man", "1944-05-14");
 
         echo $georgeLucas->displayInfosDirector();
 
         $StarWarsIV = new Movie ("Star Wars Episode IV", $georgeLucas, 1977, 121, "Science Fiction", "Synopsis");
 
-        echo $StarWarsIV->displayMovies();
+        echo $georgeLucas->displayMovies();
     ?>
 </body>
 </html>

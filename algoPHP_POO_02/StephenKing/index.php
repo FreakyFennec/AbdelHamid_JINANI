@@ -18,7 +18,7 @@
             include $class_name . '.php';
         });
 
-        $king = new Author("Stephen", "KING", "Men", "1947-09-21");
+        $king = new Author ("Stephen", "KING", "Men", "1947-09-21");
 
         echo $king->afficherInfos();
 
