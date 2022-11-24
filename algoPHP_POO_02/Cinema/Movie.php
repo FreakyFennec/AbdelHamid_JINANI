@@ -80,6 +80,16 @@
                 Durée : " .$this->duration. " mn<br>               
                 Résumé : " .$this->synopsis. "";
         }
+
+        // Method display movie
+        public function displayMovie() {
+            $result = "Movie of : $this<br><ul>";
+            foreach($this->movies as $movie) {      // Boucle sur array movies
+                $result .= "<li>$movie</li>";
+            }
+            $result .= "<ul>";
+            return $result;
+        }
         
     }
 ?>

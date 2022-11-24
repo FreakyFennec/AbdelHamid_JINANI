@@ -32,9 +32,21 @@
         $aventure = new Genre("Aventure");
 
         $movie = new Movie("Le aveturiers de l'arche perdu", $harrisonFord, 1981, 115, $aventure, "1936. Parti à la recherche d'une idole sacrée en pleine jungle péruvienne, l'aventurier Indiana Jones échappe de justesse à une embuscade tendue par son plus coriace adversaire : le Français René Belloq.
-        Revenu à la vie civile à son poste de professeur universitaire d'archéologie, il est mandaté par les services secrets et par son ami Marcus Brody, conservateur du National Museum de Washington, pour mettre la main sur le Médaillon de Râ, en possession de son ancienne amante Marion Ravenwood, désormais tenancière d'un bar au Tibet.");
+        Revenu à la vie civile à son poste de professeur universitaire d'archéologie, il est mandaté par les services secrets et par son ami Marcus Brody, conservateur du National Museum de Washington, pour mettre la main sur le Médaillon de Râ, en possession de son ancienne amante Marion Ravenwood, désormais tenancière d'un bar au Tibet. (AlloCiné).");
 
         echo $harrisonFord->displayMovies();
+
+
+
+        $starWarIV = new Movie("Star Wars Episode IV", $georgeLucas, 1977, 121, $sciFi, "Il y a bien longtemps, dans une galaxie très lointaine... La guerre civile fait rage entre l'Empire galactique et l'Alliance rebelle. Capturée par les troupes de choc de l'Empereur menées par le sombre et impitoyable Dark Vador, la princesse Leia Organa dissimule les plans de l'Etoile Noire, une station spatiale invulnérable, à son droïde R2-D2 avec pour mission de les remettre au Jedi Obi-Wan Kenobi. (AlloCiné).");
+
+        $hFord = new Actor("Ford","Harrison", "Man", "1942-07-13", "Actor");
+        $cFisher = new Actor("Fisher", "Carrie", "Woman", "1956-10-21", "Actress");
+
+        echo $hFord->displayInfosActor(); 
+        echo $cFisher->displayInfosActor();
+
+        echo $starWarIV->displayMovie();
     ?>
 </body>
 </html>
