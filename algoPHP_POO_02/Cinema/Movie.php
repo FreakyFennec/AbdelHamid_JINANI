@@ -6,11 +6,11 @@
         private Director $director;
         private int $frenchRelease;
         private int $duration;
-        private string $filmGenre;
+        private Genre $filmGenre;
         private string $synopsis;
 
         // Constructor
-        public function __construct(string $title, Director $director, int $frenchRelease, int $duration, string $filmGenre, string $synopsis)
+        public function __construct(string $title, Director $director, int $frenchRelease, int $duration, Genre $filmGenre, string $synopsis)
         {
             $this->title = $title;
             $this->director = $director;
@@ -67,6 +67,11 @@
         public function setSynopsis() {
             return $this->synopsis;
         }
+
+        // Method display genre
+        /*public function displayGenre() {
+
+        }*/
         
         // Method
         public function __toString() {
