@@ -1,5 +1,6 @@
 <?php
-    class Actor extends Person {
+    class Actor extends Person 
+    {
         // Properties
         private array $movies;
 

@@ -1,5 +1,6 @@
 <?php
-    class Director extends Person {
+    class Director extends Person 
+    {
         // Properties
         private array $movies;
 
