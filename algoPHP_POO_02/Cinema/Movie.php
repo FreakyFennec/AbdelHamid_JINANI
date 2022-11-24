@@ -4,13 +4,13 @@
         // Properties
         private string $title;
         private Director $director;
-        private DateTime $frenchRelease;
+        private int $frenchRelease;
         private int $duration;
         private string $filmGenre;
         private string $synopsis;
 
         // Constructor
-        public function __construct(string $title, Director $director, DateTime $frenchRelease, int $duration, string $filmGenre, string $synopsis)
+        public function __construct(string $title, Director $director, int $frenchRelease, int $duration, string $filmGenre, string $synopsis)
         {
             $this->title = $title;
             $this->director = $director;
@@ -35,7 +35,6 @@
         public function setDirector() {
             return $this->director;
         }
-
 
         // Get and Set frenchRelease
         public function getFrenchRelease() {
@@ -73,7 +72,7 @@
             return "" .$this->title. " <br>
                 Réalisateur : " .$this->director. "<br>
                 Date de sortie en France : " .$this->frenchRelease. "<br>
-                Durée : " .$this->duration. "<br>
+                Durée : " .$this->duration. " mn<br>
                 Genre : " .$this->filmGenre. "<br>
                 Résumé : " .$this->synopsis. "";
         }
