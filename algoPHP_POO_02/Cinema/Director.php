@@ -72,6 +72,12 @@
             $this->movies[] = $movie;
         }
 
+        // Method add genre
+        public function addGenre(Genre $genre) {
+            $this->$genre;
+            return $this;
+        }
+
         // Method display movies
         public function displayMovies() {
             $result = "Movie of : $this<br><ul>";

@@ -6,17 +6,18 @@
         private Director $director;
         private int $frenchRelease;
         private int $duration;
-        private Genre $filmGenre;
+        private Genre $genre;
         private string $synopsis;
 
         // Constructor
-        public function __construct(string $title, Director $director, int $frenchRelease, int $duration, Genre $filmGenre, string $synopsis)
+        public function __construct(string $title, Director $director, int $frenchRelease, int $duration, Genre $genre, string $synopsis)
         {
             $this->title = $title;
             $this->director = $director;
             $this->frenchRelease = $frenchRelease;
-            $this->synopsis = $filmGenre;
+            $this->synopsis = $synopsis;
             $this->duration = $duration;
+            //$this->genre->addGenre($this);
             $this->director->addMovie($this);
         }
 
@@ -52,12 +53,12 @@
             return $this->duration;
         }
 
-        // Get and Set filmGenre
+        // Get and Set genre
         public function getFilmGenre() {
-            return $this->filmGenre;
+            return $this->genre;
         }
         public function setFilmGenre() {
-            return $this->filmGenre;
+            return $this->genre;
         }
 
         // Get and Set synopsis
@@ -76,10 +77,8 @@
         // Method
         public function __toString() {
             return "" .$this->title. " <br>
-                Réalisateur : " .$this->director. "<br>
                 Date de sortie en France : " .$this->frenchRelease. "<br>
-                Durée : " .$this->duration. " mn<br>
-                Genre : " .$this->filmGenre. "<br>
+                Durée : " .$this->duration. " mn<br>               
                 Résumé : " .$this->synopsis. "";
         }
     }
