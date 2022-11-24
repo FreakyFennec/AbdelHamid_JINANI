@@ -14,25 +14,20 @@
             include $class_name . '.php';
         });
 
-        $sciFi = new Genre("Science Fiction");
+        $georgeLucas = new Person ("George", "Lucas", "Man", "1944-05-14", "Director");     // On définit une personne.
 
-        $georgeLucas = new Director ("George", "Lucas", "Man", "1944-05-14");
+        echo $georgeLucas->displayInfosPerson();    // On affiche les infos de la personne.
 
-        echo $georgeLucas->displayInfosDirector();
+        $sciFi = new Genre("Science Fiction");      // On définit le genre du film.
 
+        // On définit les infos du film plus les instanciations de la personne et du genre.
         $movie = new Movie ("Star Wars Episode IV", $georgeLucas, 1977, 121, $sciFi, "Il y a bien longtemps, dans une galaxie très lointaine... La guerre civile fait rage entre l'Empire galactique et l'Alliance rebelle. Capturée par les troupes de choc de l'Empereur menées par le sombre et impitoyable Dark Vador, la princesse Leia Organa dissimule les plans de l'Etoile Noire, une station spatiale invulnérable, à son droïde R2-D2 avec pour mission de les remettre au Jedi Obi-Wan Kenobi. (AlloCiné).");
 
-        echo $georgeLucas->displayMovies();
+        echo $georgeLucas->displayMovies();     // On affiche les infos du film.
 
+        $harrisonFord = new Person ("Ford", "Harrison", "Man", "1942-07-13", "Actor");      // On définit une personne.
 
-        $georgeLucas = new Person ("George", "Lucas", "Man", "1944-05-14", "Director");
-
-        echo $georgeLucas->displayInfosPerson();
-
-
-        $harrisonFord = new Person ("Ford", "Harrison", "Man", "1942-07-13", "Actor");
-
-        echo $harrisonFord->displayInfosPerson();
+        echo $harrisonFord->displayInfosPerson();   // On affiche les infos de la personne.
     ?>
 </body>
 </html>

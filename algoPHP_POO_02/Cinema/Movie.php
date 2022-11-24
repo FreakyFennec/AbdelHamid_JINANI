@@ -3,22 +3,22 @@
     {
         // Properties
         private string $title;
-        private Director $director;
+        private Person $person;
         private int $frenchRelease;
         private int $duration;
         private Genre $genre;
         private string $synopsis;
 
         // Constructor
-        public function __construct(string $title, Director $director, int $frenchRelease, int $duration, Genre $genre, string $synopsis)
+        public function __construct(string $title, Person $person, int $frenchRelease, int $duration, Genre $genre, string $synopsis)
         {
             $this->title = $title;
-            $this->director = $director;
+            $this->person = $person;
             $this->frenchRelease = $frenchRelease;
             $this->synopsis = $synopsis;
             $this->duration = $duration;
             //$this->genre->addGenre($this);
-            $this->director->addMovie($this);
+            $this->person->addMovie($this);
         }
 
         // Get and Set title
@@ -29,12 +29,12 @@
             return $this->title;
         }
 
-        // Get and Set director
-        public function getDirector() {
-            return $this->director;
+        // Get and Set person
+        public function getperson() {
+            return $this->person;
         }
-        public function setDirector() {
-            return $this->director;
+        public function setperson() {
+            return $this->person;
         }
 
         // Get and Set frenchRelease
@@ -81,5 +81,6 @@
                 Durée : " .$this->duration. " mn<br>               
                 Résumé : " .$this->synopsis. "";
         }
+        
     }
 ?>
