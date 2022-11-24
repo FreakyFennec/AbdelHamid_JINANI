@@ -31,7 +31,7 @@
 
         $aventure = new Genre("Aventure");
 
-        $movie = new Movie("Le aveturiers de l'arche perdu", $georgeLucas, 1981, 115, $aventure, "1936. Parti à la recherche d'une idole sacrée en pleine jungle péruvienne, l'aventurier Indiana Jones échappe de justesse à une embuscade tendue par son plus coriace adversaire : le Français René Belloq.
+        $movie = new Movie("Le aveturiers de l'arche perdu", $harrisonFord, 1981, 115, $aventure, "1936. Parti à la recherche d'une idole sacrée en pleine jungle péruvienne, l'aventurier Indiana Jones échappe de justesse à une embuscade tendue par son plus coriace adversaire : le Français René Belloq.
         Revenu à la vie civile à son poste de professeur universitaire d'archéologie, il est mandaté par les services secrets et par son ami Marcus Brody, conservateur du National Museum de Washington, pour mettre la main sur le Médaillon de Râ, en possession de son ancienne amante Marion Ravenwood, désormais tenancière d'un bar au Tibet.");
 
         echo $harrisonFord->displayMovies();
