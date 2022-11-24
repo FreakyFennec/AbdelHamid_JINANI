@@ -94,8 +94,8 @@
             return $this->surName. " " .$this->firstName;
         }
 
-         // method display infos director
-         public function displayInfosPerson() {
+        // method display infos director
+        public function displayInfosPerson() {
             return "
                 <div>
                     <p>Surname : " . $this->surName . "</p>
@@ -103,6 +103,16 @@
                     <p>Age : " . $this->getAge() . " ans.</p>
                     <p>Profession : " . $this->profession . "</p>
                 </div>";
+        }
+        
+        // Method display movies
+        public function displayMovies() {
+            $result = "Movie of : $this<br><ul>";
+            foreach($this->movies as $movie) {      // Boucle sur array movies
+                $result .= "<li>$movie</li>";
+            }
+            $result .= "<ul>";
+            return $result;    
         }
 
     }

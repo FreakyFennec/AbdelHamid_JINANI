@@ -17,7 +17,6 @@
             $this->frenchRelease = $frenchRelease;
             $this->synopsis = $synopsis;
             $this->duration = $duration;
-            //$this->genre->addGenre($this);
             $this->person->addMovie($this);
         }
 
