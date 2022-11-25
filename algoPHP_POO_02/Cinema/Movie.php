@@ -3,37 +3,40 @@
     {
         // Properties
         private string $title;
-        private Person $person;
+        private Director $director;
         private int $frenchRelease;
         private int $duration;
         private Genre $genre;
         private string $synopsis;
+        private array $castings;
 
         // Constructor
-        public function __construct(string $title, Person $person, int $frenchRelease, int $duration, Genre $genre, string $synopsis)
+        public function __construct(string $title, Director $director, int $frenchRelease, int $duration, Genre $genre, string $synopsis)
         {
             $this->title = $title;
-            $this->person = $person;
+            $this->director = $director;
             $this->frenchRelease = $frenchRelease;
             $this->synopsis = $synopsis;
             $this->duration = $duration;
-            $this->person->addMovie($this);
+            $this->genre = $genre;
+            $this->director->addMovie($this);
+            $this->castings = [];
         }
 
         // Get and Set title
         public function getTitle() {
             return $this->title;
         }
-        public function setTitle() {
-            return $this->title;
+        public function setTitle($title) {
+            $this->title = $title;
         }
 
-        // Get and Set person
-        public function getperson() {
-            return $this->person;
+        // Get and Set director
+        public function getdirector() {
+            return $this->director;
         }
-        public function setperson() {
-            return $this->person;
+        public function setdirector() {
+            return $this->director;
         }
 
         // Get and Set frenchRelease
@@ -56,8 +59,8 @@
         public function getFilmGenre() {
             return $this->genre;
         }
-        public function setFilmGenre() {
-            return $this->genre;
+        public function setFilmGenre($genre) {
+            $this->genre = $genre;
         }
 
         // Get and Set synopsis
@@ -68,23 +71,28 @@
             return $this->synopsis;
         }
 
-        
-        // Method
-        public function __toString() {
+        // ajouter un casting dans le tableau des castings
+        public function addCasting(Casting $casting){
+            $this->castings[] = $casting;
+        }
+
+        public function displayCasting() {
+            $result = "Casting de $this<br>";
+            foreach($this->castings as $casting){
+                $result .= $casting->getActor()." a joué ".$casting->getCharacter()."<br>";
+            }
+            return $result;
+        }
+
+        public function displayInfosFilm() {
             return "" .$this->title. " <br>
                 Date de sortie en France : " .$this->frenchRelease. "<br>
                 Durée : " .$this->duration. " mn<br>               
                 Résumé : " .$this->synopsis. "";
         }
-
-        // Method display movie
-        public function displayMovie() {
-            $result = "Movie of : $this<br><ul>";
-            foreach($this->movies as $movie) {      // Boucle sur array movies
-                $result .= "<li>$movie</li>";
-            }
-            $result .= "<ul>";
-            return $result;
+        // Method
+        public function __toString() {
+            return $this->title;
         }
         
     }

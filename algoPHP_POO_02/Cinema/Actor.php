@@ -2,19 +2,15 @@
     class Actor extends Person 
     {
         // Properties
-        private string $surName;
-        private string $firstName;
         private array $movies;
 
         // Constructor
-        public function __construct(string $surName, string $firstName)
+        public function __construct(string $surName, string $firstName, string $gender, string $birth)
         {
-            $this->surName = $surName;
-            $this->firstName = $firstName;
+            parent::__construct($surName, $firstName, $gender, $birth);
             $this->movies = [];
         }
 
-        
         // method display infos actor
         public function displayInfosActor() {
             return "
@@ -22,6 +18,11 @@
                     <p>Surname : " . $this->surName . "</p>
                     <p>First name : " . $this->firstName . "</p>
                 </div>";
+        }
+        
+        // ajouter un casting dans le tableau des castings
+        public function addCasting(Casting $casting){
+            $this->castings[] = $casting;
         }
     }
 ?>
