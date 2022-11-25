@@ -13,11 +13,12 @@
         spl_autoload_register(function ($class_name) { // Pour faire des includes. Les noms de fichiers et de classes doivent se correspondre.
             include $class_name . '.php';
         });
-
+echo "<p>============== disp infos person =======================</p>";
         $georgeLucas = new Director ("George", "Lucas", "Man", "1944-05-14");     // On définit une personne.
 
         echo $georgeLucas->displayInfosPerson();    // On affiche les infos de la personne.
-echo "<p>=====================================</p>";
+
+echo "<p>============== disp movies =======================</p>";
         $sciFi = new Genre("Science Fiction");      // On définit le genre du film.
 
         // On définit les infos du film plus les instanciations de la personne et du genre.
@@ -30,8 +31,7 @@ echo "<p>=====================================</p>";
         $movie = new Movie("Le aveturiers de l'arche perdu", $georgeLucas, 1981, 115, $aventure, "1936. Parti à la recherche d'une idole sacrée en pleine jungle péruvienne, l'aventurier Indiana Jones échappe de justesse à une embuscade tendue par son plus coriace adversaire : le Français René Belloq.
         Revenu à la vie civile à son poste de professeur universitaire d'archéologie, il est mandaté par les services secrets et par son ami Marcus Brody, conservateur du National Museum de Washington, pour mettre la main sur le Médaillon de Râ, en possession de son ancienne amante Marion Ravenwood, désormais tenancière d'un bar au Tibet. (AlloCiné).");
 
-echo "<p>=====================================</p>";
-
+echo "<p>================= disp infos actor ====================</p>";
         $starWarIV = new Movie("Star Wars Episode IV", $georgeLucas, 1977, 121, $sciFi, "Il y a bien longtemps, dans une galaxie très lointaine... La guerre civile fait rage entre l'Empire galactique et l'Alliance rebelle. Capturée par les troupes de choc de l'Empereur menées par le sombre et impitoyable Dark Vador, la princesse Leia Organa dissimule les plans de l'Etoile Noire, une station spatiale invulnérable, à son droïde R2-D2 avec pour mission de les remettre au Jedi Obi-Wan Kenobi. (AlloCiné).");
 
         $hFord = new Actor("Ford","Harrison", "Man", "1942-07-13",);
@@ -40,23 +40,29 @@ echo "<p>=====================================</p>";
         echo $hFord->displayInfosActor(); 
         echo $cFisher->displayInfosActor();
 
-echo "<p>=====================================</p>";
+echo "<p>=============== disp infos character ======================</p>";
         $hanSolo = new Character("Han", "Solo");
         $princessLeia = new Character("Princess Leia");
 
         echo $hanSolo->displayInfosCharacter();
-
+        
+echo "<p>=============== disp infos casting ======================</p>";
         $casting1 = new Casting($starWarIV, $hanSolo, $hFord);
         $casting2 = new Casting($starWarIV,  $princessLeia, $cFisher);
 
         echo $casting1->displayInfosCasting();
 
+echo "<p>================ disp casting movie =====================</p>";
         // afficher le casting d'un film : acteurs + rôles
         echo $starWarIV->displayCasting();
+
+echo "<p>================= disp casting actor ====================</p>";
         // afficher la filmographie d'un acteur : films + rôles
         echo $hFord->displayCasting();
-        // afficher les acteurs ayant incarné un rôle : acteurs + films
 
+echo "<p>================== disp casting charcter ===================</p>";
+        // afficher les acteurs ayant incarné un rôle : acteurs + films
+        echo $hanSolo->displayCasting();
     ?>
 </body>
 </html>

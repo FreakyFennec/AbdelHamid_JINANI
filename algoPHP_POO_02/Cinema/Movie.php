@@ -93,7 +93,6 @@
         // Method
         public function __toString() {
             return $this->title;
-        }
-        
+        }        
     }
 ?>

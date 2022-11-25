@@ -1,14 +1,15 @@
 <?php
     class Character 
     {
-        // Properties
-       
+        // Properties       
         private string $character;
+        private array $castings;
         
         // Constructor
         public function __construct(string $character)
         {
             $this->character = $character;
+            $this->castings = [];
         }
 
         // Get and Set role of character
@@ -34,6 +35,15 @@
         // ajouter un casting dans le tableau des castings
         public function addCasting(Casting $casting){
             $this->castings[] = $casting;
+        }
+
+        // Method display casting
+        public function displayCasting() {
+            $result = "Les acteurs ayant joué $this<br>";
+            foreach($this->castings as $casting) {
+                $result .= $casting->getActor(). " dans " .$casting->getMovie(). "<br>";
+            }
+            return $result;
         }
 
     }
