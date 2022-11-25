@@ -68,10 +68,6 @@
             return $this->synopsis;
         }
 
-        // Method display genre
-        /*public function displayGenre() {
-
-        }*/
         
         // Method
         public function __toString() {

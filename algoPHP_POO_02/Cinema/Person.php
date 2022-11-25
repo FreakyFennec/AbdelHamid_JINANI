@@ -10,7 +10,8 @@
         private string $profession;
 
         // Constructor
-        public function __construct(string $surName, string $firstName, string $gender,  string $birth, string $profession) {
+        public function __construct(string $surName, string $firstName, string $gender,  string $birth, string $profession) 
+        {
             $this->surName = $surName;
             $this->firstName = $firstName;
             $this->gender = $gender;
