@@ -2,7 +2,7 @@
    class Casting 
    {
         // Properties
-        private Movie $movie;
+        private Movie $movie;               // Les classes sont mise en propriété.
         private Character $character;
         private Actor $actor;
        
@@ -10,12 +10,13 @@
         public function __construct(Movie $movie, Character $character, Actor $actor) 
         {
             $this->movie = $movie;
-            $this->movie->addCasting($this);
-            $this->character = $character;
-        
-            $this->character->addCasting($this);    // ajouter casting dans Character 
+            $this->movie->addCasting($this);        // Ajouter casting dans Movie.
+            
+            $this->character = $character;        
+            $this->character->addCasting($this);    // Ajouter casting dans Character.
+            
             $this->actor = $actor;
-            $this->actor->addCasting($this);    // ajouter casting dans Actor
+            $this->actor->addCasting($this);        // Ajouter casting dans Actor.
         }   
                 
         // Get movie
@@ -39,7 +40,7 @@
 
         // Method display infos casting
         public function displayInfosCasting() {
-            return "
+            return "<h3>Infos casting du film</h3>
                 <p>" .$this->movie."</p>
                 <p>" .$this->character."</p>
                 <p>" .$this->actor."</p>";

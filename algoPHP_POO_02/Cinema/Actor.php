@@ -15,11 +15,9 @@
 
         // method display infos actor
         public function displayInfosActor() {
-            return "
-                <div>
-                    <p>Surname : " . $this->surName . "</p>
-                    <p>First name : " . $this->firstName . "</p>
-                </div>";
+            return "<h3>Infos actor</h3>
+                <p>Surname : " . $this->surName . "</p>
+                <p>First name : " . $this->firstName . "</p>";
         }
         
         // ajouter un casting dans le tableau des castings
@@ -29,7 +27,7 @@
 
         // Method display casting
         public function displayCasting() {
-            $result = "Les rôles de $this<br>";
+            $result = "<h3>Les rôles de $this</h3><br>";
             foreach($this->castings as $casting) {
                 $result .= $casting->getActor(). " a joué dans " .$casting->getMovie()." comme " .$casting->getCharacter(). "<br>";
             }
@@ -38,7 +36,7 @@
         
         // Method display infos casting
         public function displayInfosCasting() {
-            return "
+            return "<h4>Les acteurs : </h4>
                 <p>" .$this->movie."</p>
                 <p>" .$this->character."</p>
                 <p>" .$this->actor."</p>";

@@ -63,13 +63,10 @@
 
         // method display infos director
         public function displayInfosPerson() {
-            return "
-                <div>
-                    <p>Surname : " . $this->surName . "</p>
-                    <p>First name : " . $this->firstName . "</p>
-                    <p>Age : " . $this->getAge() . " ans.</p>
-                </div>";
+            return "<h4>Infos person : </h4>
+                <p>Surname : " . $this->surName . "</p>
+                <p>First name : " . $this->firstName . "</p>
+                <p>Age : " . $this->getAge() . " ans.</p>";
         }
-
     }
 ?>

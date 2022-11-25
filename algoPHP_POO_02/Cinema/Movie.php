@@ -8,7 +8,7 @@
         private int $duration;
         private Genre $genre;
         private string $synopsis;
-        private array $castings;
+        private array $castings;    // Propriété pour travailler avec le tableau castint.
 
         // Constructor
         public function __construct(string $title, Director $director, int $frenchRelease, int $duration, Genre $genre, string $synopsis)
@@ -20,7 +20,7 @@
             $this->duration = $duration;
             $this->genre = $genre;
             $this->director->addMovie($this);
-            $this->castings = [];
+            $this->castings = [];               // Array pour contenir les infos de casting.
         }
 
         // Get and Set title
@@ -76,22 +76,22 @@
             $this->castings[] = $casting;
         }
 
-        public function displayCasting() {
-            $result = "Casting de $this<br>";
+        public function displayCasting() {          // Affiche le casting du film.
+            $result = "<h3>Casting de $this</h3>";
             foreach($this->castings as $casting){
                 $result .= $casting->getActor()." a joué ".$casting->getCharacter()."<br>";
             }
             return $result;
         }
 
-        public function displayInfosFilm() {
-            return "" .$this->title. " <br>
+        public function displayInfosFilm() {        // Affiche les infos d'un film instancié dans index.
+            return "<h3>Le film : " .$this->title. "</h3><br>
                 Date de sortie en France : " .$this->frenchRelease. "<br>
                 Durée : " .$this->duration. " mn<br>               
                 Résumé : " .$this->synopsis. "";
         }
         // Method
-        public function __toString() {
+        public function __toString() {      // Affiche le contenu de l'objet en string.
             return $this->title;
         }        
     }

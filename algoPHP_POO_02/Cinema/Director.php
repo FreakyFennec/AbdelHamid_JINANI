@@ -16,7 +16,7 @@
         }
 
         public function displayMovies() {
-            $result = "Films de $this<br>";
+            $result = "<h3>Films de $this</h3><br>";
             foreach ($this->movies as $movie) {
                 $result .= $movie."<br>";
             }

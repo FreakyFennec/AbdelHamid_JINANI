@@ -23,7 +23,7 @@
 
         // Method display infos character
         public function displayInfosCharacter() {
-         return "
+         return "<h3>Infos character</h3>
             <p>Character : " .$this->character. "</p>";
         }
 
@@ -39,7 +39,7 @@
 
         // Method display casting
         public function displayCasting() {
-            $result = "Les acteurs ayant joué $this<br>";
+            $result = "<h3>Les acteurs ayant joué $this</h3><br>";
             foreach($this->castings as $casting) {
                 $result .= $casting->getActor(). " dans " .$casting->getMovie(). "<br>";
             }
