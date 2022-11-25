@@ -41,7 +41,7 @@ echo "<p>================= disp infos actor ====================</p>";
         echo $cFisher->displayInfosActor();
 
 echo "<p>=============== disp infos character ======================</p>";
-        $hanSolo = new Character("Han", "Solo");
+        $hanSolo = new Character("Han Solo");
         $princessLeia = new Character("Princess Leia");
 
         echo $hanSolo->displayInfosCharacter();
@@ -63,6 +63,36 @@ echo "<p>================= disp casting actor ====================</p>";
 echo "<p>================== disp casting charcter ===================</p>";
         // afficher les acteurs ayant incarné un rôle : acteurs + films
         echo $hanSolo->displayCasting();
+
+echo "<p>================== Part II with James Bond Movie =============</p>";
+echo "<p>======================================================</p>";
+        $tYoung = new Director("Terence", "Young", "Man", 1915-06-20);
+        echo $tYoung->displayInfosPerson();
+
+        $action = new Genre("action");
+
+        $jBondDrNo = new Movie("James Bond 007 contre Dr No", $tYoung, 1962, 105, $action, "Lorsque deux agents britanniques disparaissent mystérieusement en Jamaïque, le chef des services secrets britanniques, « M », y envoie l'agent spécial 007 James Bond pour enquêter.");
+
+        echo $tYoung->displayMovies();
+
+        echo $jBondDrNo->displayInfosFilm();
+
+        $sConnery = new Actor("Connery", "Sean", "Man", "1930-08-25");
+        $uAndress = new Actor("Andress", "Ursula", "Woman", "1936-03-19");
+
+        echo $sConnery->displayInfosActor();
+        echo $uAndress->displayInfosActor();
+
+        $jBond007 = new Character("James Bond 007");
+        $honey = new Character("Honey");
+
+        echo $jBond007->displayInfosCharacter();
+        echo $honey->displayInfosCharacter();
+
+        $casting3 = new Casting($jBondDrNo, $jBond007, $sConnery);
+
+        echo $casting3->displayInfosCasting();
+
     ?>
 </body>
 </html>
