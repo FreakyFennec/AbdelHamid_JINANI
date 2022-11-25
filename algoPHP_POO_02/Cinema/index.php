@@ -46,7 +46,7 @@
         echo $hFord->displayInfosActor(); 
         echo $cFisher->displayInfosActor();
 
-        echo $starWarIV->displayMovie();
+        //echo $starWarIV->displayMovie();
     ?>
 </body>
 </html>
