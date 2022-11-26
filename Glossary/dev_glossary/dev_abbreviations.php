@@ -1,16 +1,4 @@
-<?php
-    // Connect to mysqli
-    $conn = mysqli_connect("localhost", "root", "");
 
-    // Verify connexion
-    if (mysqli_connect_errno()) {
-        echo "Impossible de se connecter à MySQL : " .mysqli_connect_error();
-        exit();
-    }
-
-    // Connect to db dev_tools
-    mysqli_select_db($conn, "dev_tools");
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,40 +37,60 @@
                     Une abréviation est un groupe de lettres qui représente un mot ou un groupe de mots.<br>
                     Quand on peut lire l'abréviation comme un mot (ex.: Unicef) on parle d'un acronyme et si l'on ne peut que l'épeler (ex.: EDF) alors c'est un sigle.
                 </p>
-
                 <?php
-                    // Requête (mysql_query) + message d'erreur si la requête ne se passe pas bien (or die)
-                    if ($req = mysqli_query($conn, 'SELECT * FROM dev_abbreviations')) {
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $dbname = "dev_tools";
 
-                        // Résultat de la requête
-                        //echo "lignes retournées : " .mysqli_num_rows($req);
-                        $data = mysqli_fetch_array($req);
-                        
-                        // Libère l'espace mémoire alloué pour cette interrogation de la db
-                        mysqli_free_result($req);
+                    // Connect to mysqli
+                    $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+                    // Verify connexion
+                    if (mysqli_connect_errno()) {
+                        echo "Impossible de se connecter à MySQL : " .mysqli_connect_error();
+                        exit();
                     }
 
+                    // Query
+                    $req = "SELECT * FROM dev_abbreviations";
+                    $result = $conn->query($req);
+                    $num = mysqli_num_rows($result);                
+                    
+                    if ($num > 0) {
+
+                        echo "<table>
+                            <caption>Sigles et acronymes en informatique</caption>
+                            <thead>
+                                <tr>
+                                    <th>Abrev.</th>
+                                    <th>Signification</th>
+                                    <th>Définition</th>
+                                    <th>Type</th>
+                                </tr>
+                                <thead>
+                                <tbody> 
+                                <tr>";
+
+                                while($row = mysqli_fetch_assoc($result)) {
+                                    $abbreviation = $row['abbreviation'];
+                                    $signification = $row['signification'];
+                                    $definition = $row['definition'];
+                                    $type = $row['type'];
+                                
+                        echo "<td>" . $abbreviation. "</td>
+                                <td>" . $signification. "</td>
+                                <td>" . $definition. "</td>
+                                <td>" . $type. "</td></tr>";
+                                }
+                        echo "</table>";
+                    } else {
+                        echo "0 no results";
+                    }  
+                     // Free the memory space allocated for this query of the db
+                    mysqli_free_result($result);
                     // close db
                     mysqli_close($conn);
-                ?>
-                
-                <?php
-                    echo "<table>
-                    <caption>Sigles et acronymes en informatique</caption>
-                    <thead>
-                        <tr>
-                            <th>Abrev.</th>
-                            <th>Signification</th>
-                            <th>Définition</th>
-                            <th>Type</th>
-                        </tr>
-                        <thead>    
-                    <tbody>";
-
-                    echo $data['abbreviation'];
-                    echo $data['signification'];
-                    echo $data['definition'];
-                    echo $data['type'];
                 ?>
 
             </article>
