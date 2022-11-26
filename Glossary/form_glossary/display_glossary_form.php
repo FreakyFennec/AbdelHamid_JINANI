@@ -14,7 +14,7 @@
 <body>
     <div id="container">
         <header>
-            <p id="title_header">The nine dev.</p>
+            <p id="title_header">The nine dev</p>
             <img class="img_header" src="assets/img/tag_Lyon_DSC_0015.png" alt="imgHeader">
         </header>
         <nav>
