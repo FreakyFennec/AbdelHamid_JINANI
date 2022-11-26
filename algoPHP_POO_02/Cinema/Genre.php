@@ -1,5 +1,6 @@
 <?php
-    class Genre {
+    class Genre 
+    {
         // Properties
         private string $genre;
 
