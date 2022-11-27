@@ -74,13 +74,13 @@
                                 while($row = mysqli_fetch_assoc($result)) {
                                     $abbreviation = $row['abbreviation'];
                                     $signification = $row['signification'];
-                                    $definition = $row['definition'];
-                                    $type = $row['type'];
+                                    $defAbbrev = $row['defAbbrev'];
+                                    $typeAbbrev = $row['typeAbbrev'];
                                 
                         echo "<td>" . $abbreviation. "</td>
                                 <td>" . $signification. "</td>
-                                <td>" . $definition. "</td>
-                                <td>" . $type. "</td></tr>";
+                                <td>" . $defAbbrev. "</td>
+                                <td>" . $typeAbbrev. "</td></tr>";
                                 }
                         echo "</table>";
                     } else {

@@ -22,7 +22,7 @@
                 <li><a href="#" class="home">Home</a></li>
                 <li><a href="#" class="blog">Blog</a></li>
                 <li><a href="#" class="contact">Contact</a></li>
-                <li><a href="form_glossary/display_glossary_form.php" class="admin">Admin</a></li>
+                <li><a href="form_glossary/glossary_form_post.php" class="admin">Admin</a></li>
             </ul>
         </nav>
         <main>
@@ -32,7 +32,7 @@
                 Pour m'aider dans cette tâche Herculéenne j'ai commencé une page pour les noter au fur et à mesure.<br><br>
                 Et si cela pouvait servir à quelqu'un d'autre j'en serais heureux, bien que la toile regorge de pages bien plus abouties que ne le sera jamais la mienne.</p><br>
                 
-                <a href="dev_glossary/dev_abbreviations.php" class="link_pages"><p class="contLinkPage">Dev abbreviations</p></a>
+                <a href="dev_abbreviations/dev_abbreviations.php" class="link_pages"><p class="contLinkPage">Dev abbreviations</p></a>
             </article>
             <aside>
                 <div id="zone_author">   

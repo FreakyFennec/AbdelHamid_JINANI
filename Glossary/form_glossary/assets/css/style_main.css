@@ -154,6 +154,10 @@ fieldset {
 
     margin: 10px 0px 5px 0px;
 }
+textarea {
+    vertical-align: top;
+}
+  
 #fieldsetButtonR {
     font-size: 1.05em;
     border-radius: 0px 0px 5px 5px;

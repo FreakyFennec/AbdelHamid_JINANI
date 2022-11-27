@@ -29,41 +29,33 @@
             <article>
                 <h1 id="title_article">Form Glossary</h1>
                 
-                <?php
-                    // Work variables
-                    $abbreviationInput = array("Abréviation", "Signification","Definition");
-                    $abbreviationType = 
-                    [
-                        "Acronyme" => "",
-                        "Sigle" => ""
-                    ];
+                <form method="post" action="controller.php">
+                    <fieldset id="fieldsetText">
+                        <div>                    
+                            <label id="inputTextLabel" for="abbreviation">Abbreviation</label>
+                            <input type="text" id="inputText" name="abbreviation" required minlength="2" maxlength="20" size="20"></input><br>
+                                            
+                            <label id="inputTextLabel" for="signification">Signification</label>
+                            <input type="text" id="inputText" name="signification" required minlength="4" maxlength="50" size="20"></input><br>
+                                           
+                            <label id="textAreaLabel" for="defAbbrev">Definition</label>
+                            <textarea type="text" id="textArea" name="defAbbrev" required rows="3" cols="33"></textarea><br>
+                        </div>
+                    </fieldset>
+                    <fieldset id="fieldsetButtonR">
+                        <div id="zoneChoiceType">
+                            <span>Type of abbreviation</span><br>
 
-                    function displayAbbreviationForm($abbreviationInput, $abbreviationType) {
+                            <input type="radio" id="typeAbbrev" name="typeAbbrev" value="Sigle" class="choiceType">
+                            <label for="sigle">Sigle</label><br>
 
-                        echo '<form method="post" action="controller.php"><fieldset id="fieldsetText"><div>';
+                            <input type="radio" id="typeAbbrev" name="typeAbbrev" value="Acronyme" class="choiceType">
+                            <label for="acronyme">Acronyme</label><br>
+                        </div>
+                    </fieldset>
+                    <button type="submit">Submit</button>
+                </form>
 
-                        foreach($abbreviationInput as $abbreviationInput) {
-
-                            echo '
-                                <label id="inputTextLabel" for="#">' .$abbreviationInput. '</label>
-                                <input type="text" id="inputText" name="#" required minlength="4" maxlength="20" size="20"></input><br>
-                            ';
-                        }
-
-                        echo '</div></fieldset>';
-                        echo '<fieldset id="fieldsetButtonR"><div id="zoneChoiceType"><span>Type of abbreviation</span><br>';
-                       
-                        foreach($abbreviationType as $key => $value) {
-                            echo '
-                                <input type="radio" id="' .$key. '" name="type" value="' .$value. '" class="choiceType">
-                                <label for="' .$value. '">' .$key. '</label><br>';
-
-                        }
-                        echo '</div></fieldset>';
-                        echo '<button type="submit">Submit</button></form>';       
-                    }
-                    displayAbbreviationForm($abbreviationInput, $abbreviationType);
-                ?>
             </article>
             <!--<aside>
                 <div id="zone_author">
