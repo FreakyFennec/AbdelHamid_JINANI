@@ -21,7 +21,7 @@
         </p>
         <p>
             <label for="">Quantité désirée :
-                <input type="number" step="any" value="1">
+                <input type="number" step="qqt" value="1">
             </label>
         </p>
         <p>
