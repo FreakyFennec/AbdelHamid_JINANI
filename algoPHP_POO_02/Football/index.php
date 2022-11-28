@@ -10,21 +10,22 @@
 
 <body>
     <?php
-    spl_autoload_register(function ($class_name) { // Pour faire des includes. Les noms de fichiers et de classes doivent se correspondre.
-        include $class_name . '.php';
-    });
-
-    $france = new Pays("FR");
-
-    $kounde = new Joueur("Kounde", "Jules", "1983-07-24", "H", "Barcelonne", $france);
-
-    echo $kounde;
-
-    $espagne = new Pays("ESP");
-    $barcelone = new Equipe("FC Barcelona", $espagne);
-    echo $barcelone;
-
-
+        spl_autoload_register(function ($class_name) { // Pour faire des includes. Les noms de fichiers et de classes doivent se correspondre.
+            include $class_name . '.php';
+        });
+    
+        $france = new Pays("FR");
+    
+        $kounde = new Joueur("Kounde", "Jules", "1983-07-24", "H", "Barcelonne", $france);
+    
+        echo $kounde;
+    
+        $espagne = new Pays("ESP");
+        $barcelone = new Equipe("FC Barcelona", $espagne);
+        echo $barcelone;
+    
+        $carKounde1 = new Carriere($kounde, $barcelone, 2006);
+        echo $carKounde1;
     ?>
 </body>
 
