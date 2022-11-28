@@ -8,7 +8,7 @@
         protected DateTime $birth;
 
         // Constructor
-        public function __construct(string $surName, string $firstName, string $gender,  string $birth) 
+        public function __construct(string $surName, string $firstName, string $gender, string $birth) 
         {
             $this->surName = $surName;
             $this->firstName = $firstName;
@@ -69,4 +69,3 @@
                 <p>Age : " . $this->getAge() . " ans.</p>";
         }
     }
-?>

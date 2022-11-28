@@ -1,25 +1,23 @@
 <?php
-class Personne
+class Joueur
 {
     // Properties
-    private string $nom;
-    private string $prenom;
-    private DateTime $dateNaissance;
-    private genre $genre;
-    private string $lieuNaissance;
-    private string $nationalite;
-    private string $fonction;
+    protected string $nom;
+    protected string $prenom;
+    protected DateTime $dateNaissance;
+    protected string $genre;
+    protected string $lieuNaissance;
+    protected Pays $nationalite;
 
-    // Construct
-    public function __construct(string $nom, string $prenom, DateTime $dateNaissance, genre $genre, string $lieuNaissance, string $nationalite, string $fonction)
+    // Constructor
+    public function __construct(string $nom, string $prenom, string $dateNaissance, string $genre, string $lieuNaissance, Pays $nationalite)
     {
         $this->nom = $nom;
         $this->prenom = $prenom;
-        $this->dateNaissance = $dateNaissance;
+        $this->dateNaissance = new DateTime($dateNaissance);
         $this->genre = $genre;
         $this->lieuNaissance = $lieuNaissance;
         $this->nationalite = $nationalite;
-        $this->nationalite = $fonction;
     }
 
     // Get and Set nom
@@ -43,13 +41,14 @@ class Personne
     }
 
     // Get and Set dateNaissance
-    public function getDateNaissance()
+    public function getDateNaissance(): DateTime
     {
         return $this->dateNaissance;
     }
     public function setDateNaissance($dateNaissance)
     {
-        $this->dateNaissance = $dateNaissance;
+        $this->dateNaissance;
+        return $this;
     }
 
     // Get and Set genre
@@ -82,16 +81,6 @@ class Personne
         $this->nationalite = $nationalite;
     }
 
-    // Get and Set fonction
-    public function getFonction()
-    {
-        return $this->fonction;
-    }
-    public function setFonction($fonction)
-    {
-        $this->fonction = $fonction;
-    }
-
     // Methode calcul age
     public function getAge()
     {
@@ -100,6 +89,6 @@ class Personne
 
     public function __toString()
     {   // Methode pour afficher les informations en lettres       
-        return $this->nom . " " . $this->prenom;
+        return $this->nom . "<br>" . $this->prenom . "<br>" . $this->getAge() . "<br>" . $this->genre . "<br>" . $this->lieuNaissance . "<br>" . $this->nationalite . "<br>";
     }
 }
