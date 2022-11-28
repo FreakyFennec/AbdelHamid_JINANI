@@ -43,6 +43,11 @@
         public function addCarriere(Carriere $carriere) {
             $this->carrieres[] = $carriere;            
         }
+       
+        // Methode ajoute équipes
+        public function addEquipe(Equipe $equipe) {
+            $this->equipes[] = $equipe;
+        }
 
         // Affiche carriere
         public function afficheCarriere() {

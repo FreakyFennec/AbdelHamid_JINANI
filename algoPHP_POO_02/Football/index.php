@@ -35,9 +35,9 @@
         $carKounde2 = new Carriere($kounde, $nante, 2001, 1999);
         echo $carKounde2;
 
-        $equipesFrance = ;
+        $equipesFrance = new Pays($france,$nante, $marseille);
 
-        echo $equipesFrance->afficheInfosEquipe($nante, $marseille);
+        echo $equipesFrance->afficheEquipesParPays();
     ?>
 </body>
 

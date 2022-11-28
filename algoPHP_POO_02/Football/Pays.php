@@ -3,8 +3,6 @@
     class Pays
     {
         private string $pays;
-        private array $joueurs;
-        private array $equipes;
 
         public function __construct(string $pays)
         {
@@ -26,10 +24,18 @@
 
             return $this;
         }
-
+       
         public function __toString()
         {
             return $this->pays;
+        }
+
+        public function afficheEquipesParPays(){
+            $result = "<h3>Equipes de $this</h3><br>";
+            foreach($this->equipes as $equipe) {
+                $result .= $equipe. "<br>";
+            }
+            return $result;
         }
     }
 ?>
