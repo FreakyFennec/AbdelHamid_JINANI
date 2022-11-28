@@ -27,11 +27,17 @@
         $nante = new Equipe("Nante", $france, $france);
         echo $nante;
 
+        $marseille = new Equipe("OM", $france, $france);
+
         $carKounde1 = new Carriere($kounde, $barcelone, 2006, 2001);
         echo $carKounde1;
 
         $carKounde2 = new Carriere($kounde, $nante, 2001, 1999);
         echo $carKounde2;
+
+        $equipesFrance = ;
+
+        echo $equipesFrance->afficheInfosEquipe($nante, $marseille);
     ?>
 </body>
 

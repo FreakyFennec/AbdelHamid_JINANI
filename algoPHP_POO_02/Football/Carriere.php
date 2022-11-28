@@ -42,7 +42,7 @@
 
         public function __toString()
         {
-            return "<br><br>" .$this->joueur. " " .$this->equipe. " " .$this->anneeDansEquipe. " Année de ralliement à l'équipe : " .$this->anneeRalliement. "<br><br>";
+            return "<br><br>" .$this->joueur. " " .$this->equipe. " " .$this->anneeDansEquipe. " Année de ralliement à l'équipe : " .$this->anneeRalliement."";
         }
 
         // Methode affiche infos équipe

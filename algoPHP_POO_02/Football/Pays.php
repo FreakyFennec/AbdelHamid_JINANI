@@ -3,10 +3,14 @@
     class Pays
     {
         private string $pays;
+        private array $joueurs;
+        private array $equipes;
 
         public function __construct(string $pays)
         {
             $this->pays = $pays;
+            $this->joueurs = [];
+            $this->equipes = [];
         }
 
         // Get and Set Pays
