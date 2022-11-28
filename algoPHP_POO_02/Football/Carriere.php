@@ -5,9 +5,10 @@
         private Joueur $joueur;
         private Equipe $equipe;
         private int $anneeDansEquipe;
+        private int $anneeRalliement;
 
         // Construct
-        public function __construct(Joueur $joueur, Equipe $equipe, int $anneeDansEquipe)
+        public function __construct(Joueur $joueur, Equipe $equipe, int $anneeDansEquipe, int $anneeRalliement)
         {
             $this->joueur = $joueur;
             $this->joueur->addCarriere($this);
@@ -16,6 +17,7 @@
             $this->equipe->addCarriere($this);
 
             $this->anneeDansEquipe = $anneeDansEquipe;
+            $this->anneeRalliement = $anneeRalliement;
         }
 
         // Get joueur
@@ -33,10 +35,14 @@
         {
             return $this->anneeDansEquipe;
         }
+        
+        public function getAnneRalliement() {
+            return $this->anneeRalliement;
+        }
 
         public function __toString()
         {
-            return $this->joueur. " " .$this->equipe. " " .$this->anneeDansEquipe;
+            return "<br><br>" .$this->joueur. " " .$this->equipe. " " .$this->anneeDansEquipe. " Année de ralliement à l'équipe : " .$this->anneeRalliement. "<br><br>";
         }
 
         // Methode affiche infos équipe
@@ -44,7 +50,8 @@
             return "<h3>Infos équipe :</h3>
                 <p>" . $this->joueur . "</p>
                 <p>" . $this->equipe . "</p>
-                <p>" . $this->anneeDansEquipe . "</p>";
+                <p>" . $this->anneeDansEquipe . "</p>
+                <p>" . $this->anneeRalliement . "</p><br>";
         }
     }
 ?>

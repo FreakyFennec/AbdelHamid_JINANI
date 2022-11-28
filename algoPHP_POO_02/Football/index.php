@@ -16,7 +16,7 @@
 
         $france = new Pays("FR");
 
-        $kounde = new Joueur("Kounde", "Jules", "1983-07-24", "H", "Barcelonne", $france);
+        $kounde = new Joueur("Kounde", "Jules", "1983-07-24", "H", "Paris", $france);
 
         echo $kounde;
 
@@ -27,10 +27,10 @@
         $nante = new Equipe("Nante", $france, $france);
         echo $nante;
 
-        $carKounde1 = new Carriere($kounde, $barcelone, 2006);
+        $carKounde1 = new Carriere($kounde, $barcelone, 2006, 2001);
         echo $carKounde1;
 
-        $carKounde2 = new Carriere($kounde, $nante, 2001);
+        $carKounde2 = new Carriere($kounde, $nante, 2001, 1999);
         echo $carKounde2;
     ?>
 </body>
