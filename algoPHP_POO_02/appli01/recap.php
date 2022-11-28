@@ -11,6 +11,9 @@
 </head>
 <body>
     <?php
+        var_dump($_SESSION);
+    ?>
+    <?php
         if(!isset($_SESSION["products"]) || empty($_SESSION["products"])) {
             echo "<p>Aucun produit en session...</p>";
         } else {
