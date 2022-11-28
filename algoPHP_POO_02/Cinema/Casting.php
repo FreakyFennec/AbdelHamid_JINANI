@@ -41,9 +41,8 @@
         // Method display infos casting
         public function displayInfosCasting() {
             return "<h3>Infos casting du film</h3>
-                <p>" .$this->movie."</p>
-                <p>" .$this->character."</p>
-                <p>" .$this->actor."</p>";
+                <p>" .$this->movie. "</p>
+                <p>" .$this->character. "</p>
+                <p>" .$this->actor. "</p>";
         }
     }
-?>

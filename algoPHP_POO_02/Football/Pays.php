@@ -1,36 +1,30 @@
 <?php
 
-class Pays
-{
-    private string $pays;
-
-    public function __construct(string $pays)
+    class Pays
     {
-        $this->pays = $pays;
-    }
+        private string $pays;
 
-    /**
-     * Get the value of pays
-     */
-    public function getPays()
-    {
-        return $this->pays;
-    }
+        public function __construct(string $pays)
+        {
+            $this->pays = $pays;
+        }
 
-    /**
-     * Set the value of pays
-     *
-     * @return  self
-     */
-    public function setPays($pays)
-    {
-        $this->pays = $pays;
+        // Get and Set Pays
+        public function getPays()
+        {
+            return $this->pays;
+        }
 
-        return $this;
-    }
+        // Get and Set Pays
+        public function setPays($pays)
+        {
+            $this->pays = $pays;
 
-    public function __toString()
-    {
-        return $this->pays;
+            return $this;
+        }
+
+        public function __toString()
+        {
+            return $this->pays;
+        }
     }
-}

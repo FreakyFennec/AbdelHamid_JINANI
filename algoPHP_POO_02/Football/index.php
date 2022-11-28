@@ -19,6 +19,12 @@
     $kounde = new Joueur("Kounde", "Jules", "1983-07-24", "H", "Barcelonne", $france);
 
     echo $kounde;
+
+    $espagne = new Pays("ESP");
+    $barcelone = new Equipe("FC Barcelona", $espagne);
+    echo $barcelone;
+
+
     ?>
 </body>
 
