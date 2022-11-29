@@ -19,5 +19,5 @@
             $_SESSION["products"][] = $product;
         }
     }
-    header("Location:index.php");   // Autrement retourne à la page index de toutes
+    header("Location:recap.php");   // Autrement retourne à la page index de toutes
 ?>
