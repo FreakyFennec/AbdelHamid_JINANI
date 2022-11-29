@@ -44,7 +44,11 @@
                                         "<td>".$index."</td>",
                                         "<td>".$product["name"]."</td>",
                                         "<td>".number_format($product["price"], 2, ",","&nbsp;")."</td>",
-                                        "<td><p class='incrementeQantMoins'>-</p>".$product["qqt"]."<p class='incrementeQantPlus'>+</p></td>",
+
+                                        
+                                        "<td><input class='qqtPlus' type='submit'' value='-'>".$product["qqt"]."<input class='qqtMoins' type='submit value='+'></td>",
+                                        
+
                                         "<td>".number_format($product["total"], 2, ",","&nbsp;")."</td>",
                                         "<td><input type='image' id='imgCorbeille' alt='Delet'
                                         src='assets/img/icons/corbeille.png'></td>",

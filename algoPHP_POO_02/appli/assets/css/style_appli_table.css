@@ -76,7 +76,7 @@ tbody tr {
     background-color: rgb(167, 17, 17);
     border-radius: 5px;
 }
-.incrementeQantMoins, .incrementeQantPlus {
+.qqtMoins, .qqtPlus {
     display: inline-block;
     width: 30px;
     height: 30px;
