@@ -45,8 +45,10 @@
                                         "<td>".$product["name"]."</td>",
                                         "<td>".number_format($product["price"], 2, ",","&nbsp;")."</td>",
 
-                                        
-                                        "<td><input class='qqtPlus' type='submit'' value='-'>".$product["qqt"]."<input class='qqtMoins' type='submit value='+'></td>",
+
+                                        "<td class='quantArea'><input type='image' id='imgMoins' alt='Quantitée moins'
+                                        src='assets/img/icons/iconMoins.png'>".$product["qqt"]."<input type='image' id='imgPlus' alt='Quantitée plus'
+                                        src='assets/img/icons/iconPlus.png'></td>",
                                         
 
                                         "<td>".number_format($product["total"], 2, ",","&nbsp;")."</td>",
