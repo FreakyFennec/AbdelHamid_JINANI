@@ -16,11 +16,8 @@
                 "total" => $price * $qqt
             ];
 
-            $_SESSION["produts"][] = $product;
+            $_SESSION["products"][] = $product;
         }
     }
-
     header("Location:index.php");   // Autrement retourne à la page index de toutes
-
-
 ?>

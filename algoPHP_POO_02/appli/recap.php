@@ -8,10 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Récapitulatif des produits</title>
+    <link rel="stylesheet" href="assets/css/style_main.css">
 </head>
 <body>
     <?php
-        var_dump($_SESSION);
+        // var_dump($_SESSION);
     ?>
     <?php
         if(!isset($_SESSION["products"]) || empty($_SESSION["products"])) {
@@ -41,7 +42,7 @@
                     }
                     echo "<tr>",
                                 "<td colspan = 4>Total général : </td>",
-                                "<td><strong>" .number_format($product["totalGeneral"], 2, ",","&nbsp;"). "&nbsp;</strong></td>",
+                                "<td><strong>" .number_format($product["total"], 2, ",","&nbsp;") . "&nbsp;</strong></td>",
                             "</tr>",
                         "</tbody>",
                     "</table>";

@@ -1,10 +1,3 @@
-<?php
-    session_save_path();        // Chemin où sont sauvegardé les données. (faire un echo pour visualiser)
-    session_start();
-    echo "Salut";
-    $_SESSION["user"] = "Freaky";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +21,7 @@
         </p>
         <p>
             <label for="">Quantité désirée :
-                <input type="number" step="qqt" value="1">
+                <input type="number" step="qqt" name="qqt" value="1">
             </label>
         </p>
         <p>
