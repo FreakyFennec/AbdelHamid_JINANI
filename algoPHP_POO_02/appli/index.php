@@ -5,28 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajout produit</title>
+    <link rel="stylesheet" href="assets/css/style_main.css">
+    <link rel="stylesheet" href="assets/css/style_form.css">
 </head>
 <body>
-    <h1>Ajouter un produit</h1>
-    <form action="traitement.php" method="post">
-        <p>
-            <label for="">Nom du produit :
-                <input type="text" name="name">
-            </label>
-        </p>
-        <p>
-            <label for="">Prix du produit :
-                <input type="number" step="any" name="price">
-            </label>
-        </p>
-        <p>
-            <label for="">Quantité désirée :
-                <input type="number" step="qqt" name="qqt" value="1">
-            </label>
-        </p>
-        <p>
-            <input type="submit" name="submit" value="Ajouter le produit">
-        </p>
-    </form>
+    <div id="container">
+        <nav>
+            <ul class="ul_navigation">
+                <li><a href="index.php" class="accueil">Accueil</a></li>
+                <li><a href="#" class="listeProduits">Liste des produits</a></li>
+                <li><a href="recap.php" class="recap">Récap</a></li>
+                <li><a href="#" class="numRecap">1</a></li>
+            </ul>
+        </nav>
+        <main>
+            <form action="traitement.php" method="post">
+                <fieldset id="fieldsetText">
+                    <div id="inputArea">
+                        <div>
+                            <label id="inputTextLabel" for="">Nom du produit :</label>
+                            <input id="inputText" type="text" name="name" size="20">
+                        </div>
+                                            
+                        <div>
+                            <label id="inputTextLabel" for="">Prix du produit :</label>
+                            <input id="inputText" type="number" step="any" name="price" size="20">
+                        </div>
+                                            
+                        <div>
+                            <label id="inputTextLabel" for="">Quantité désirée :</label>
+                            <input id="inputText" type="number" step="qqt" name="qqt" value="1" size="20">
+                        </div>                       
+                    </div>                   
+                </fieldset>
+                <input id="ajoutProduit" type="submit" name="submit" value="Ajouter"> 
+            </form>
+        </main>
+    </div>
 </body>
 </html>
