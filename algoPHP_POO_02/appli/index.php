@@ -19,7 +19,7 @@
             </ul>
         </nav>
         <main>
-            <form action="traitement.php" method="get">
+            <form action="traitement.php?action=add" method="POST" enctype="multipart/form-data">
                 <fieldset id="fieldsetText">
                     <div id="inputArea">
                         <div>

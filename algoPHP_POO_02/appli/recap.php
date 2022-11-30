@@ -24,21 +24,44 @@
         <main>
         <?php
             if(isset($_GET["action"])) {
-
+                echo "<table>",
+                        "<thead>",
+                            "<tr>",
+                                "<th>#</th>",
+                                "<th>Nom</th>",
+                                "<th>Prix</th>",
+                                "<th>Quantité</th>",
+                                "<th>Total</th>",
+                                "<th>Actions</th>",
+                            "</tr>",
+                        "</thead>",
+                        "<tbody>";
 
 
                 switch($_GET["action"]) {
+
                     // AJOUTER UN PRODUIT
                     case "add":
 
-                        array_push($_SESSION["products"]["product"]);   // Ajoute à l'array des produits le produit.
+                        if(isset($_POST["submit"])) {
+                            // Ici on vérifie l'intégrité des valeurs transmises dans le tableau $_POST.
+                            $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                            $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+                            $qqt = filter_input(INPUT_POST, "qqt", FILTER_VALIDATE_INT);
+                        }
+
+
+                        
+
                         header("Location: recap.php");
                         break;
+
+                        
 
                     // SUPPRIMER UN PRODUIT
                     case "delet":
 
-                        array_ 
+                        //array_ 
                         header("Location: recap.php");
                         break;
                         
@@ -62,18 +85,7 @@
 
                 }
 
-                echo "<table>",
-                        "<thead>",
-                            "<tr>",
-                                "<th>#</th>",
-                                "<th>Nom</th>",
-                                "<th>Prix</th>",
-                                "<th>Quantité</th>",
-                                "<th>Total</th>",
-                                "<th>Actions</th>",
-                            "</tr>",
-                        "</thead>",
-                        "<tbody>";
+                
                         $totalGeneral = 0;
                         foreach($_SESSION["products"] as $index => $product) {
                             echo  "<tr>",
