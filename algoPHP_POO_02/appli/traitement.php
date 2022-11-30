@@ -36,7 +36,7 @@
             // SUPPRIMER UN PRODUIT
             case "delet":
 
-                //array_ 
+                
                 header("Location: recap.php");
                 break;
                 

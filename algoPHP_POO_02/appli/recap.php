@@ -24,7 +24,7 @@
         <main>
         <?php
             if(!isset($_SESSION["products"]) || empty($_SESSION["products"])) {
-                echo "<p>Aucun produit en session...</p>";
+                echo "<p class='panierVide'>Aucun produit en session...</p>";
             } else {
                 echo "<table>",
                         "<thead>",
@@ -42,28 +42,35 @@
                         foreach($_SESSION["products"] as $index => $product) {
                             echo  "<tr>",
                                         "<td>".$index."</td>",
+
                                         "<td>".$product["name"]."</td>",
+
                                         "<td>".number_format($product["price"], 2, ",","&nbsp;")."</td>",
 
-
-                                        "<td class='quantArea'><input type='image' id='imgMoins' alt='Quantitée moins'
-                                        src='assets/img/icons/iconMoins.png'>".$product["qqt"]."<input type='image' id='imgPlus' alt='Quantitée plus'
-                                        src='assets/img/icons/iconPlus.png'></td>",
-                                        
+                                        "<td class='quantArea'>
+                                            <input type='image' id='imgMoins' alt='Quantitée moins' src='assets/img/icons/iconMoins.png'>
+                                            " .$product["qqt"]. "
+                                            <input type='image' id='imgPlus' alt='Quantitée plus' src='assets/img/icons/iconPlus.png'>
+                                        </td>",                                       
 
                                         "<td>".number_format($product["total"], 2, ",","&nbsp;")."</td>",
-                                        "<td><input type='image' id='imgCorbeille' alt='Delet'
-                                        src='assets/img/icons/corbeille.png'></td>",
+
+                                        "<td>
+                                            <input type='image' id='imgCorbeille' alt='Delet' src='assets/img/icons/corbeille.png'>
+                                        </td>",
                                     "</tr>";
                             $totalGeneral += $product["total"];
                         }
+                        $totalProduits = count($_SESSION["products"]);
                         echo "<tr>",
-                                    "<td colspan = 2>Nombre de produits : </td>",
+                                    "<td colspan = 2>Nombre de produits : " .$totalProduits. "</td>",
                                     "<td colspan = 2>Total général : </td>",
                                     "<td><strong>" .number_format($totalGeneral, 2, ",","&nbsp;") . "&nbsp;</strong></td>",
                                 "</tr>",
                                 "<tr>",
-                                    "<td colspan = 6><input class='boutonVidePanier' type='submit' name='submit' value='Vider le panier' onclick='viderPanier();'></td>",
+                                    "<td colspan = 2>
+                                        <a href='traitement.php?action=clear'class='boutonVidePanier'>Vider le panier</a>
+                                    </td>",
                                 "</tr>",
                             "</tbody>",
                         "</table>";
