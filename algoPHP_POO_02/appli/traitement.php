@@ -74,8 +74,7 @@
                 break;
             // AFFICHER LE DETAIL
             case "detail":
-        }
-        
+        }        
     }
     header("Location:recap.php");   // Autrement retourne à la page index de toutes
 ?>
