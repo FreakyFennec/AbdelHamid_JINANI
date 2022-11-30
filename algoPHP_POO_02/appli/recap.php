@@ -24,27 +24,42 @@
         <main>
         <?php
             if(isset($_GET["action"])) {
+
+
+
                 switch($_GET["action"]) {
                     // AJOUTER UN PRODUIT
                     case "add":
 
-                        
+                        array_push($_SESSION["products"]["product"]);   // Ajoute à l'array des produits le produit.
+                        header("Location: recap.php");
+                        break;
+
                     // SUPPRIMER UN PRODUIT
                     case "delet":
+
+                        array_ 
+                        header("Location: recap.php");
+                        break;
+                        
                     // VIDER LE PANIER
                     case "clear":
 
                         // Vider l'array de produit en session
                         unset($_SESSION["products"]);
                         header("Location: recap.php");
-                        die();
+                        die();                                  // Termine le script courant comme exit().
                         break;
+
                     // AUGMENTER LA QUANTITE
                     case "up-qtt":
+
                     // DIMINUER LA QUANTITE
                     case "down-qtt":
+
                     // AFFICHER LE DETAIL
                     case "detail":
+
                 }
 
                 echo "<table>",
@@ -62,21 +77,22 @@
                         $totalGeneral = 0;
                         foreach($_SESSION["products"] as $index => $product) {
                             echo  "<tr>",
-                                        "<td>".$index."</td>",
-                                        "<td>".$product["name"]."</td>",
-                                        "<td>".number_format($product["price"], 2, ",","&nbsp;")."</td>",
+                                        "<td>".$index."</td>",                                                      // Index du produit.
+                                        "<td>".$product["name"]."</td>",                                            // Nom du produit.
+                                        "<td>".number_format($product["price"], 2, ",","&nbsp;")."</td>",           // Prix du produit.
 
-
-                                        "<td class='quantArea'><input type='image' id='imgMoins' alt='Quantitée moins'
-                                        src='assets/img/icons/iconMoins.png'>".$product["qqt"]."<input type='image' id='imgPlus' alt='Quantitée plus'
-                                        src='assets/img/icons/iconPlus.png'></td>",
+                                        "<td class='quantArea'>
+                                            <input type='image' id='imgMoins' alt='Quantitée moins' src='assets/img/icons/iconMoins.png'>" 
+                                            .$product["qqt"].                                                                               // Quantité de produit.
+                                            "<input type='image' id='imgPlus' alt='Quantitée plus' src='assets/img/icons/iconPlus.png'>
+                                        </td>",
                                         
-
-                                        "<td>".number_format($product["total"], 2, ",","&nbsp;")."</td>",
-                                        "<td><input type='image' id='imgCorbeille' alt='Delet'
-                                        src='assets/img/icons/corbeille.png'></td>",
+                                        "<td>".number_format($product["total"], 2, ",","&nbsp;")."</td>",                                   // Sous total par produit.
+                                        "<td>
+                                            <input type='image' id='imgCorbeille' alt='Delet' src='assets/img/icons/corbeille.png'>         
+                                        </td>",
                                     "</tr>";
-                            $totalGeneral += $product["total"];
+                            $totalGeneral += $product["total"];     // Total des produits + le sous total par prduit.
                         }
                         echo "<tr>",
                                     "<td colspan = 2>Nombre de produits : </td>",
