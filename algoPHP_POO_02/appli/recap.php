@@ -60,7 +60,7 @@
                         echo "<tr>",
                                     "<td colspan = 2>Nombre de produits : </td>",
                                     "<td colspan = 2>Total général : </td>",
-                                    "<td><strong>" .number_format($product["total"], 2, ",","&nbsp;") . "&nbsp;</strong></td>",
+                                    "<td><strong>" .number_format($totalGeneral, 2, ",","&nbsp;") . "&nbsp;</strong></td>",
                                 "</tr>",
                                 "<tr>",
                                     "<td colspan = 6><input class='boutonVidePanier' type='submit' name='submit' value='Vider le panier' onclick='viderPanier();'></td>",

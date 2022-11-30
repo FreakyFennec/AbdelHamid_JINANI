@@ -19,19 +19,19 @@
                     $qqt = filter_input(INPUT_POST, "qqt", FILTER_VALIDATE_INT);
 
                     // Vérifie si tous les filtres ont fonctionnés.
-                    if(isset($_GET["action"])) {
+                    if($name && $price && $qqt) {
                         $product = [
-                            $action = $_GET["action"],
-                            $name = $_GET["name"],
-                            $price = $_GET["price"],
-                            $qqt = $_GET["qqt"],
-                            $total = $price * $qqt
+                            "name" => $name,
+                            "price" => $price,
+                            "qqt" => $qqt,
+                            "total" => $price * $qqt
                         ];
                         
-                        
-                    }
-                        array_push($_SESSION["products"] = $product);
+                        $_SESSION["products"][] = $product;
+                    }                       
                 }
+                header("Location: recap.php");
+                break;
 
             // SUPPRIMER UN PRODUIT
             case "delet":
