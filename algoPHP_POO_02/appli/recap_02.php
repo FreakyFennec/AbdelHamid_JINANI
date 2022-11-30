@@ -23,30 +23,9 @@
         </nav>
         <main>
         <?php
-            if(isset($_GET["action"])) {
-                switch($_GET["action"]) {
-                    // AJOUTER UN PRODUIT
-                    case "add":
-
-                        
-                    // SUPPRIMER UN PRODUIT
-                    case "delet":
-                    // VIDER LE PANIER
-                    case "clear":
-
-                        // Vider l'array de produit en session
-                        unset($_SESSION["products"]);
-                        header("Location: recap.php");
-                        die();
-                        break;
-                    // AUGMENTER LA QUANTITE
-                    case "up-qtt":
-                    // DIMINUER LA QUANTITE
-                    case "down-qtt":
-                    // AFFICHER LE DETAIL
-                    case "detail":
-                }
-
+            if(!isset($_SESSION["products"]) || empty($_SESSION["products"])) {
+                echo "<p>Aucun produit en session...</p>";
+            } else {
                 echo "<table>",
                         "<thead>",
                             "<tr>",
@@ -88,9 +67,12 @@
                                 "</tr>",
                             "</tbody>",
                         "</table>";
+
+                function viderPanier() {
+                    unset($_SESSION["products"]);
+                } 
             }
-            
-            header("Location: index.php");
+                               
         ?>
         </main>
     </div>
