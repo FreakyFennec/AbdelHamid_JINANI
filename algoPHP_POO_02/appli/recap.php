@@ -39,7 +39,9 @@
                         "</thead>",
                         "<tbody>";
                         $totalGeneral = 0;
+                        $totalProduits = 0;
                         foreach($_SESSION["products"] as $index => $product) {
+                            $total = $product["price"] * $product["qqt"];
                             echo  "<tr>",
                                         "<td>".$index."</td>",
 
@@ -48,20 +50,20 @@
                                         "<td>".number_format($product["price"], 2, ",","&nbsp;")."</td>",
 
                                         "<td class='quantArea'>
-                                            <input type='image' id='imgMoins' alt='Quantitée moins' src='assets/img/icons/iconMoins.png'>
+                                            <a href='traitement.php?action=down-qtt&id=$index'><input type='image' id='imgMoins' alt='Quantitée moins' src='assets/img/icons/iconMoins.png'></a>
                                             " .$product["qqt"]. "
-                                            <input type='image' id='imgPlus' alt='Quantitée plus' src='assets/img/icons/iconPlus.png'>
+                                            <a href='traitement.php?action=up-qtt&id=$index'><input type='image' id='imgPlus' alt='Quantitée plus' src='assets/img/icons/iconPlus.png'></a>
                                         </td>",                                       
 
-                                        "<td>".number_format($product["total"], 2, ",","&nbsp;")."</td>",
+                                        "<td>".number_format($total, 2, ",","&nbsp;")."</td>",
 
                                         "<td>
-                                            <input type='image' id='imgCorbeille' alt='Delet' src='assets/img/icons/corbeille.png'>
+                                        <a href='traitement.php?action=delet&id=$index'><input type='image' id='imgCorbeille' alt='Delet' src='assets/img/icons/corbeille.png'></a>
                                         </td>",
                                     "</tr>";
-                            $totalGeneral += $product["total"];
+                            $totalGeneral += $total;
                         }
-                        $totalProduits = count($_SESSION["products"]);
+                        $totalProduits += $product["qqt"];
                         echo "<tr>",
                                     "<td colspan = 2>Nombre de produits : " .$totalProduits. "</td>",
                                     "<td colspan = 2>Total général : </td>",

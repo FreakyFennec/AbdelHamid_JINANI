@@ -36,7 +36,9 @@
             // SUPPRIMER UN PRODUIT
             case "delet":
 
-                
+                // Supprimer un item de l'array
+                unset($_SESSION["products"][$_GET["id"]]);
+
                 header("Location: recap.php");
                 break;
                 
@@ -52,9 +54,24 @@
             // AUGMENTER LA QUANTITE
             case "up-qtt":
 
+                // Augmente la valeur quantité
+                $_SESSION["products"][$_GET["id"]]["qqt"]++;
+
+                header("Location: recap.php");
+                break;
             // DIMINUER LA QUANTITE
             case "down-qtt":
+                
+                // Diminue la valeur quantité
+                $_SESSION["products"][$_GET["id"]]["qqt"]--;
 
+                if($_SESSION["products"][$_GET["id"]]["qqt"] == 0) {
+                    unset($_SESSION["products"]);
+                    header("Location: recap.php");
+                    die();                         
+                }
+                header("Location: recap.php");
+                break;
             // AFFICHER LE DETAIL
             case "detail":
         }
