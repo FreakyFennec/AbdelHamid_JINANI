@@ -29,7 +29,7 @@
                     </li>
                     <li>
                         <a class="nav-link" href="recap.php"> 
-                            <?php $class = (getWholeQuantity() > 0) ? "success" : "danger"; ?>
+                            <?php $class = (getWholeQuantity() > 0) ? "success" : "danger"; ?>      <!-- Opérateur ternaire ? -->
                             Récap <span class="badge badge-pill bg-<?= $class ?>"><?= getWholeQuantity() ?></span>
                         </a>
                     </li>
