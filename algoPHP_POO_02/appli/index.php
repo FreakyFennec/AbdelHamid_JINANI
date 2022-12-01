@@ -38,7 +38,7 @@
                         </div>                       
                         <div>
                             <label id="inputTextLabel" for="">Catégorie :</label>
-                            <select id="inputText" type="select" name="category" size="1">
+                            <select id="inputText" type="select" name="category">
                                 <option value="fruits">Fruits</option>
                                 <option value="legumes">Légumes</option>
                                 <option value="feculents">Féculents</option>
