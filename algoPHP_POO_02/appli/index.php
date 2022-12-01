@@ -36,6 +36,14 @@
                             <label id="inputTextLabel" for="">Quantité désirée :</label>
                             <input id="inputText" type="number" step="qqt" name="qqt" value="1" size="20">
                         </div>                       
+                        <div>
+                            <label id="inputTextLabel" for="">Catégorie :</label>
+                            <select id="inputText" type="select" name="category" size="1">
+                                <option value="fruits">Fruits</option>
+                                <option value="legumes">Légumes</option>
+                                <option value="feculents">Féculents</option>
+                            </select>
+                        </div>                       
                     </div>                   
                 </fieldset>
                 <input id="ajoutProduit" type="submit" name="submit" value="Ajouter"> 
