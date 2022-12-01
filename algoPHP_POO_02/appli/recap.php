@@ -34,6 +34,7 @@
                                 "<th>Prix</th>",
                                 "<th>Quantité</th>",
                                 "<th>Total</th>",
+                                "<th>Catégorie</th>",
                                 "<th>Actions</th>",
                             "</tr>",
                         "</thead>",
@@ -56,6 +57,8 @@
                                         </td>",                                       
 
                                         "<td>".number_format($total, 2, ",","&nbsp;")."</td>",
+
+                                        "<td>".$product["category"]."</td>",
 
                                         "<td>
                                         <a href='traitement.php?action=delet&id=$index'><input type='image' id='imgCorbeille' alt='Delet' src='assets/img/icons/corbeille.png'></a>

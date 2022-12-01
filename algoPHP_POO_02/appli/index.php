@@ -39,9 +39,9 @@
                         <div>
                             <label id="inputTextLabel" for="">Catégorie :</label>
                             <select id="inputText" type="select" name="category">
-                                <option value="fruits">Fruits</option>
-                                <option value="legumes">Légumes</option>
-                                <option value="feculents">Féculents</option>
+                                <option value="Fruits">Fruits</option>
+                                <option value="Legumes">Légumes</option>
+                                <option value="Féculents">Féculents</option>
                             </select>
                         </div>                       
                     </div>                   

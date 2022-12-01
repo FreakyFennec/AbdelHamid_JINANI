@@ -17,7 +17,7 @@
                     $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);   // FILTER_SANITIZE_STRING is deprecated (c'était censé supprimer tous caractères spéciaux et balises html, éviter l'injection de code).
                     $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                     $qqt = filter_input(INPUT_POST, "qqt", FILTER_VALIDATE_INT);
-                    $category = filter_input(INPUT_POST, "category", FILTER_VALIDATE_SPECIAL_CHARS);
+                    $category = filter_input(INPUT_POST, "category", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
                     // Vérifie si tous les filtres ont fonctionnés.
                     if($name && $price && $qqt) {
