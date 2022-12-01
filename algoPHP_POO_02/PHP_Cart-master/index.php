@@ -20,7 +20,7 @@
     <div class="row">
         <label for="qtt" class="form-label">
             Quantité désirée :
-            <input id="qtt" type="number" name="qtt" value="1" class="form-control" required>
+            <input id="qtt" type="number" name="qtt" value="1" min="1" class="form-control" required>
         </label>
     </div>
     <div class="row">

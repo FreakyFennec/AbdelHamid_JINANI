@@ -24,12 +24,12 @@
                         $error = $_FILES['file']['error'];
 
                         // récupérer l'extension du fichier uploadé
-                        $tabExtension = explode('.', $nameImg);
+                        $tabExtension = explode('.', $nameImg);             // Divise une string ('', string)
                         $extension = strtolower(end($tabExtension));
                         //Tableau des extensions acceptées
                         $extensions = ['jpg', 'png', 'jpeg', 'gif'];
                         //Taille max acceptée
-                        $maxSize = 400000;
+                        $maxSize = 400000;                                  // Quelle unitée ?
                         
                         // vérifier si l'extension est autorisée et si la taille n'excède pas le quota imposé
                         if(in_array($extension, $extensions) && $size <= $maxSize && $error == 0){
