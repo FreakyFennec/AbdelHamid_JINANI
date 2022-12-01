@@ -40,7 +40,8 @@ INSERT INTO `dev_abbreviations` (`id`, `abbreviation`, `signification`, `defAbbr
 	(7, 'BOM', 'Byte Order Mark', 'Série d\'octets au début d\'un fichier texte, pour définir l\'encodage du contenu. Si encodage UTF-8 alors sans BOM', 'Acronyme'),
 	(8, 'PHP', 'Hypertext Preprocessor', 'Langage informatique (de script). Principalement utilisé pour concevoir des sites dynamiques.', 'Sigle'),
 	(9, 'MOOC', 'Massive Open Online Course', 'Formation en ligne ouverte à tous.', 'Acronyme'),
-	(10, 'API', 'Application Programming Interface', 'C\'est une interface logicielle qui permet de « connecter » un logiciel ou un service à un autre logiciel ou service afin d’échanger des données et des fonctionnalités.', 'Acronyme');
+	(10, 'API', 'Application Programming Interface', 'C\'est une interface logicielle qui permet de « connecter » un logiciel ou un service à un autre logiciel ou service afin d’échanger des données et des fonctionnalités.', 'Acronyme'),
+	(11, 'MCD', 'Modèle Conceptuel Données', 'Représentation graphique permetant de comprendre comment les différents éléments sont liés entre eux. (base de données).', 'Sigle');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
