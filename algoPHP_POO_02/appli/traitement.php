@@ -68,7 +68,7 @@
                 $_SESSION["products"][$_GET["id"]]["qqt"]--;
 
                 if($_SESSION["products"][$_GET["id"]]["qqt"] == 0) {
-                    unset($_SESSION["products"]);
+                    unset($_SESSION["products"][$_GET["id"]]);
                     header("Location: recap.php");
                     die();                         
                 }
