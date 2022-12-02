@@ -30,10 +30,14 @@
                         ];
                         
                         $_SESSION["products"][] = $product;
+
+                        $_SESSION['message'] = "<p>Produit ajouté</p>"; 
+                        header("Location: index.php");
+                        die;
                     }                       
                 }
-                header("Location: recap.php");
-                break;
+
+                
 
             // SUPPRIMER UN PRODUIT
             case "delet":

@@ -46,7 +46,17 @@
                         </div>                       
                     </div>                   
                 </fieldset>
-                <input id="ajoutProduit" type="submit" name="submit" value="Ajouter"> 
+                
+                <input id="ajoutProduit" type="submit" name="submit" value="Ajouter"><br>
+                <div>
+                    <?php
+                    session_start();
+                        if(isset($_SESSION['message'])) {
+                            echo $_SESSION['message'];
+                            unset ($_SESSION['message']);
+                        }
+                    ?>
+                </div>                
             </form>
         </main>
     </div>
