@@ -52,7 +52,7 @@
                     }
 
                     // Query
-                    $req = "SELECT * FROM dev_abbreviations";
+                    $req = "SELECT * FROM dev_glossary";
                     $result = $conn->query($req);
                     $num = mysqli_num_rows($result);                
                     
@@ -62,7 +62,7 @@
                             <caption>Sigles et acronymes en informatique</caption>
                             <thead>
                                 <tr>
-                                    <th>Abrev.</th>
+                                    <th>Nom</th>
                                     <th>Signification</th>
                                     <th>Définition</th>
                                     <th>Type</th>
@@ -72,15 +72,15 @@
                                 <tr>";
 
                                 while($row = mysqli_fetch_assoc($result)) {
-                                    $abbreviation = $row['abbreviation'];
+                                    $name = $row['name'];
                                     $signification = $row['signification'];
-                                    $defAbbrev = $row['defAbbrev'];
-                                    $typeAbbrev = $row['typeAbbrev'];
+                                    $definition = $row['definition'];
+                                    $type = $row['type'];
                                 
-                        echo "<td>" . $abbreviation. "</td>
+                        echo "<td>" . $name. "</td>
                                 <td>" . $signification. "</td>
-                                <td>" . $defAbbrev. "</td>
-                                <td>" . $typeAbbrev. "</td></tr>";
+                                <td>" . $definition. "</td>
+                                <td>" . $type. "</td></tr>";
                                 }
                         echo "</table>";
                     } else {
