@@ -32,25 +32,28 @@
                 <form method="post" action="controller.php">
                     <fieldset id="fieldsetText">
                         <div>                    
-                            <label id="inputTextLabel" for="abbreviation">Abbreviation</label>
-                            <input type="text" id="inputText" name="abbreviation" required minlength="2" maxlength="20" size="20"></input><br>
+                            <label id="inputTextLabel" for="name">Nom</label>
+                            <input type="text" id="inputText" name="name" required minlength="2" maxlength="20" size="20"></input><br>
                                             
                             <label id="inputTextLabel" for="signification">Signification</label>
                             <input type="text" id="inputText" name="signification" required minlength="4" maxlength="50" size="20"></input><br>
                                            
-                            <label id="textAreaLabel" for="defAbbrev">Definition</label>
-                            <textarea type="text" id="textArea" name="defAbbrev" required rows="3" cols="33"></textarea><br>
+                            <label id="textAreaLabel" for="definition">Definition</label>
+                            <textarea type="text" id="textArea" name="definition" required rows="3" cols="33"></textarea><br>
                         </div>
                     </fieldset>
                     <fieldset id="fieldsetButtonR">
                         <div id="zoneChoiceType">
-                            <span>Type of abbreviation</span><br>
+                            <span>Type</span><br>
 
-                            <input type="radio" id="typeAbbrev" name="typeAbbrev" value="Sigle" class="choiceType">
+                            <input type="radio" id="type" name="type" value="Sigle" class="choiceType">
                             <label for="sigle">Sigle</label><br>
 
-                            <input type="radio" id="typeAbbrev" name="typeAbbrev" value="Acronyme" class="choiceType">
+                            <input type="radio" id="type" name="type" value="Acronyme" class="choiceType">
                             <label for="acronyme">Acronyme</label><br>
+
+                            <input type="radio" id="type" name="type" value="Label" class="choiceType">
+                            <label for="label">Label</label><br>
                         </div>
                     </fieldset>
                     <button type="submit">Submit</button>

@@ -7,10 +7,10 @@
         $password = "";
         $dbname = "dev_tools";
 
-        $abbreviation = $_POST['abbreviation'];
+        $name = $_POST['name'];
         $signification = $_POST['signification'];
-        $defAbbrev = $_POST['defAbbrev'];
-        $typeAbbrev = $_POST['typeAbbrev'];
+        $definition = $_POST['definition'];
+        $type = $_POST['type'];
 
         // Connect to mysqli
         $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -22,10 +22,10 @@
         }
 
         // Prepare query
-        $statement = $conn->prepare("INSERT INTO  dev_abbreviations(abbreviation, signification, defAbbrev, typeAbbrev) VALUES (?, ?, ?, ?)");
+        $statement = $conn->prepare("INSERT INTO  dev_glossary(name, signification, definition, type) VALUES (?, ?, ?, ?)");
 
         // Bind values and execute insert
-        $statement->bind_param("ssss",$abbreviation, $signification, $defAbbrev, $typeAbbrev);
+        $statement->bind_param("ssss",$name, $signification, $definition, $type);
 
         if ($statement->execute()) {
             print "C'est okay !";
