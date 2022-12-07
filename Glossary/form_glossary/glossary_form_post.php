@@ -36,7 +36,7 @@
                             <input type="text" id="inputText" name="name" required minlength="2" maxlength="20" size="20"></input><br>
                                             
                             <label id="inputTextLabel" for="signification">Signification</label>
-                            <input type="text" id="inputText" name="signification" required minlength="4" maxlength="50" size="20"></input><br>
+                            <input type="text" id="inputText" name="signification" required minlength="4" maxlength="100" size="20"></input><br>
                                            
                             <label id="textAreaLabel" for="definition">Definition</label>
                             <textarea type="text" id="textArea" name="definition" required rows="3" cols="33"></textarea><br>

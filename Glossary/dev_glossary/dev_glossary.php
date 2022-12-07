@@ -26,7 +26,7 @@
                 <li><a href="../index.php" class="home">Home</a></li>
                 <li><a href="#" class="blog">Blog</a></li>
                 <li><a href="#" class="contact">Contact</a></li>
-                <li><a href="../form_glossary/display_glossary_form.php" class="admin">Admin</a></li>
+                <li><a href="../form_glossary/glossary_form_post.php" class="admin">Admin</a></li>
             </ul>
         </nav>
         <main>
