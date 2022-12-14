@@ -120,7 +120,9 @@ ORDER BY nbr_habitants DESC LIMIT 1;
 /* Nom des personnages qui n'ont jamais bu aucune potion. */
 SELECT p.nom_personnage
 FROM personnage p
-WHERE p.id_personnage NOT IN ( SELECT b.id_personnage FROM boire b );
+WHERE p.id_personnage NOT IN ( 
+  SELECT b.id_personnage FROM boire b 
+  );
 
 /*== 15 ================*/
 /* Nom du / des personnages qui n'ont pas le droit de boire de la potion 'Magique'. */
@@ -132,8 +134,6 @@ WHERE p.id_personnage NOT IN (
     WHERE id_potion = 1 
     );
 
-
-
 /*==  ================*/
 SELECT per.nom_personnage, SUM(b.dose_boire) AS doseBue
 FROM boire b
@@ -142,10 +142,14 @@ INNER JOIN personnage per ON b.id_personnage = per.id_personnage
 GROUP BY per.id_personnage
 ORDER BY doseBue DESC;
 
+/*== A ======================================*/
+/* Insérer personnage */
 
+INSERT INTO personnage (nom_personnage, adresse_personnage, id_lieu, id_specialite)
+VALUES ('Champdeblix', 'ferme Hantassion', 6, 12);
 
-===========================================
-===========================================
+/*== B ======================================*/
+/* Autoriser boire potion*/
 
 DELETE
 FROM autoriser_boire
@@ -154,3 +158,36 @@ WHERE id_personnage = 12;
 INSERT INTO autoriser_boire (id_potion, id_personnage)
 VALUES (1, 12),
 (13, 12);
+
+/*== C ======================================*/
+/* Enlever casques Grec */
+
+DELETE
+FROM casque
+WHERE id_type_casque = 2 
+AND id_casque NOT IN (
+  SELECT id_casque FROM prendre_casque
+  )
+
+/*== D ======================================*/
+/* Changer adresse */
+
+UPDATE personnage
+SET adresse_personnage = 'prison à Condate', id_lieu = 9
+WHERE nom_personnage = 'Zérozérosix';
+
+/*== E ======================================*/
+/* Soupe ne doit plus contenir de persil */
+
+DELETE
+FROM composer
+WHERE id_ingredient = 19;
+
+/*== F ======================================*/
+/* Erreur de casques de Obélix */
+
+UPDATE prendre_casque
+SET id_casque = 10, qte = 42
+WHERE id_personnage = 5 AND id_bataille = 9;
+
+
