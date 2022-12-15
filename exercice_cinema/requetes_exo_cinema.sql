@@ -26,28 +26,33 @@ ON p.id_personne = r.id_personne
 WHERE r.id_realisateur = 4;
 
 /*== d ==*/
-/*==  ==*/
+/*== Nombre de films par genre (classés dans l’ordre décroissant) ==*/
+SELECT COUNT(type_genre_film) 
+FROM appartenir a
+INNER JOIN genre g
+ON a.id_genre_film = g.id_genre_film
+GROUP BY a.id_genre_film;
 
 /*== e ==*/
-/*==  ==*/
+/*== Nombre de films par réalisateur (classés dans l’ordre décroissant) ==*/
 
 /*== f ==*/
-/*==  ==*/
+/*== Casting d’un film en particulier (id_film) : nom, prénom des acteurs + sexe ==*/
 
 /*== g ==*/
-/*==  ==*/
+/*== Films tournés par un acteur en particulier (id_acteur) avec leur rôle et l’année de sortie (du film le plus récent au plus ancien) ==*/
 
 /*== h ==*/
-/*==  ==*/
+/*== Listes des personnes qui sont à la fois acteurs et réalisateurs ==*/
 
 /*== i ==*/
-/*==  ==*/
+/*== Liste des films qui ont moins de 5 ans (classés du plus récent au plus ancien) ==*/
 
 /*== j ==*/
-/*==  ==*/
+/*== Nombre d’hommes et de femmes parmi les acteurs ==*/
 
 /*== k ==*/
-/*==  ==*/
+/*== Liste des acteurs ayant plus de 50 ans (âge révolu et non révolu) ==*/
 
 /*== l ==*/
-/*==  ==*/
+/*== Acteurs ayant joué dans 3 films ou plus ==*/
