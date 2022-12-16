@@ -47,13 +47,17 @@ ORDER BY COUNT(id_film) DESC;
 
 /*== f ==*/
 /*== Casting d’un film en particulier (id_film) : nom, prénom des acteurs + sexe ==*/
-SELECT CONCAT(p.prenom_personne,' ', p.nom_personne), genre_personne, p.id_personne
+SELECT CONCAT(p.prenom_personne,' ', p.nom_personne), p.genre_personne, c.id_acteur
 FROM casting c
-INNER JOIN personne p
-ON c.id_acteur = p.id_personne
 INNER JOIN acteur a
-ON c.id_film = a.id_acteur
-WHERE id_film = 1;
+ON c.id_acteur = a.id_acteur
+INNER JOIN personne p
+ON a.id_acteur = p.id_personne
+WHERE id_film = 5
+AND p.id_personne NOT IN (
+  SELECT id_personne
+  FROM realisateur 
+  );
 
 /*== g ==*/
 /*== Films tournés par un acteur en particulier (id_acteur) avec leur rôle et l’année de sortie (du film le plus récent au plus ancien) ==*/
