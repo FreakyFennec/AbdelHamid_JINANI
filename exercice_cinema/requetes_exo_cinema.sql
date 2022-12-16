@@ -35,10 +35,12 @@ GROUP BY a.id_genre_film;
 
 /*== e ==*/
 /*== Nombre de films par réalisateur (classés dans l’ordre décroissant) ==*/
-SELECT COUNT(id_film)
+SELECT COUNT(id_film), CONCAT(p.prenom_personne,' ', p.nom_personne)
 FROM film f
 INNER JOIN realisateur r
 ON f.id_realisateur = r.id_realisateur
+INNER JOIN personne p
+ON p.id_personne = r.id_personne
 GROUP BY r.id_realisateur
 ORDER BY COUNT(id_film) DESC;
 
