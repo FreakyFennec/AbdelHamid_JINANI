@@ -27,7 +27,7 @@ WHERE r.id_realisateur = 4;
 
 /*== d ==*/
 /*== Nombre de films par genre (classés dans l’ordre décroissant) ==*/
-SELECT COUNT(type_genre_film) 
+SELECT COUNT(type_genre_film), type_genre_film 
 FROM appartenir a
 INNER JOIN genre g
 ON a.id_genre_film = g.id_genre_film
@@ -35,6 +35,12 @@ GROUP BY a.id_genre_film;
 
 /*== e ==*/
 /*== Nombre de films par réalisateur (classés dans l’ordre décroissant) ==*/
+SELECT COUNT(id_film)
+FROM film f
+INNER JOIN realisateur r
+ON f.id_realisateur = r.id_realisateur
+GROUP BY r.id_realisateur
+ORDER BY COUNT(id_film) DESC;
 
 /*== f ==*/
 /*== Casting d’un film en particulier (id_film) : nom, prénom des acteurs + sexe ==*/
