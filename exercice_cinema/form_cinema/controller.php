@@ -5,12 +5,13 @@
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "dev_tools";
+        $dbname = "cinema_hamid_02";
 
-        $name = $_POST['name'];
-        $signification = $_POST['signification'];
-        $definition = $_POST['definition'];
-        $type = $_POST['type'];
+        $nom_personne = $_POST['nom_personne'];
+        $prenom_personne = $_POST['prenom_personne'];
+        $date_naiss_personne = $_POST['date_naiss_personne'];
+        $lieu_naiss_personne = $_POST['lieu_naiss_personne'];
+        $genre_personne = $_POST['genre_personne'];
 
         // Connect to mysqli
         $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -22,10 +23,11 @@
         }
 
         // Prepare query
-        $statement = $conn->prepare("INSERT INTO  dev_glossary(name, signification, definition, type) VALUES (?, ?, ?, ?)");
+        $statement = $conn->prepare("INSERT INTO  dev_glossary(nom_personne, prenom_personne, date_naiss_personne, lieu_naiss_personne, genre_personne) 
+                                    VALUES (?, ?, ?, ?, ?)");
 
         // Bind values and execute insert
-        $statement->bind_param("ssss",$name, $signification, $definition, $type);
+        $statement->bind_param("ssss",$nom_personne, $prenom_personne, $date_naiss_personne, $lieu_naiss_personne, $genre_personne);
 
         if ($statement->execute()) {
             print "C'est okay !";

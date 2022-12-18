@@ -31,12 +31,42 @@
                 
                 <form method="post" action="controller.php">
                     <fieldset id="fieldsetText">
+                        <div>
+                            <label for="nom_personne" id="inputTextLabel">Nom</label>
+                            <input type="text" id="inputText" name="nom_personne" required minlength="2" maxlength="100"><br>
+                            
+                            <label for="prenom_personne" id="inputTextLabel">Prenom</label>
+                            <input type="text" id="inputText" name="prenom_personne" required minlength="2" maxlength="100"><br>
+                                            
+                            <label id="inputTextLabel" for="date_naiss_personne">Date de naissance</label>
+                            <input type="date" id="inputText" name="date_naiss_personne" required minlength="4" maxlength="100" size="20"></input><br>
+
+                            <label id="inputTextLabel" for="lieu_naiss_personne">Lieu de naissance</label>
+                            <input type="text" id="inputText" name="lieu_naiss_personne" required minlength="4" maxlength="100" size="20"></input><br>
+
+                            <label id="inputTextLabel" for="genre_personne">Genre</label>
+                            <select name="genre_personne" id="genre_personne">
+                                <option value="H">Homme</option>
+                                <option value="F">Femme</option>
+                                <option value="Y">Yel</option>
+                            </select><br><br>
+
+                            <p>Qualitée :</p>
+                            <input type="radio" id="type" name="type" value="Sigle" class="choiceType">
+                            <label for="realisateur">Réalisateur</label><br>
+
+                            <input type="radio" id="type" name="type" value="Acronyme" class="choiceType">
+                            <label for="acteur">Acteur</label><br>
+
+                        </div>
+                    </fieldset>
+                    <fieldset id="fieldsetText">
                         <div>                    
                             <label id="inputTextLabel" for="titre_film">Titre</label>
                             <input type="text" id="inputText" name="titre_film" required minlength="2" maxlength="20" size="20"></input><br>
                                             
                             <label id="inputTextLabel" for="date_sortie_fr">Date sortie fr</label>
-                            <input type="text" id="inputText" name="date_sortie_fr" required minlength="4" maxlength="100" size="20"></input><br>
+                            <input type="date" id="inputText" name="date_sortie_fr" required minlength="4" maxlength="100" size="20"></input><br>
 
                             <label id="inputTextLabel" for="duree_film">Durée</label>
                             <input type="text" id="inputText" name="duree_film" required minlength="4" maxlength="100" size="20"></input><br>
@@ -52,6 +82,26 @@
 
                             <label id="inputTextLabel" for="id_realisateur">Id réalisateur</label>
                             <input type="text" id="inputText" name="id_realisateur" required minlength="4" maxlength="100" size="20"></input><br>
+                            
+                            <label id="inputTextLabel" for="type_genre_film">Genre</label>
+                            <select name="type_genre_film" id="type_genre_film">
+                                <option value="animation">Animation</option>
+                                <option value="aventure">Aventure</option>
+                                <option value="biopic">Biopic</option>
+                                <option value="comedie">Comédie</option>
+                                <option value="documentaire">Documentaire</option>
+                                <option value="drame">Drame</option>
+                                <option value="erotique">Erotique</option>
+                                <option value="espionnage">Espionnage</option>
+                                <option value="fantastique">Fantastique</option>
+                                <option value="historique">Historique</option>
+                                <option value="horreur">Horreur</option>
+                                <option value="musique">Musique</option>
+                                <option value="navet">Navet</option>
+                                <option value="policier">Policier</option>
+                                <option value="sci-fi">Sci-fi</option>
+                                <option value="thriller">Thriller</option>
+                            </select><br>
                             
                         </div>
                     </fieldset>
