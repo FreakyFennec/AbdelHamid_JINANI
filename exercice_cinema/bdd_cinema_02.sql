@@ -33,33 +33,48 @@ INSERT INTO `acteur` (`id_acteur`, `id_personne`) VALUES
 	(1, 2),
 	(2, 3),
 	(3, 4),
+
 	(4, 6),
 	(5, 7),
 	(6, 8),
+
 	(7, 10),
 	(8, 11),
 	(9, 12),
+
 	(10, 14),
 	(11, 15),
 	(12, 16),
+
 	(13, 17),
 	(14, 18),
 	(15, 19),
 	(16, 20),
 	(17, 21),
+
 	(18, 23),
 	(19, 24),
 	(20, 25),
 	(21, 26),
+
 	(22, 27),
 	(23, 28),
 	(24, 29),
 	(25, 30),
+
 	(26, 31),
 	(27, 32),
 	(28, 33),
 	(29, 34),
-	(30, 35);
+	(30, 35),
+
+	(31, 36),
+	(32, 37),
+	(33, 38),
+	(34, 39),
+	(35, 40),
+	(36, 41),
+	(37, 42);
 
 -- Listage de la structure de table cinema_hamid. appartenir
 CREATE TABLE IF NOT EXISTS `appartenir` (
@@ -71,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `appartenir` (
   CONSTRAINT `FK_appartenir_genre` FOREIGN KEY (`id_genre_film`) REFERENCES `genre` (`id_genre_film`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_hamid.appartenir : ~8 rows (environ)
+-- Listage des données de la table cinema_hamid.appartenir : ~9 rows (environ)
 INSERT INTO `appartenir` (`id_film`, `id_genre_film`) VALUES
 	(1, 6),
 	(2, 4),
@@ -101,35 +116,50 @@ INSERT INTO `casting` (`id_film`, `id_acteur`, `id_role`) VALUES
 	(1, 1, 1),
 	(1, 2, 2),
 	(1, 3, 3),
+
 	(2, 4, 4),
 	(2, 5, 5),
 	(2, 6, 6),
+
 	(3, 7, 7),
 	(3, 8, 8),
 	(3, 9, 9),
+
 	(4, 7, 10),
 	(4, 10, 11),
 	(4, 15, 13),
 	(4, 16, 12),
+
 	(5, 13, 14),
 	(5, 14, 15),
 	(5, 15, 16),
 	(5, 16, 17),
+
 	(5, 17, 18),
 	(6, 18, 20),
 	(6, 19, 21),
 	(6, 20, 22),
 	(6, 21, 23),
+
 	(7, 22, 24),
 	(7, 23, 25),
 	(7, 24, 26),
 	(7, 25, 27),
 	(7, 26, 28),
+	
 	(8, 27, 29),
 	(8, 28, 30),
 	(8, 29, 21),
 	(8, 30, 32),
-	(8, 31, 33);
+	(8, 31, 33),
+
+	(9, 31, 34),
+	(9, 32, 35),
+	(9, 33, 36),
+	(9, 34, 37),
+	(9, 35, 38),
+	(9, 36, 39),
+	(9, 37, 40);
 
 -- Listage de la structure de table cinema_hamid. film
 CREATE TABLE IF NOT EXISTS `film` (
@@ -165,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `genre` (
   PRIMARY KEY (`id_genre_film`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_hamid.genre : ~16 rows (environ)
+-- Listage des données de la table cinema_hamid.genre : ~5 rows (environ)
 INSERT INTO `genre` (`id_genre_film`, `type_genre_film`) VALUES
 	(1, 'Animation'),
 	(2, 'Aventure'),
@@ -201,44 +231,52 @@ INSERT INTO `personne` (`id_personne`, `nom_personne`, `prenom_personne`, `date_
 	(2, 'Patel', 'Dev', '1990-04-23', 'Grande-Bretagne', 'H'),
 	(3, 'Irons', 'Jeremy', '1948-09-19', 'Grande-Bretagne', 'H'),
 	(4, 'Jones', 'Tobias', '1966-09-07', 'Grande-Bretagne', 'H'),
+
 	(5, 'Subbaraj', 'Karthik', '1983-03-19', 'Indes', 'H'),
 	(6, 'Dhanush', 'V', '1983-02-25', 'Indes', 'H'),
 	(7, 'Lekshmi', 'Aishwarya', '1990-09-06', 'Indes', 'F'),
 	(8, 'Cosmo', 'James', '1948-05-24', 'Grande-Bretagne', 'H'),
+
 	(9, 'Biglow', 'Kathryn', '1951-11-17', 'États-Unis', 'F'),
 	(10, 'Ford', 'Harrison', '1942-07-13', 'États-Unis', 'H'),
 	(11, 'Neeson', 'Liam', '1952-06-07', 'Grande-Bretagne', 'H'),
 	(12, 'Sarsgaard', 'Peter', '1971-03-07', 'États-Unis', 'H'),
+
 	(13, 'Scott', 'Ridley', '1937-11-30', 'Grande-Bretagne', 'H'),
 	(14, 'Hauer', 'Rutger', '1944-01-23', 'Pays-Bas', 'H'),
 	(15, 'Hannah', 'Daryl', '1960-12-03', 'États-Unis', 'F'),
 	(16, 'Young', 'Sean', '1959-11-20', 'États-Unis', 'F'),
+
 	(17, 'Rapace', 'Noomi', '1979-12-28', 'Suède', 'F'),
 	(18, 'Fassebender', 'Michael', '1977-04-02', 'Allemagne', 'H'),
 	(19, 'Theron', 'Charlize', '1975-08-07', 'Afrique du Sud', 'F'),
 	(20, 'Elba', 'Idris', '1972-09-06', 'États-Unis', 'H'),
 	(21, 'Pearce', 'Guy', '1967-10-05', 'Australie', 'H'),
+
 	(22, 'Kubrick', 'Stanley', '1928-07-26', 'États-Unis', 'H'),
 	(23, 'Masson', 'James', '1909-05-15', 'Grande-Bretagne', 'H'),
 	(24, 'Winters', 'Shelley', '1920-08-18', 'États-Unis', 'F'),
 	(25, 'Lyon', 'Sue', '1946-07-10', 'États-Unis', 'F'),
 	(26, 'Sellers', 'Peter', '1925-07-08', 'Grande-Bretagne', 'H'),
+
 	(27, 'Scott', 'George C.', '1927-10-18', 'États-Unis', 'H'),
 	(28, 'Hayden', 'Sterling', '1916-03-26', 'États-Unis', 'H'),
 	(29, 'Wynn', 'Keenan', '1916-07-27', 'États-Unis', 'H'),
 	(30, 'Pickens', 'Slim', '1919-06-29', 'États-Unis', 'H'),
+
 	(31, 'Dullea', 'Keir', '1936-05-30', 'États-Unis', 'H'),
 	(32, 'Lockwood', 'Gary', '1937-02-21', 'États-Unis', 'H'),
 	(33, 'Sylvester', 'William', '1922-01-31', 'États-Unis', 'H'),
 	(34, 'Richter', 'Daniel', '1939-01-01', 'États-Unis', 'H'),
 	(35, 'Rossiter', 'Leonard', '1926-10-21', 'Grande-Bretagne', 'H'),
-	(40, 'Eastwood', 'Clint', '1930-05-31', 'États-Unis', 'H'),
-	(41, 'Cooper', 'Bradley', '1975-01-05', 'États-Unis', 'H'),
-	(42, 'Fishburne', 'Laurence', '1961-07-31', 'États-Unis', 'H'),
-	(43, 'Peña ', 'Michael', '1976-01-30', 'États-Unis', 'H'),
-	(44, 'Wiest', 'Dianne', '1948-03-28', 'États-Unis', 'F'),
-	(45, 'Garcia', 'Andy', '1956-04-12', 'Cuba', 'H'),
-	(46, 'Collins', 'Clifton Jr', '1970-06-16', 'Mexique', 'H');
+
+	(36, 'Eastwood', 'Clint', '1930-05-31', 'États-Unis', 'H'),
+	(37, 'Cooper', 'Bradley', '1975-01-05', 'États-Unis', 'H'),
+	(38, 'Fishburne', 'Laurence', '1961-07-31', 'États-Unis', 'H'),
+	(39, 'Peña ', 'Michael', '1976-01-30', 'États-Unis', 'H'),
+	(40, 'Wiest', 'Dianne', '1948-03-28', 'États-Unis', 'F'),
+	(41, 'Garcia', 'Andy', '1956-04-12', 'Cuba', 'H'),
+	(42, 'Collins', 'Clifton Jr', '1970-06-16', 'Mexique', 'H');
 
 -- Listage de la structure de table cinema_hamid. realisateur
 CREATE TABLE IF NOT EXISTS `realisateur` (
@@ -249,14 +287,14 @@ CREATE TABLE IF NOT EXISTS `realisateur` (
   CONSTRAINT `FK_realilsateur_cinema_hamid.personne` FOREIGN KEY (`id_personne`) REFERENCES `personne` (`id_personne`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_hamid.realisateur : ~5 rows (environ)
+-- Listage des données de la table cinema_hamid.realisateur : ~6 rows (environ)
 INSERT INTO `realisateur` (`id_realisateur`, `id_personne`) VALUES
 	(1, 1),
 	(2, 5),
 	(3, 9),
 	(4, 13),
 	(5, 22),
-	(6, 40);
+	(6, 36);
 
 -- Listage de la structure de table cinema_hamid. role
 CREATE TABLE IF NOT EXISTS `role` (
@@ -270,42 +308,50 @@ INSERT INTO `role` (`id_role`, `nom_role`) VALUES
 	(1, 'Srinivasa Ramanujan'),
 	(2, 'G.H. Hardy'),
 	(3, 'John Edensor Littlewood'),
+
 	(4, 'Suruli '),
 	(5, 'Attila '),
 	(6, 'Peter Sprott '),
+
 	(7, 'Capitaine Alexei Vostrikov'),
 	(8, 'Capitaine Mikhail Polenin'),
 	(9, 'Lieutenant Vadim Ratchenko'),
+
 	(10, 'Rick Deckard'),
 	(11, 'Roy Batty'),
 	(12, 'Rachel'),
 	(13, 'Pris'),
+
 	(14, 'Elisabeth Shaw'),
 	(15, 'David'),
 	(16, 'Meredith Vickers'),
 	(17, 'Capitaine Janek'),
 	(18, 'Charlie Holloway'),
-	(20, 'Humbert Humbert'),
-	(21, 'Charlotte Haze'),
-	(22, 'Dolores « Lolita » Haze'),
-	(23, 'Clare Quilty / Dr Zempf'),
-	(24, 'Président Merkin Muffley'),
-	(25, 'Général « Buck » Turgidson'),
-	(26, 'Général Jack D. Ripper'),
-	(27, 'Colonel « Bat » Guano'),
-	(28, 'Commandant T.J. « King » Kong'),
-	(29, 'Dr David Bowman'),
-	(30, 'Dr Frank Poole'),
-	(31, 'Dr Heywood R. Floyd'),
-	(32, 'Moonwatcher ( Guetteur de Lune )'),
-	(33, 'Dr Andrei Smyslov'),
-	(34, 'Earl Stone'),
-	(35, 'Colin Bates'),
-	(36, 'Carl'),
-	(37, 'agent Trevino'),
-	(38, 'Mary'),
-	(39, 'Laton'),
-	(40, 'Gustavo');
+
+	(19, 'Humbert Humbert'),
+	(20, 'Charlotte Haze'),
+	(21, 'Dolores « Lolita » Haze'),
+	(22, 'Clare Quilty / Dr Zempf'),
+
+	(23, 'Président Merkin Muffley'),
+	(24, 'Général « Buck » Turgidson'),
+	(25, 'Général Jack D. Ripper'),
+	(26, 'Colonel « Bat » Guano'),
+	(27, 'Commandant T.J. « King » Kong'),
+
+	(28, 'Dr David Bowman'),
+	(29, 'Dr Frank Poole'),
+	(30, 'Dr Heywood R. Floyd'),
+	(31, 'Moonwatcher ( Guetteur de Lune )'),
+	(32, 'Dr Andrei Smyslov'),
+
+	(33, 'Earl Stone'),
+	(34, 'Colin Bates'),
+	(35, 'Carl'),
+	(36, 'agent Trevino'),
+	(37, 'Mary'),
+	(38, 'Laton'),
+	(39, 'Gustavo');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

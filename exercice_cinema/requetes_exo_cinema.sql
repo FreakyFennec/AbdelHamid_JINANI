@@ -53,7 +53,7 @@ INNER JOIN acteur a
 ON c.id_acteur = a.id_acteur
 INNER JOIN personne p
 ON a.id_acteur = p.id_personne
-WHERE id_film = 5
+WHERE id_film = 4
 AND p.id_personne NOT IN (
   SELECT id_personne
   FROM realisateur 
@@ -61,6 +61,23 @@ AND p.id_personne NOT IN (
 
 /*== g ==*/
 /*== Films tournés par un acteur en particulier (id_acteur) avec leur rôle et l’année de sortie (du film le plus récent au plus ancien) ==*/
+SELECT 
+    a.id_acteur,
+	p.id_personne,
+	CONCAT(p.prenom_personne,' ', p.nom_personne),
+    c.id_role,
+    c.id_film,
+    f.titre_film,
+    DATE_FORMAT(date_sortie_fr, "%d/%m/%Y") AS date_sortie_fr
+FROM personne p
+INNER JOIN acteur a
+	ON p.id_personne = a.id_personne
+INNER JOIN casting c
+	ON a.id_acteur = c.id_acteur
+INNER JOIN film f
+	ON c.id_film = f.id_film
+WHERE p.nom_personne = 'Ford'
+ORDER BY f.date_sortie_fr DESC;
 
 /*== h ==*/
 /*== Listes des personnes qui sont à la fois acteurs et réalisateurs ==*/
