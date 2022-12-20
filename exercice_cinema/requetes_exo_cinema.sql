@@ -131,3 +131,14 @@ GROUP BY genre_personne;
 
 /*== l ==*/
 /*== Acteurs ayant joué dans 3 films ou plus ==*/
+SELECT 
+	COUNT(c.id_acteur) AS nbr_film,
+    c.id_acteur,
+    CONCAT(p.prenom_personne,' ', p.nom_personne) AS nom_acteur
+FROM casting c
+INNER JOIN acteur a
+	ON c.id_acteur = a.id_acteur
+INNER JOIN personne p
+	ON a.id_personne = p.id_personne
+GROUP BY c.id_acteur
+HAVING COUNT(*) >= 3;
