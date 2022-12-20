@@ -104,12 +104,30 @@ INNER JOIN acteur a
 
 /*== i ==*/
 /*== Liste des films qui ont moins de 5 ans (classés du plus récent au plus ancien) ==*/
+SELECT
+	titre_film,
+    DATE_FORMAT(date_sortie_fr, "%d/%m/%Y") AS date_sortie_fr
+FROM film f
+WHERE date_sortie_fr >= YEAR(CURRENT_DATE()) - 5
+ORDER BY date_sortie_fr DESC;
 
 /*== j ==*/
 /*== Nombre d’hommes et de femmes parmi les acteurs ==*/
+SELECT
+	COUNT(*) AS nbr_acteurs,
+    genre_personne
+FROM personne
+GROUP BY genre_personne;
 
 /*== k ==*/
 /*== Liste des acteurs ayant plus de 50 ans (âge révolu et non révolu) ==*/
+SELECT
+	COUNT(*) AS nbr_acteurs,
+    genre_personne
+FROM personne p
+INNER JOIN acteur a
+	ON p.id_personne = a.id_personne
+GROUP BY genre_personne;
 
 /*== l ==*/
 /*== Acteurs ayant joué dans 3 films ou plus ==*/
