@@ -15,8 +15,20 @@
 
     // Si pas d'erreur on continue
 
+    // Récupére le titre du film
+    if (isset($_POST['titre_film'])) {
+        // La variable existe, on la récupére.
+        $titre_film = $_POST['titre_film'];
+        echo "Le titre du film est : " . $titre_film;
+    } else {
+        // La variable n'est pas passée, message d'erreur.
+        echo "Erreur : le titre du film n'est pas passé";
+    }
+
+
     // Récupére le contenu de la table film
-    $sqlQuery = 'SELECT * FROM film';                       // Variable qui contient la requête sql.
+    $sqlQuery = 'SELECT * FROM film
+                WHERE titre_film = ' . $_POST['titre_film'] . '';                       // Variable qui contient la requête sql.
     $filmStatement = $mysqlConnection->prepare($sqlQuery);  // On prépare la requête (plus de sécurité).
 
     $filmStatement->execute();
@@ -26,7 +38,7 @@
     if ($films > 0) {
 
         echo "
-        <h1>Tous les films</h1>
+        <h1>Détail du film</h1>
         <table>
             <caption>Liste des films</caption>
             <thead>
@@ -40,16 +52,11 @@
                 <tr>";
 
                 // On fait un boucle foreach() pour afficher les films.
-                foreach ($films as $film) {
+                
 
                     echo 
-                        "<td><a href='detail_film.php?titre_film=" . $film['titre_film'] . "' class='lien-pages'>" . $film['titre_film'] . "</a></td>
-                        <td>" . date('d-m-Y', strtotime($film['date_sortie_fr'])) . "</td>
-                        <td>" . $film['duree_film'] . "</td>
-                    </tr>";   // Affiche les films
-                    
-                }
-
+                        "<td><a href='pages_cinema/detail_film.php?titre_film=" . $_POST[$film['titre_film']] . "' class='lien-pages'>" . $film['titre_film'] . "</a></td>
+                    </tr>";                                  
         echo "</table>";
 
     } else {
