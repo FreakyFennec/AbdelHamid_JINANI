@@ -15,17 +15,52 @@
 
     // Si pas d'erreur on continue
 
-    // Récupére le contenu de la table film
-    $sqlQuery = 'SELECT * FROM film';                       // Variable qui contient la requête sql.
-    $filmStatement = $mysqlConnection->prepare($sqlQuery);  // On prépare la requête (plus de sécurité).
+    // Récupére le contenu de la table realisateur
+    $sqlQuery = 'SELECT *
+                 FROM personne p
+                 INNER JOIN realisateur r
+                   ON p.id_personne = r.id_personne;';                       // Variable qui contient la requête sql.
+                   
+    $realisateurStatement = $mysqlConnection->prepare($sqlQuery);  // On prépare la requête (plus de sécurité).
 
-    $filmStatement->execute();
-    $films = $filmStatement->fetchAll();                    // Va chercher les éléments de la requête.
+    $realisateurStatement->execute();
+    $realisateurs = $realisateurStatement->fetchAll();                    // Va chercher les éléments de la requête.
 
-    // On fait un boucle foreach() pour afficher les films.
-    foreach ($films as $film) {
-        ?>
-        <p><?php echo $film['titre_film']; ?></p>           <!-- Affiche les titre des films -->
-        <?php
+
+    if ($realisateurs > 0) {
+
+        echo "
+        <h1>Tous les réalisateurs</h1>
+        <table>
+            <caption>Liste des réalisateurs</caption>
+            <thead>
+                <tr>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Date de naiss</th>
+                    <th>Pays de naiss</th>
+                </tr>
+                <thead>
+                <tbody> 
+                <tr>";
+
+                // On fait un boucle foreach() pour afficher les realisateurs.
+                foreach ($realisateurs as $realisateur) {
+
+                    echo 
+                        "<td>" . $realisateur['prenom_personne'] . "</td>
+                        <td>" . $realisateur['nom_personne'] . "</td>
+                        <td>" . date('d-m-Y', strtotime($realisateur['date_naiss_personne'])) . "</td>
+                        <td>" . $realisateur['lieu_naiss_personne'] . "</td>
+                    </tr>";   // Affiche les realisateurs
+                    
+                }
+
+        echo "</table>";
+
+    } else {
+
+        echo "0 no results";
+
     }
 ?>

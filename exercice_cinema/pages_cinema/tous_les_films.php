@@ -25,7 +25,9 @@
 
     if ($films > 0) {
 
-        echo "<table>
+        echo "
+        <h1>Tous les films</h1>
+        <table>
             <caption>Liste des films</caption>
             <thead>
                 <tr>

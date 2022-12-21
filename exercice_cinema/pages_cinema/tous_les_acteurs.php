@@ -15,17 +15,52 @@
 
     // Si pas d'erreur on continue
 
-    // Récupére le contenu de la table film
-    $sqlQuery = 'SELECT * FROM film';                       // Variable qui contient la requête sql.
-    $filmStatement = $mysqlConnection->prepare($sqlQuery);  // On prépare la requête (plus de sécurité).
+    // Récupére le contenu de la table realisateur
+    $sqlQuery = 'SELECT *
+                 FROM personne p
+                 INNER JOIN acteur a
+        ON p.id_personne = a.id_personne;';                         // Variable qui contient la requête sql.
 
-    $filmStatement->execute();
-    $films = $filmStatement->fetchAll();                    // Va chercher les éléments de la requête.
+    $realisateurStatement = $mysqlConnection->prepare($sqlQuery);  // On prépare la requête (plus de sécurité).
 
-    // On fait un boucle foreach() pour afficher les films.
-    foreach ($films as $film) {
-        ?>
-        <p><?php echo $film['titre_film']; ?></p>           <!-- Affiche les titre des films -->
-        <?php
+    $realisateurStatement->execute();
+    $realisateurs = $realisateurStatement->fetchAll();             // Va chercher les éléments de la requête.
+
+
+    if ($realisateurs > 0) {
+
+        echo "
+        <h1>Tous les acteurs</h1>
+        <table>
+            <caption>Liste des acteurs</caption>
+            <thead>
+                <tr>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Date de naissance</th>
+                    <th>Pays de naissance</th>
+                </tr>
+                <thead>
+                <tbody> 
+                <tr>";
+
+                // On fait un boucle foreach() pour afficher les realisateurs.
+                foreach ($realisateurs as $realisateur) {
+
+                    echo 
+                        "<td>" . $realisateur['prenom_personne'] . "</td>
+                        <td>" . $realisateur['nom_personne'] . "</td>
+                        <td>" . date('d-m-Y', strtotime($realisateur['date_naiss_personne'])) . "</td>
+                        <td>" . $realisateur['lieu_naiss_personne'] . "</td>
+                    </tr>";   // Affiche les realisateurs
+                    
+                }
+
+        echo "</table>";
+
+    } else {
+
+        echo "0 no results";
+
     }
 ?>
