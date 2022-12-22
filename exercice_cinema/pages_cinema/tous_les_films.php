@@ -15,8 +15,10 @@
 
     // Si pas d'erreur on continue
 
-    // Récupére le contenu de la table film
-    $sqlQuery = 'SELECT * FROM film';                       // Variable qui contient la requête sql.
+    // Récupère le contenu de la table film
+    $sqlQuery = 'SELECT * 
+                 FROM film';                       // Variable qui contient la requête sql.
+
     $filmStatement = $mysqlConnection->prepare($sqlQuery);  // On prépare la requête (plus de sécurité).
 
     $filmStatement->execute();
@@ -31,6 +33,7 @@
             <caption>Liste des films</caption>
             <thead>
                 <tr>
+                    <th>Id du film</th>
                     <th>Titre du film</th>
                     <th>Date de sortie fr</th>
                     <th>Durée</th>
@@ -43,7 +46,8 @@
                 foreach ($films as $film) {
 
                     echo 
-                        "<td><a href='detail_film.php?titre_film=" . $film['titre_film'] . "' class='lien-pages'>" . $film['titre_film'] . "</a></td>
+                        "<td>" . $film['id_film'] . "</td>
+                        <td><a href='detail_film.php?id=" . $film['id_film'] . "' class='lien-pages'>" . $film['titre_film'] . "</a></td>
                         <td>" . date('d-m-Y', strtotime($film['date_sortie_fr'])) . "</td>
                         <td>" . $film['duree_film'] . "</td>
                     </tr>";   // Affiche les films

@@ -51,7 +51,7 @@
                 foreach ($films as $film) {
 
                     echo 
-                        "<h2>" . $film['id_film'] . ") " . $film['titre_film'] . "</h2>
+                        "<h2>" . $film['titre_film'] . "</h2>
                         <p>Date sortie en France : " . date('d-m-Y', strtotime($film['date_sortie_fr'])) . "</p>
                         <p>Durée du film : " . $film['duree_film'] . " mn</p>
                         <p>Réalisateur : " . $film['nom_realisateur'] . "</p>
@@ -98,7 +98,7 @@
 
                     echo 
                         "
-                        <p>" . $casting['nom_acteur'] . " (" . $casting['nom_role'] . ")</p>";
+                        <p>" . $casting['nom_acteur'] . " As : " . $casting['nom_role'] . "</p>";
                     
                 }                                 
         echo "</table>";
