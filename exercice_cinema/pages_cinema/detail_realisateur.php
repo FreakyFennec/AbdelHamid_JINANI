@@ -53,10 +53,9 @@
 
                     echo 
                         "<h2>" . $realisateur['id_realisateur'] . ") " . $realisateur['nom_realisateur'] . "</h2>
-                        <p>Date sortie en France : " . date('d-m-Y', strtotime($realisateur['date_sortie_fr'])) . "</p>
-                        
-                        <p>Réalisateur : " . $realisateur['nom_realisateur'] . "</p>
-                        <img src=../assets/img/img_personne/" . $realisateur['img_personne'] . " alt='" . $realisateur['alt_img_personne'] . "'></p>";
+                        <p>Date de naissance : " . date('d-m-Y', strtotime($realisateur['date_naiss_personne'])) . "</p>                        
+                        <p>Pays de naissance : " . $realisateur['lieu_naiss_personne'] . "</p>
+                        <img src=assets/img/img_personnes/" . $realisateur['img_personne'] . " alt='" . $realisateur['alt_img_personne'] . "'></p>";
                     
                 }                                 
         echo "</table>";
