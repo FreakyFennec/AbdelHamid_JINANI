@@ -30,53 +30,36 @@ CREATE TABLE IF NOT EXISTS `acteur` (
 
 -- Listage des données de la table cinema_hamid.acteur : ~43 rows (environ)
 INSERT INTO `acteur` (`id_acteur`, `id_personne`) VALUES
--- Film 01 --
 	(1, 2),
 	(2, 3),
 	(3, 4),
-
--- Film 02 --
 	(4, 6),
 	(5, 7),
 	(6, 8),
-
--- Film 03 --
 	(7, 10),
 	(8, 11),
 	(9, 12),
-
--- Film 04 --
 	(10, 14),
 	(11, 15),
 	(12, 16),
-
--- Film 05 --
 	(13, 17),
 	(14, 18),
 	(15, 19),
 	(16, 20),
 	(17, 21),
-
--- Film 06 --	
 	(18, 23),
 	(19, 24),
 	(20, 25),
 	(21, 26),
-
--- Film 07 --	
 	(22, 26),
 	(23, 27),
 	(24, 28),
 	(25, 29),
-	(26, 31),
-
--- Film 08 --	
+	(26, 30),
 	(27, 32),
 	(28, 33),
 	(29, 34),
 	(30, 35),
-
--- Film 09 --
 	(31, 36),
 	(32, 37),
 	(33, 38),
@@ -84,8 +67,6 @@ INSERT INTO `acteur` (`id_acteur`, `id_personne`) VALUES
 	(35, 40),
 	(36, 41),
 	(37, 42),
-
--- Film 10 --
 	(38, 48),
 	(39, 49),
 	(40, 50),
@@ -103,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `appartenir` (
   CONSTRAINT `FK_appartenir_genre` FOREIGN KEY (`id_genre_film`) REFERENCES `genre` (`id_genre_film`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_hamid.appartenir : ~9 rows (environ)
+-- Listage des données de la table cinema_hamid.appartenir : ~10 rows (environ)
 INSERT INTO `appartenir` (`id_film`, `id_genre_film`) VALUES
 	(1, 6),
 	(2, 4),
@@ -131,55 +112,38 @@ CREATE TABLE IF NOT EXISTS `casting` (
 
 -- Listage des données de la table cinema_hamid.casting : ~46 rows (environ)
 INSERT INTO `casting` (`id_film`, `id_acteur`, `id_role`) VALUES
--- Film 01 --
 	(1, 1, 1),
 	(1, 2, 2),
 	(1, 3, 3),
-
--- Film 02 --
 	(2, 4, 4),
 	(2, 5, 5),
 	(2, 6, 6),
-
--- Film 03 --
 	(3, 7, 7),
 	(3, 8, 8),
 	(3, 9, 9),
-
--- Film 04 --
 	(4, 7, 10),
 	(4, 10, 11),
 	(4, 11, 13),
 	(4, 12, 12),
-
--- Film 05 --
 	(5, 13, 14),
 	(5, 14, 15),
 	(5, 15, 16),
 	(5, 16, 17),
 	(5, 17, 18),
-
--- Film 06 --
 	(6, 18, 19),
 	(6, 19, 20),
 	(6, 20, 21),
 	(6, 21, 22),
-
--- Film 07 --
 	(7, 22, 24),
 	(7, 23, 24),
 	(7, 24, 25),
 	(7, 25, 26),
 	(7, 26, 27),
-
--- Film 08 --
 	(8, 26, 28),
 	(8, 27, 29),
 	(8, 28, 30),
 	(8, 29, 31),
 	(8, 30, 32),
-
--- Film 09 --
 	(9, 31, 34),
 	(9, 32, 35),
 	(9, 33, 36),
@@ -187,8 +151,6 @@ INSERT INTO `casting` (`id_film`, `id_acteur`, `id_role`) VALUES
 	(9, 35, 38),
 	(9, 36, 39),
 	(9, 37, 40),
-
--- Film 10 --
 	(10, 38, 41),
 	(10, 39, 42),
 	(10, 40, 43),
@@ -212,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `film` (
   CONSTRAINT `FK_film_realilsateur` FOREIGN KEY (`id_realisateur`) REFERENCES `realisateur` (`id_realisateur`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_hamid.film : ~9 rows (environ)
+-- Listage des données de la table cinema_hamid.film : ~10 rows (environ)
 INSERT INTO `film` (`id_film`, `titre_film`, `date_sortie_fr`, `duree_film`, `synopsis_film`, `affiche_film`, `note_film`, `id_realisateur`) VALUES
 	(1, 'L\'Homme qui défiait l\'infini', '2017-01-01', 108, 'Srinivasa Ramanujan est l\'un des plus grands mathématiciens de notre temps. Élevé à Madras en Inde, il intègre la prestigieuse université de Cambridge en Angleterre pendant la Première Guerre mondiale et y développe de nombreuses théories mathématiques sous l\'égide de son professeur G.H. Hardy. ', 'assets/img/L-homme-qui-defiait-l-infini.jpg', 5, 1),
 	(2, 'Jagame Thandhiram', '2021-06-21', 158, 'Quand un gangster habile et insouciant est recruté par un baron de la pègre étranger pour éliminer un rival, les dilemmes moraux qui s\'ensuivent le prennent au dépourvu.', 'assets/img/jagame-thandhiram.jpg', 2, 2),
@@ -264,58 +226,41 @@ CREATE TABLE IF NOT EXISTS `personne` (
 
 -- Listage des données de la table cinema_hamid.personne : ~49 rows (environ)
 INSERT INTO `personne` (`id_personne`, `nom_personne`, `prenom_personne`, `date_naiss_personne`, `lieu_naiss_personne`, `genre_personne`) VALUES
--- Film 01 --	
 	(1, 'Brown', 'Matt', '1980-01-01', 'Canada', 'H'),
 	(2, 'Patel', 'Dev', '1990-04-23', 'Grande-Bretagne', 'H'),
 	(3, 'Irons', 'Jeremy', '1948-09-19', 'Grande-Bretagne', 'H'),
 	(4, 'Jones', 'Tobias', '1966-09-07', 'Grande-Bretagne', 'H'),
-	
--- Film 02 --
 	(5, 'Subbaraj', 'Karthik', '1983-03-19', 'Indes', 'H'),
 	(6, 'Dhanush', 'V', '1983-02-25', 'Indes', 'H'),
 	(7, 'Lekshmi', 'Aishwarya', '1990-09-06', 'Indes', 'F'),
 	(8, 'Cosmo', 'James', '1948-05-24', 'Grande-Bretagne', 'H'),
-	
--- Film 03 --
 	(9, 'Biglow', 'Kathryn', '1951-11-17', 'États-Unis', 'F'),
 	(10, 'Ford', 'Harrison', '1942-07-13', 'États-Unis', 'H'),
 	(11, 'Neeson', 'Liam', '1952-06-07', 'Grande-Bretagne', 'H'),
 	(12, 'Sarsgaard', 'Peter', '1971-03-07', 'États-Unis', 'H'),
-	
--- Film 04 --
 	(13, 'Scott', 'Ridley', '1937-11-30', 'Grande-Bretagne', 'H'),
 	(14, 'Hauer', 'Rutger', '1944-01-23', 'Pays-Bas', 'H'),
 	(15, 'Hannah', 'Daryl', '1960-12-03', 'États-Unis', 'F'),
 	(16, 'Young', 'Sean', '1959-11-20', 'États-Unis', 'F'),
-	
--- Film 05 --
 	(17, 'Rapace', 'Noomi', '1979-12-28', 'Suède', 'F'),
 	(18, 'Fassebender', 'Michael', '1977-04-02', 'Allemagne', 'H'),
 	(19, 'Theron', 'Charlize', '1975-08-07', 'Afrique du Sud', 'F'),
 	(20, 'Elba', 'Idris', '1972-09-06', 'États-Unis', 'H'),
 	(21, 'Pearce', 'Guy', '1967-10-05', 'Australie', 'H'),
-	
--- Film 06 --
 	(22, 'Kubrick', 'Stanley', '1928-07-26', 'États-Unis', 'H'),
 	(23, 'Masson', 'James', '1909-05-15', 'Grande-Bretagne', 'H'),
 	(24, 'Winters', 'Shelley', '1920-08-18', 'États-Unis', 'F'),
 	(25, 'Lyon', 'Sue', '1946-07-10', 'États-Unis', 'F'),
-
--- Film 07 --
 	(26, 'Sellers', 'Peter', '1925-07-08', 'Grande-Bretagne', 'H'),
 	(27, 'Scott', 'George C.', '1927-10-18', 'États-Unis', 'H'),
 	(28, 'Hayden', 'Sterling', '1916-03-26', 'États-Unis', 'H'),
 	(29, 'Wynn', 'Keenan', '1916-07-27', 'États-Unis', 'H'),
 	(30, 'Pickens', 'Slim', '1919-06-29', 'États-Unis', 'H'),
-	
--- Film 08 --
 	(31, 'Dullea', 'Keir', '1936-05-30', 'États-Unis', 'H'),
 	(32, 'Lockwood', 'Gary', '1937-02-21', 'États-Unis', 'H'),
 	(33, 'Sylvester', 'William', '1922-01-31', 'États-Unis', 'H'),
 	(34, 'Richter', 'Daniel', '1939-01-01', 'États-Unis', 'H'),
 	(35, 'Rossiter', 'Leonard', '1926-10-21', 'Grande-Bretagne', 'H'),
-	
--- Film 09 --
 	(36, 'Eastwood', 'Clint', '1930-05-31', 'États-Unis', 'H'),
 	(37, 'Cooper', 'Bradley', '1975-01-05', 'États-Unis', 'H'),
 	(38, 'Fishburne', 'Laurence', '1961-07-31', 'États-Unis', 'H'),
@@ -323,8 +268,6 @@ INSERT INTO `personne` (`id_personne`, `nom_personne`, `prenom_personne`, `date_
 	(40, 'Wiest', 'Dianne', '1948-03-28', 'États-Unis', 'F'),
 	(41, 'Garcia', 'Andy', '1956-04-12', 'Cuba', 'H'),
 	(42, 'Collins', 'Clifton Jr', '1970-06-16', 'Mexique', 'H'),
-	
--- Film 10 --
 	(47, 'Lucas', 'Georges', '1944-05-14', 'États-Unis', 'H'),
 	(48, 'Hamill', 'Mark', '1951-09-25', 'États-Unis', 'H'),
 	(49, 'Fisher', 'Carrie', '1956-10-21', 'États-Unis', 'F'),
@@ -342,7 +285,7 @@ CREATE TABLE IF NOT EXISTS `realisateur` (
   CONSTRAINT `FK_realilsateur_cinema_hamid.personne` FOREIGN KEY (`id_personne`) REFERENCES `personne` (`id_personne`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_hamid.realisateur : ~6 rows (environ)
+-- Listage des données de la table cinema_hamid.realisateur : ~7 rows (environ)
 INSERT INTO `realisateur` (`id_realisateur`, `id_personne`) VALUES
 	(1, 1),
 	(2, 5),

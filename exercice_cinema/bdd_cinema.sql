@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `acteur` (
   CONSTRAINT `FK_acteur_personne` FOREIGN KEY (`id_personne`) REFERENCES `personne` (`id_personne`)
 ) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_hamid.acteur : ~37 rows (environ)
+-- Listage des données de la table cinema_hamid.acteur : ~43 rows (environ)
 INSERT INTO `acteur` (`id_acteur`, `id_personne`) VALUES
 	(1, 2),
 	(2, 3),
@@ -51,11 +51,11 @@ INSERT INTO `acteur` (`id_acteur`, `id_personne`) VALUES
 	(19, 24),
 	(20, 25),
 	(21, 26),
-	(22, 27),
-	(23, 28),
-	(24, 29),
-	(25, 30),
-	(26, 31),
+	(22, 26),
+	(23, 27),
+	(24, 28),
+	(25, 29),
+	(26, 30),
 	(27, 32),
 	(28, 33),
 	(29, 34),
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `casting` (
   CONSTRAINT `FK_casting_role` FOREIGN KEY (`id_role`) REFERENCES `role` (`id_role`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_hamid.casting : ~39 rows (environ)
+-- Listage des données de la table cinema_hamid.casting : ~46 rows (environ)
 INSERT INTO `casting` (`id_film`, `id_acteur`, `id_role`) VALUES
 	(1, 1, 1),
 	(1, 2, 2),
@@ -130,20 +130,20 @@ INSERT INTO `casting` (`id_film`, `id_acteur`, `id_role`) VALUES
 	(5, 15, 16),
 	(5, 16, 17),
 	(5, 17, 18),
-	(6, 18, 20),
-	(6, 19, 21),
-	(6, 20, 22),
-	(6, 21, 23),
+	(6, 18, 19),
+	(6, 19, 20),
+	(6, 20, 21),
+	(6, 21, 22),
 	(7, 22, 24),
-	(7, 23, 25),
-	(7, 24, 26),
-	(7, 25, 27),
-	(7, 26, 28),
+	(7, 23, 24),
+	(7, 24, 25),
+	(7, 25, 26),
+	(7, 26, 27),
+	(8, 26, 28),
 	(8, 27, 29),
 	(8, 28, 30),
-	(8, 29, 21),
+	(8, 29, 31),
 	(8, 30, 32),
-	(8, 31, 33),
 	(9, 31, 34),
 	(9, 32, 35),
 	(9, 33, 36),
@@ -224,7 +224,7 @@ CREATE TABLE IF NOT EXISTS `personne` (
   PRIMARY KEY (`id_personne`)
 ) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_hamid.personne : ~42 rows (environ)
+-- Listage des données de la table cinema_hamid.personne : ~49 rows (environ)
 INSERT INTO `personne` (`id_personne`, `nom_personne`, `prenom_personne`, `date_naiss_personne`, `lieu_naiss_personne`, `genre_personne`) VALUES
 	(1, 'Brown', 'Matt', '1980-01-01', 'Canada', 'H'),
 	(2, 'Patel', 'Dev', '1990-04-23', 'Grande-Bretagne', 'H'),
@@ -302,7 +302,7 @@ CREATE TABLE IF NOT EXISTS `role` (
   PRIMARY KEY (`id_role`)
 ) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_hamid.role : ~39 rows (environ)
+-- Listage des données de la table cinema_hamid.role : ~46 rows (environ)
 INSERT INTO `role` (`id_role`, `nom_role`) VALUES
 	(1, 'Srinivasa Ramanujan'),
 	(2, 'G.H. Hardy'),
