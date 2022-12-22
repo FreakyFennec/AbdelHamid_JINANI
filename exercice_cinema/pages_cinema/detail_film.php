@@ -55,7 +55,7 @@
                         <p>Date sortie en France : " . date('d-m-Y', strtotime($film['date_sortie_fr'])) . "</p>
                         <p>Durée du film : " . $film['duree_film'] . " mn</p>
                         <p>Réalisateur : " . $film['nom_realisateur'] . "</p>
-                        <img src=../assets/img/img_affiches_films/" . $film['affiche_film'] . ">
+                        <img src=assets/img/img_affiches_films/" . $film['affiche_film'] . ">
                         <h3>Synopsis : </h3>
                         <p>" . $film['synopsis_film']  . "</p>";
                     

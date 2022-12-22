@@ -66,5 +66,41 @@
 
     }
 
+// Récupère le contenu de la table realisateur
+    $sqlQuery = 'SELECT *,
+                    titre_film, 
+                    DATE_FORMAT(date_sortie_fr, "%d/%m/%Y") AS date_sortie_fr, 
+                    CONCAT(p.prenom_personne,\' \', p.nom_personne) AS nom_realisateur
+                FROM film f
+                INNER JOIN realisateur r
+                    ON f.id_realisateur = r.id_realisateur
+                INNER JOIN personne p
+                    ON p.id_personne = r.id_personne
+                WHERE r.id_realisateur = ' . $id . '';                       // Variable qui contient la requête sql.
+                
+    $realisateurStatement = $mysqlConnection->prepare($sqlQuery);  // On prépare la requête (plus de sécurité).
+
+    $realisateurStatement->execute();
+    $realisateurs = $realisateurStatement->fetchAll();                    // Va chercher les éléments de la requête.
+    
+    if ($realisateurs > 0) {
+
+        echo "
+        <h3>Filmographie</h3>";
+
+                // On fait une boucle foreach() pour afficher les détails du realisateur.
+                foreach ($realisateurs as $realisateur) {
+
+                    echo 
+                        "<p>- " . $realisateur['titre_film'] . " (" . $realisateur['date_sortie_fr'] . ")</p>";
+                    
+                }                                 
+        echo "</table>";
+
+    } else {
+
+        echo "0 no results";
+
+    }
 
 ?>
