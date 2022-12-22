@@ -16,7 +16,8 @@
     // Si pas d'erreur on continue
 
     // Récupére le contenu de la table realisateur
-    $sqlQuery = 'SELECT *
+    $sqlQuery = 'SELECT *,
+                    CONCAT(p.prenom_personne,\' \', p.nom_personne) AS nom_realisateur
                  FROM personne p
                  INNER JOIN realisateur r
                    ON p.id_personne = r.id_personne;';                       // Variable qui contient la requête sql.
@@ -35,7 +36,7 @@
             <caption>Liste des réalisateurs</caption>
             <thead>
                 <tr>
-                    <th>Prénom</th>
+                    <th>Id du réal.</th>
                     <th>Nom</th>
                     <th>Date de naiss</th>
                     <th>Pays de naiss</th>
@@ -48,11 +49,11 @@
                 foreach ($realisateurs as $realisateur) {
 
                     echo 
-                        "<td>" . $realisateur['prenom_personne'] . "</td>
-                        <td>" . $realisateur['nom_personne'] . "</td>
+                        "<td>" . $realisateur['id_realisateur'] . "</td>
+                        <td><a href='detail_realisateur.php?id=" . $realisateur['id_realisateur'] . "' class='lien-pages'>" . $realisateur['nom_realisateur'] . "</a></td>
                         <td>" . date('d-m-Y', strtotime($realisateur['date_naiss_personne'])) . "</td>
                         <td>" . $realisateur['lieu_naiss_personne'] . "</td>
-                    </tr>";   // Affiche les realisateurs
+                    </tr>";
                     
                 }
 
