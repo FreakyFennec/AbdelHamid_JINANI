@@ -100,7 +100,7 @@
                 foreach ($realisateurs as $realisateur) {
 
                     echo 
-                        "<p>- " . $realisateur['titre_film'] . " (" . $realisateur['date_sortie_fr'] . ")</p>";
+                        "<p>- " . $realisateur['titre_film'] . " (" . $realisateur['date_sortie_fr'] . ") " . $realisateur['nom_role'] . "</p>";
                     
                 }                                 
         echo "</table>";
