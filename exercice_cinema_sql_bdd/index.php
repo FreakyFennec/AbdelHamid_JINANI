@@ -19,7 +19,7 @@
     
 ?>        
 
-<h1>Index cinéma</h1>
+<h1>Index cinéma (sql & bdd)</h1>
 <a href="pages_cinema/tous_les_films.php" class="lien-pages">Tous les films</a><br>                  <!-- Affiche les titre des films -->
 <a href="pages_cinema/tous_les_realisateurs.php" class="lien-pages">Tous les réalisateurs</a><br>    <!-- Affiche les titre des films -->
 <a href="pages_cinema/tous_les_acteurs.php" class="lien-pages">Tous les acteurs</a><br>              <!-- Affiche les titre des films -->
