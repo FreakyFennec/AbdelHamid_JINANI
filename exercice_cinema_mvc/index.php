@@ -20,5 +20,3 @@
 ?>        
 
 <h1>Index cinéma(MVC)</h1>
-<a href="pages_cinema/tous_les_films.php" class="lien-pages">Tous les films</a><br>               <!-- Affiche les titre des films -->
-        
