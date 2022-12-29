@@ -11,6 +11,6 @@
         switch ($_GET["action"]) {
 
             case "listFilms" : $ctrlCinema->listFilms(); break;
-            //case "listActeurs" : $ctrlCinema->listActeurs(); break;
+            case "listActeurs" : $ctrlCinema->listActeurs(); break;
         }
     }
