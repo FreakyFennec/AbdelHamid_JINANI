@@ -8,5 +8,5 @@
 <a href="http://localhost/AbdelHamid_JINANI/algoPHP_POO_02/">Index (algoPHP_POO_02)</a><br>
 <a href="http://localhost/AbdelHamid_JINANI/Asterix_le_Gaulois/">Index (Asterix le gaulois)</a><br>
 <a href="http://localhost/AbdelHamid_JINANI/Glossary/">Index (Glossary)</a><br>
-<a href="http://localhost/AbdelHamid_JINANI/exercice_cinema/">Index (Cinéma SQL & BDD)</a><br>
+<a href="http://localhost/AbdelHamid_JINANI/exercice_cinema_sql_bdd/">Index (Cinéma SQL & BDD)</a><br>
 <a href="http://localhost/AbdelHamid_JINANI/exercice_cinema_mvc/">Index (Cinéma MVC)</a><br>

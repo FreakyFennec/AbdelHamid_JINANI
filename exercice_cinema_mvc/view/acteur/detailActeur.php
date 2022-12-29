@@ -2,9 +2,10 @@
 
 use Model\Connect;
 
-    public function detActor($id) {
+    public function detActeur($id) {
+
         $pdo = Connect::seConnecter();
         $requete = $pdo->prepare("SELECT * FROM acteur WHERE id_acteur = :id");
         $requete->execute(["id" => $id]);
-        require "view/acteur/detailActeur.php"    
+        require "view/acteur/detailActeur.php";  
     }
