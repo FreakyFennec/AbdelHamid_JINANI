@@ -17,4 +17,3 @@
             require "view/listFilms.php";
         }
     }
-?>
