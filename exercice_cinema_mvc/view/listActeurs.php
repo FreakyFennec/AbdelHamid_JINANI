@@ -15,7 +15,7 @@
                 ?>
                 <tr>
                     <td><?= $acteur["prenom_personne"] ?></td>
-                    <td><a href="filmographieActeur.php?action=rolesActeur&id=<?=$acteur['id_acteur']?>"><?= $acteur['nom_personne'] ?></a></td>
+                    <td><a href="index.php?action=rolesActeur&id=<?=$acteur['id_acteur']?>"><?= $acteur['nom_personne'] ?></a></td>
                     <td><?= $acteur["date_naiss_personne"] ?></td>
                     <td><?= $acteur["lieu_naiss_personne"] ?></td>
                 </tr>

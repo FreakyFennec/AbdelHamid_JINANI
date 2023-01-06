@@ -9,17 +9,24 @@
 
 <table class="">
     <thead>
-        <tr></tr>
-        <tr></tr>
+        <tr>
+            <th>Role</th>
+            <th>Film</th>
+            <th>Date sortie fr</th>
+        </tr>
     </thead>
+    <tbody>
+        <!-- fetchAll on récupére plusieures lignes -->
+        <?php
+            foreach($requete->fetchAll() as $role) { ?>
+                <tr>
+                    <td><?= $role["nom_role"] ?></td>
+                    <td><?= $role["titre_film"] ?></td>
+                    <td><?= $role["date_sortie_fr"] ?></td>
+                </tr>
+        <?php } ?>
+    </tbody>
 </table>
-<!-- fetchAll on récupére plusieures lignes -->
-<?php
-    foreach($requete->fetchAll() as $role) { ?>
-
-    }
-
-?>
 
 <?php
 

@@ -84,10 +84,10 @@
             $pdo = Connect::seConnecter();
             $requete = $pdo->prepare("
                 SELECT 
-                    
-                r.nom_role,
-                f.titre_film,
-                DATE_FORMAT(date_sortie_fr, '%d/%m/%Y') AS date_sortie_fr
+                    p.nom_personne as nom_acteur,                    
+                    r.nom_role,
+                    f.titre_film,
+                    DATE_FORMAT(date_sortie_fr, '%d/%m/%Y') AS date_sortie_fr
                 FROM personne p
                 INNER JOIN acteur a
                     ON p.id_personne = a.id_personne
