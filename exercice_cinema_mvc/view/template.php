@@ -10,16 +10,17 @@
     <body>
         <nav>
             <ul>
-                <li>Films</li>
-                <li>Acteurs</li>
-                <li>Réalisateurs</li>
-                <li>Roles</li>
+                <li><a href="index.php?action=listFilms">Films</a></li>
+                <li><a href="index.php?action=listActeurs">Acteurs</a></li>
+                <li><a href="index.php?action=listRealisateurs">Réalisateurs</a></li>
+
+                <li><a href="index.php?action=filmographieActeur&id='. $id .'">Filmographie</a></li>
                 <li>Genres</li>
             </ul>
         </nav>
         <main>
             <div id="contenu">
-                <h1 class="titrePrincipal">PDO Cinema</h1>
+                <h1 class="titrePrincipal"><?= $titre ?></h1>
                 <h2 class="titreSecondaire"><?= $titre_secondaire ?></h2>
                 <?= $contenu ?>
             </div>

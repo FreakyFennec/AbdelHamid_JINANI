@@ -11,9 +11,9 @@
     </thead>
     <tbody>
         <?php
-            foreach($requete->fetch_all() as $film) { ?>
+            foreach($requete->fetchAll() as $film) { ?>
                 <tr>
-                    <td><?= $film["titre_film"] ?></td>
+                    <td><a href="index.php?action=detailFilm&id=<?= $film["id_film"] ?>"><?= $film["titre_film"] ?></a></td>
                     <td><?= $film["date_sortie_fr"] ?></td>
                 </tr>
         <?php } ?>

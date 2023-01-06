@@ -11,12 +11,13 @@
     </thead>
     <tbody>
         <?php
-            foreach($requete->fetch_all() as $film) { ?>
+            foreach($requete->fetchAll() as $acteur) {
+                ?>
                 <tr>
-                    <td><?= $film["prenom_personne"] ?></td>
-                    <td><?= $film["nom_personne"] ?></td>
-                    <td><?= $film["date_naiss_personne"] ?></td>
-                    <td><?= $film["lieu_naiss_personne"] ?></td>
+                    <td><?= $acteur["prenom_personne"] ?></td>
+                    <td><a href="filmographieActeur.php?action=rolesActeur&id=<?=$acteur['id_acteur']?>"><?= $acteur['nom_personne'] ?></a></td>
+                    <td><?= $acteur["date_naiss_personne"] ?></td>
+                    <td><?= $acteur["lieu_naiss_personne"] ?></td>
                 </tr>
         <?php } ?>
     </tbody>

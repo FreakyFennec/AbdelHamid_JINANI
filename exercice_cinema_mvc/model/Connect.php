@@ -3,7 +3,7 @@
 
     abstract class Connect {
         const HOST = "Localhost";
-        const DB = "cinema";
+        const DB = "cinema_hamid";
         const USER = "root";
         const PASS = "";
 
