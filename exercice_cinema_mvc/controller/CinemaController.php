@@ -48,9 +48,9 @@
         public function detailFilm($id) {
 
             $pdo = Connect::seConnecter();
-            $requete = $pdo->prepare("
+            $requete1 = $pdo->prepare("
                 SELECT * , 
-                CONCAT(p.prenom_personne,' ', p.nom_personne) AS nom_realisateur
+                    CONCAT(p.prenom_personne,' ', p.nom_personne) AS nom_realisateur
                 FROM film f
                 INNER JOIN realisateur r
                     ON f.id_realisateur = r.id_realisateur
@@ -58,7 +58,24 @@
                     ON r.id_personne = p.id_personne
                 WHERE id_film = :id
             ");
-            $requete->execute(["id"=> $id]);
+            $requete1->execute(["id"=> $id]);
+
+            $requete2 = $pdo->prepare("
+                SELECT 
+                    CONCAT(p.prenom_personne,' ', p.nom_personne) AS nom_acteur, 
+                    p.genre_personne, 
+                    c.id_acteur,
+                    r.nom_role
+                FROM casting c
+                INNER JOIN acteur a
+                    ON c.id_acteur = a.id_acteur
+                INNER JOIN personne p
+                    ON a.id_personne = p.id_personne
+                INNER JOIN role r
+                    ON a.id_acteur = r.id_role
+                WHERE id_film = :id
+            ");
+            $requete2->execute(["id"=>$id]);
  
             require "view/detailFilm.php";
         }
