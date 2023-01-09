@@ -17,7 +17,7 @@
                 <li><a href="index.php?action=filmographieActeur&id='. $id .'">Filmographie</a></li>
 
                 <li><a href="index.php?action=listGenres">Genres</a></li>
-                <li><a href="index.php?action=listeRoles">Rôles</a></li>
+                <li><a href="index.php?action=listRoles">Rôles</a></li>
             </ul>
         </nav>
         

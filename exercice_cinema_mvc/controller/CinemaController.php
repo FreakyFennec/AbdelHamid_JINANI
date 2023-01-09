@@ -114,4 +114,16 @@
             
             require "view/listGenres.php";
         }
+
+        public function listRoles () {
+
+            $pdo = Connect::seConnecter();
+            $requete = $pdo->query("
+                SELECT 
+                    nom_role 
+                FROM role
+            ");
+
+            require "view/listRoles.php";
+        }
     }
