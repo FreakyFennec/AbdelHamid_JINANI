@@ -99,8 +99,9 @@
         }
 
         public function listGenres() {
+            
             $pdo = Connect::seConnecter();
-            $requete = $pdo->prepare("
+            $requete = $pdo->query("
                 SELECT 
                     COUNT(type_genre_film) AS nbr_films, 
                     type_genre_film 

@@ -4,6 +4,7 @@
     <thead>
         <tr>
             <th>Genre</th>
+            <th>Nbre de films</th>
         </tr>
     </thead>
     <tbody>
@@ -11,6 +12,7 @@
             foreach($requete->fetchAll() as $genre) { ?>
                 <tr>                    
                     <td><?= $genre["type_genre_film"] ?></td>
+                    <td><?= $genre["nbr_films"] ?></td>
                 </tr>
         <?php } ?>
     </tbody>
