@@ -120,13 +120,13 @@
             $pdo = Connect::seConnecter();
             $requete = $pdo->query("
                 SELECT 
-                    COUNT(type_genre_film) AS nbr_films, 
+                    COUNT(a.id_film) AS nbr_films, 
                     g.type_genre_film,
                     g.id_genre_film AS id_genre_film
-                FROM appartenir a
-                INNER JOIN genre g
+                FROM genre g
+                LEFT JOIN appartenir a
                     ON a.id_genre_film = g.id_genre_film
-                GROUP BY a.id_genre_film
+                GROUP BY g.id_genre_film
                 ORDER BY COUNT(type_genre_film) DESC
             ");
             
