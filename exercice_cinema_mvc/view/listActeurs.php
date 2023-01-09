@@ -5,8 +5,9 @@
 <table class="">
     <thead>
         <tr>
-            <th>Prénom</th>
             <th>Nom</th>
+            <th>Date de naissance</th>
+            <th>Pays de naissance</th>
         </tr>
     </thead>
     <tbody>
@@ -14,8 +15,7 @@
             foreach($requete->fetchAll() as $acteur) {
                 ?>
                 <tr>
-                    <td><?= $acteur["prenom_personne"] ?></td>
-                    <td><a href="index.php?action=rolesActeur&id=<?=$acteur['id_acteur']?>"><?= $acteur['nom_personne'] ?></a></td>
+                    <td><a href="index.php?action=rolesActeur&id=<?=$acteur['id_personne']?>"><?= $acteur['nom_acteur'] ?></a></td>
                     <td><?= $acteur["date_naiss_personne"] ?></td>
                     <td><?= $acteur["lieu_naiss_personne"] ?></td>
                 </tr>

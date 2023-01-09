@@ -63,10 +63,10 @@
             require "view/detailFilm.php";
         }
 
-        public function detailActeur($id) {
+        public function rolesActeur($id) {
 
             $pdo = Connect::seConnecter();
-            $requete = $pdo->prepare("
+            $requete1 = $pdo->prepare("
                 SELECT 
                     CONCAT(p.prenom_personne,' ', p.nom_personne) AS nom_acteur
                 FROM personne p
@@ -74,17 +74,10 @@
                     ON p.id_personne = a.id_personne
                 WHERE p.id_personne = :id
             ");
-            $requete->execute(["id"=> $id]);
+            $requete1->execute(["id"=> $id]);
 
-            require "view/filmographieActeur.php";
-        }
-
-        public function rolesActeur($id) {
-
-            $pdo = Connect::seConnecter();
-            $requete = $pdo->prepare("
-                SELECT 
-                    p.nom_personne as nom_acteur,                    
+            $requete2 = $pdo->prepare("
+                SELECT                   
                     r.nom_role,
                     f.titre_film,
                     DATE_FORMAT(date_sortie_fr, '%d/%m/%Y') AS date_sortie_fr
@@ -100,8 +93,24 @@
                 WHERE p.id_personne = :id
                 ORDER BY f.date_sortie_fr DESC
             ");
-            $requete->execute(["id"=> $id]);
+            $requete2->execute(["id"=> $id]);
 
             require "view/filmographieActeur.php";
+        }
+
+        public function listGenres() {
+            $pdo = Connect::seConnecter();
+            $requete = $pdo->prepare("
+                SELECT 
+                    COUNT(type_genre_film) AS nbr_films, 
+                    type_genre_film 
+                FROM appartenir a
+                INNER JOIN genre g
+                    ON a.id_genre_film = g.id_genre_film
+                GROUP BY a.id_genre_film
+                ORDER BY COUNT(type_genre_film) DESC
+            ");
+            
+            require "view/listGenres.php";
         }
     }

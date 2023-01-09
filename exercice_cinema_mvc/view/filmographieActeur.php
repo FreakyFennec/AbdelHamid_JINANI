@@ -1,9 +1,10 @@
-<?php ob_start(); ?>
+<?php  ob_start();
+    $acteur = $requete1->fetch();
+?>
 
 <table class="">
     <thead>
         <tr>
-            <th>Nom acteur</th>
             <th>Rôle</th>
             <th>Film</th>
             <th>Date sortie fr</th>
@@ -11,9 +12,8 @@
     </thead>
     <tbody>
         <?php
-            foreach($requete->fetchAll() as $role) { ?>
-                <tr>
-                    <td><?= $role["nom_acteur"] ?></td>
+            foreach($requete2->fetchAll() as $role) { ?>
+                <tr>                    
                     <td><?= $role["nom_role"] ?></td>
                     <td><?= $role["titre_film"] ?></td>
                     <td><?= $role["date_sortie_fr"] ?></td>
@@ -24,7 +24,7 @@
 
 <?php
     $titre = "Filmographie";
-    $titre_secondaire = "Filmographie";
+    $titre_secondaire = "Filmographie de : " . $acteur["nom_acteur"];
     $contenu = ob_get_clean();
     require "view/template.php";
 ?>
