@@ -11,7 +11,7 @@
         <?php
             foreach($requete->fetchAll() as $genre) { ?>
                 <tr>                    
-                    <td><?= $genre["type_genre_film"] ?></td>
+                    <td><a href="index.php?action=listParGenre&id=<?= $genre["id_genre_film"] ?>"><?= $genre["type_genre_film"] ?></a></td>
                     <td><?= $genre["nbr_films"] ?></td>
                 </tr>
         <?php } ?>

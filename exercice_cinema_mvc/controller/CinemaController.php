@@ -104,7 +104,8 @@
             $requete = $pdo->query("
                 SELECT 
                     COUNT(type_genre_film) AS nbr_films, 
-                    type_genre_film 
+                    g.type_genre_film,
+                    g.id_genre_film AS id_genre_film
                 FROM appartenir a
                 INNER JOIN genre g
                     ON a.id_genre_film = g.id_genre_film
@@ -125,5 +126,25 @@
             ");
 
             require "view/listRoles.php";
+        }
+
+        public function listParGenre($id) {
+
+            $pdo = Connect::seConnecter();
+            $requete = $pdo->prepare("
+                SELECT 
+                    f.titre_film, 
+                    f.date_sortie_fr,
+                    g.id_genre_film
+                FROM genre g
+                INNER JOIN appartenir a
+                    ON g.id_genre_film = a.id_genre_film
+                INNER JOIN film f
+                    ON a.id_film = f.id_film
+                WHERE g.id_genre_film = :id
+            ");
+            $requete->execute(["id"=>$id]);
+
+            require "view/listParGenre.php";
         }
     }
