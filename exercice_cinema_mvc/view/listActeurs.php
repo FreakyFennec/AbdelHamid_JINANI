@@ -2,6 +2,7 @@
 
 <p class="">Il y a <?= $requete->rowCount() ?> acteurs</p>
 
+<button type="submit" name="nom_acteur" class="addActeur" onclick="'location.href=index.php?action=addActeur'">Ajouter un acteur</button>
 <table class="">
     <thead>
         <tr>

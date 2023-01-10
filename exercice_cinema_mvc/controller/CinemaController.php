@@ -183,10 +183,32 @@
                 ");
                 $requete->execute(["nom_genre"=>$genre]); 
                 
-                require "view/listGenres.php";
+                require "view/formMovies.php";
 
             } else {
                 require "view/formMovies.php";
             }    
+        }
+
+        public function addActeur() {
+            if (isset($_POST['nom_acteur'])) {
+                $acteur = filter_input(INPUT_POST, "nom_acteur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+                var_dump($acteur);
+
+                $pdo = Connect::seConnecter();
+                $requete = $pdo->prepare("
+                    INSERT INTO personne(nom_personne, prenom_personne, date_naiss_personne, lieu_naiss_personne, genre_personne)
+                    VALUES(:nom_personne, :prenom_personne, :date_naiss_personne, :lieu_naiss_personne, :genre_personne)
+                
+                ");
+                $requete->execute(["acteur"=>$acteur]);
+
+                require "view/formMovies.php";
+                
+            } else {
+                require "view/formMovies.php";
+            }
+            
         }
     }
