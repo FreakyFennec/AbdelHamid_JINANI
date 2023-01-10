@@ -18,7 +18,7 @@
 
                 <li><a href="index.php?action=listGenres">Genres</a></li>
                 <li><a href="index.php?action=listRoles">Rôles</a></li>
-
+                <li><a href="index.php?action=insertGenre">Ajouter genres</a></li>
             </ul>
         </nav>
         

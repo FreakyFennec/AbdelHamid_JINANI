@@ -166,15 +166,25 @@
         }
 
         public function insertGenre() {
+            
+            if (isset($_POST['nom_genre'])) {
 
-            if (isset($_GET)) {
+                //var_dump($_POST);
+
+                $genre = filter_input(INPUT_POST, "nom_genre", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+                var_dump($genre);
+                //die("je veux pas !");
+
                 $pdo = Connect::seConnecter();
                 $requete = $pdo->prepare("
                     INSERT INTO genre(type_genre_film)
-                    VALUES('nom_genre')
+                    VALUES(:nom_genre)
                 ");
-                $requete->execute();
+                $requete->execute(["nom_genre"=>$genre]); 
                 
+                require "view/listGenres.php";
+
             } else {
                 require "view/formMovies.php";
             }    
