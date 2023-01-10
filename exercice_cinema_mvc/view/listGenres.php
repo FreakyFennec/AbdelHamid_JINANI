@@ -1,5 +1,9 @@
 <?php  ob_start();?>
 
+<div class="addGenre">
+    <button class="addGenre" onclick="location.href='index.php?action=insertGenre'">Ajouter un genre</button>
+</div>
+
 <table class="">
     <thead>
         <tr>

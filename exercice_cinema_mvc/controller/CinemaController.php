@@ -164,4 +164,19 @@
 
             require "view/listParGenre.php";
         }
+
+        public function insertGenre() {
+
+            if (isset($_GET)) {
+                $pdo = Connect::seConnecter();
+                $requete = $pdo->prepare("
+                    INSERT INTO genre(type_genre_film)
+                    VALUES('nom_genre')
+                ");
+                $requete->execute();
+                
+            } else {
+                require "view/formMovies.php";
+            }    
+        }
     }

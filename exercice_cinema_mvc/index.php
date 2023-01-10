@@ -23,6 +23,7 @@
             case "listGenres" : $ctrlCinema->listGenres(); break;
             case "listRoles" : $ctrlCinema->listRoles(); break;
             case "listParGenre" : $ctrlCinema->listParGenre($id); break;
+            case "insertGenre" : $ctrlCinema->insertGenre(); break;
         }
     } else {
         $ctrlHome->displayHomePage();
